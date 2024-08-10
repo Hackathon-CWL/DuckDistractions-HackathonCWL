@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function showSection(sectionId) {
+    window.showSection = function(sectionId) {
         const sections = document.querySelectorAll('.tab-content');
         sections.forEach(section => {
             if (section.id === sectionId) {
@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     document.querySelector('.sidebar-toggle').addEventListener('click', function() {
         const mobileNav = document.querySelector('.mobile-nav');
         mobileNav.classList.toggle('active');
     });
-
     showSection('get-started');
 });

@@ -1,15 +1,16 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #E9F5E1;
-    color: #2C5F2D;
+    background: url('https://w0.peakpx.com/wallpaper/710/666/HD-wallpaper-green-abstract-waves-abstract-art-abstract-waves-creative-green-backgrounds-green-waves-geometric-shapes-green-gradient-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #E9F5E1;
     margin: 0;
     padding: 0;
-    transition: background-color 0.5s ease;
+    transition: background 0.5s ease;
 }
 
 nav {
-    background-color: #2C5F2D;
+    background-color: rgba(44, 95, 45, 0.8); /* Semi-transparent green */
     padding: 10px 20px;
     text-align: center;
 }

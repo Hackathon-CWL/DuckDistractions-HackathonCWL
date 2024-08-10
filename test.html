@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="css/pomodoroStyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <div class="tabs">
+            <div class="tab active" data-target="pomodoro">Pomodoro</div>
+            <div class="tab" data-target="short-break">Short Break</div>
+            <div class="tab" data-target="long-break">Long Break</div>
+          </div>
+          <div class="content">
+            <div id="pomodoro" class="tab-content active">
+              <div class="timer">25:00</div>
+              <button id="start"><i class="fas fa-play"></i> Start</button>
+            </div>
+            <div id="short-break" class="tab-content">
+              <div class="timer">05:00</div>
+              <button id="start"><i class="fas fa-play"></i> Start</button>
+            </div>
+            <div id="long-break" class="tab-content">
+              <div class="timer">15:00</div>
+              <button id="start"><i class="fas fa-play"></i> Start</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+  <script src="scripts/pomodoroScript.js"></script>
+</body>
+</html>

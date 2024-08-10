@@ -3,16 +3,19 @@ body {
   text-align: center;
   margin: 0;
   padding: 0; 
+  height: calc(100vh+600px);
 }
 
+/* Container styling */
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 20px; 
-  margin-top: -100px; 
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  overflow: hidden; /* Allow scrolling if content overflows */
+  box-sizing: border-box;
+  margin-top: 69px;
 }
+
 .card {
   background: rgba(255, 255, 255, 0.3); /* White background with 30% opacity */
   backdrop-filter: blur(10px); /* Backdrop blur effect */
@@ -26,8 +29,117 @@ body {
   align-items: center; /* Center align all content horizontally */
   margin: 0 auto; /* Center card horizontally */
   box-sizing: border-box; /* Ensure padding is included in the width */
+  margin-bottom: 50px;
 }
 
+.task-feature {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px; /* Ensure consistent width with the card */
+  box-sizing: border-box;
+  margin-top: 20px; /* Add space above the task feature */
+  max-height: calc(100vh - 280px); /* Adjust height based on the remaining viewport space */
+  overflow: hidden; /* Hide overflow outside the container */
+}
+
+
+/* Task List Styling */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* Set a fixed height for the task list */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 69px;
+
+}
+
+/* Ensure proper styling for task items */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+  color: white;
+  font-size: 16px;
+}
+
+.task-item button {
+  margin-left: 10px; /* Space between buttons */
+}
+.task-item button:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+
+.task-feature h3 {
+  margin-top: 0;
+  color: white;
+  font-size: 24px;
+  font-style: bold;
+}
+
+#task-form {
+  display: flex;
+  gap: 10px;
+}
+
+#task-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#add-task {
+  padding: 10px 20px;
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+}
+
+.task-item button {
+  margin-left: 10px; /* Space between buttons */
+}
+.task-item button.edit {
+  color: #ffc107;
+}
+
+.task-item button.delete {
+  color: #dc3545;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
 .rabs {
   display: flex;
   width: 100%; /* Make rabs take full width of the card */

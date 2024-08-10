@@ -8,8 +8,8 @@ body {
 }
 header {
     background-color: #4fa26f; 
-    color: white;
-    padding: 15px 30px;
+    color: azure;
+    padding: 9px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;

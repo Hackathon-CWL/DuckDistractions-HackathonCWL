@@ -12,7 +12,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">PeachyPomodoro</div>
+        <div class="logo">
+            <object data="/path-to/your-svg-image.svg" type="image/svg+xml">
+                <img src="assets/man-meditating-svgrepo-com.svg" height="30" width="40" />
+
+            </object>PeachyPomodoro
+        </div>
         <nav class="desktop-nav">
             <ul>
                 <li><a href="#" onclick="showSection('get-started')">Get Started</a></li>
@@ -46,6 +51,7 @@
         </section>
 
         <section id="todo-list" class="tab-content">
+            <img src="./assets/todolist.png" alt="To-Do Icon" class="todo-icon">
             <h2>To-Do List</h2>
             <div class="todo-container">
                 <h3>Your Tasks</h3>

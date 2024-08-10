@@ -6,7 +6,9 @@
     <title>PeachyPomodoro</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
-    <script src="scripts/scripts.js" defer></script>
+    <link rel="stylesheet" href="css/pomodoroStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  
 </head>
 <body>
     <header>
@@ -33,14 +35,43 @@
             </ul>
         </nav>
     </header>
-
-    <main>
         <section id="get-started" class="tab-content active">
             <h2>Get Started</h2>
         </section>
 
         <section id="pomodoro" class="tab-content">
-            <poop>pomodoro</poop>
+            <div class="container">
+                <div class="card">
+                  <div class="rabs">
+                    <div class="rab active" data-target="pomodoro-content">Pomodoro</div>
+                    <div class="rab" data-target="short-break">Short Break</div>
+                    <div class="rab" data-target="long-break">Long Break</div>
+                  </div>
+                  <div class="content">
+                    <div id="pomodoro-content" class="rab-content active">
+                      <div class="timer">25:00</div>
+                      <button id="start"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    <div id="short-break" class="rab-content">
+                      <div class="timer">05:00</div>
+                      <button id="start"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    <div id="long-break" class="rab-content">
+                      <div class="timer">15:00</div>
+                      <button id="start"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="task-container">
+                  <h1 style="  color: white; font-size: 24px; font-style: bold;">Tasks</h1>
+                  <form id="task-form">
+                    <input type="text" id="task-name" placeholder="Task Name" required>
+                    <input type="number" id="pomodoro-count" placeholder="Pomodoros" min="1" required>
+                    <button type="submit" id="add-task">Add Task</button>
+                  </form>
+                  <ul id="task-list"></ul>
+                </div>
+              </div>      
         </section>
 
         <section id="todo-list" class="tab-content">
@@ -58,6 +89,8 @@
         <section id="about-us" class="tab-content">
             <h2>About Us</h2>
         </section>
-    </main>
+        <script src="scripts/scripts.js"></script>
+        <script src="scripts/pomodoroScript.js"></script>        
+        <script src="scripts/tasks.js"></script>
 </body>
 </html>

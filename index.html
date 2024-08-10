@@ -3,68 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productivity Website</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Focus Forest</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li onclick="openTab('get-started')">Get Started</li>
-            <li onclick="openTab('pomodoro-timer')">Pomodoro Timer</li>
-            <li onclick="openTab('todo-list')">To-Do List</li>
-            <li onclick="openTab('analytics')">Analytics</li>
-            <li onclick="openTab('about-us')">About Us</li>
+            <li><a href="#" data-target="get-started">Get Started</a></li>
+            <li><a href="#" data-target="pomodoro">Pomodoro Timer</a></li>
+            <li><a href="#" data-target="todo-list">To-Do List</a></li>
+            <li><a href="#" data-target="focus-mode">Focus Mode</a></li>
+            <li><a href="#" data-target="analytics">Analytics</a></li>
+            <li><a href="#" data-target="about-us">About Us</a></li>
         </ul>
-        <div class="focus-mode">
-            <label for="focus-toggle">Focus Mode</label>
-            <input type="checkbox" id="focus-toggle">
-        </div>
     </nav>
 
-    <div class="tab-content">
-        <section id="get-started" class="tab active">
-            <h1>Welcome to Your Productivity Hub</h1>
-            <p>Start organizing your tasks and boost your productivity!</p>
+    <div class="content">
+        <section id="get-started" class="active">
+            <h1>Welcome to Focus Forest</h1>
+            <p>Your journey to a more focused and productive life begins here.</p>
+            <button class="cta-button">Get Started</button>
         </section>
 
-        <section id="pomodoro-timer" class="tab">
+        <section id="pomodoro">
             <h2>Pomodoro Timer</h2>
-            <p>Focus on your work with time management techniques.</p>
-            <!-- Timer functionality would go here -->
+            <div class="timer">
+                <span class="time">25:00</span>
+                <div class="controls">
+                    <button class="control-btn">Start</button>
+                    <button class="control-btn">Pause</button>
+                    <button class="control-btn">Reset</button>
+                </div>
+            </div>
         </section>
 
-        <section id="todo-list" class="tab">
+        <section id="todo-list">
             <h2>To-Do List</h2>
-            <p>Organize your tasks efficiently.</p>
-            <!-- To-Do list functionality would go here -->
+            <div class="todo-container">
+                <input type="text" placeholder="Add a new task...">
+                <ul class="todo-list">
+                    <!-- Tasks will be added here dynamically -->
+                </ul>
+            </div>
         </section>
 
-        <section id="analytics" class="tab">
-            <h2>Analytics of Work Done</h2>
+        <section id="focus-mode">
+            <h2>Focus Mode</h2>
+            <label class="switch">
+                <input type="checkbox" id="focus-toggle">
+                <span class="slider round"></span>
+            </label>
+            <p id="focus-status">Focus Mode is OFF</p>
+        </section>
+
+        <section id="analytics">
+            <h2>Analytics</h2>
             <p>Track your productivity over time.</p>
-            <!-- Analytics and graphs would go here -->
+            <div class="chart-placeholder">Charts go here</div>
         </section>
 
-        <section id="about-us" class="tab">
+        <section id="about-us">
             <h2>About Us</h2>
-            <p>Learn more about our mission and the team behind this project.</p>
+            <p>Focus Forest is created to help you stay on track and achieve your goals.</p>
+            <p>Contact us: <a href="mailto:support@focusforest.com">support@focusforest.com</a></p>
         </section>
     </div>
 
-    <script>
-        function openTab(tabName) {
-            // Hide all tabs
-            var tabs = document.getElementsByClassName('tab');
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = 'none';
-            }
+    <footer>
+        <p>&copy; 2024 Focus Forest. All rights reserved.</p>
+    </footer>
 
-            // Show the selected tab
-            document.getElementById(tabName).style.display = 'block';
-        }
-
-        // Show the "Get Started" tab by default
-        document.getElementById('get-started').style.display = 'block';
-    </script>
+    <script src="./scripts/scripts.js"></script>
 </body>
 </html>

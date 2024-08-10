@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PeachyPomodoro</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/todolist.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
     <script src="scripts/scripts.js" defer></script>
+    <script src="scripts/todolist.js" defer></script>
 </head>
 <body>
     <header>
@@ -40,11 +42,19 @@
         </section>
 
         <section id="pomodoro" class="tab-content">
-            <poop>pomodoro</poop>
+            <h2>pomodoro</h2>
         </section>
 
         <section id="todo-list" class="tab-content">
             <h2>To-Do List</h2>
+            <div class="todo-container">
+                <h3>Your Tasks</h3>
+                <div class="todo-input">
+                    <input type="text" id="new-task" placeholder="Add a new task..." />
+                    <button id="add-task">Add</button>
+                </div>
+                <ul id="task-list"></ul>
+            </div>
         </section>
 
         <section id="focus-mode" class="tab-content">

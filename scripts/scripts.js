@@ -1,7 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.tab-content');
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+
+    document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+        const mobileNav = document.querySelector('.mobile-nav');
+        mobileNav.classList.toggle('active');
+    });
+
+    showSection('get-started');
+
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const tabId = button.getAttribute('data-tab');
+            showTab(tabId);
+        });
+    });
+
     // Function to show the selected tab
     function showTab(tabId) {
-        console.log('Showing tab:', tabId); // Debugging line
         const tabs = document.querySelectorAll('.tab-panel');
         const buttons = document.querySelectorAll('.tab-button');
         
@@ -23,24 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // Function to toggle the mobile sidebar
-    function toggleSidebar() {
-        const mobileNav = document.querySelector('.mobile-nav');
-        mobileNav.classList.toggle('active');
-    }
-
-    // Add click event listener to sidebar toggle button
-    document.querySelector('.sidebar-toggle').addEventListener('click', toggleSidebar);
-
-    // Set default active tab
-    showTab('pomodoro');
-
-    // Set up click event listeners for tab buttons
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.addEventListener('click', function() {
-            const tabId = button.getAttribute('data-tab');
-            showTab(tabId);
-        });
-    });
 });

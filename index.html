@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeachyPomodoro</title>
+    <title>DuckDistractions</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pomodoroStyles.css">
@@ -12,13 +12,15 @@
 </head>
 <body>
     <header>
-        <div class="logo">PeachyPomodoro</div>
+        <div class="logo" style="display: flex; align-items: flex-end;">
+          <a href="index.html"><img src="../../images and docs/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
+            <div style="font-size: 32px; align-self: flex-start;">DuckDistractions</div>
+        </div>
         <nav class="desktop-nav">
             <ul>
                 <li><a href="#" onclick="showSection('get-started')">Get Started</a></li>
                 <li><a href="#" onclick="showSection('pomodoro')">Pomodoro</a></li>
                 <li><a href="#" onclick="showSection('todo-list')">To-Do List</a></li>
-                <li><a href="#" onclick="showSection('focus-mode')">Focus Mode</a></li>
                 <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
                 <li><a href="#" onclick="showSection('about-us')">About Us</a></li>
             </ul>
@@ -26,10 +28,10 @@
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
+                <li><a href="index.html"><img src="../../images and docs/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
                 <li><a href="#" onclick="showSection('get-started')">Get Started</a></li>
                 <li><a href="#" onclick="showSection('pomodoro')">Pomodoro Timer</a></li>
                 <li><a href="#" onclick="showSection('todo-list')">To-Do List</a></li>
-                <li><a href="#" onclick="showSection('focus-mode')">Focus Mode</a></li>
                 <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
                 <li><a href="#" onclick="showSection('about-us')">About Us</a></li>
             </ul>
@@ -76,10 +78,6 @@
 
         <section id="todo-list" class="tab-content">
             <h2>To-Do List</h2>
-        </section>
-
-        <section id="focus-mode" class="tab-content">
-            <h2>Focus Mode</h2>
         </section>
 
         <section id="analytics" class="tab-content">

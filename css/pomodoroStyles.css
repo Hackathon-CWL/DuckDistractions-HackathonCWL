@@ -14,6 +14,8 @@ body {
   overflow: hidden; /* Allow scrolling if content overflows */
   box-sizing: border-box;
   margin-top: 69px;
+  z-index: 1; /* Ensure it’s on top of other content */
+  position:relative;
 }
 
 .card {

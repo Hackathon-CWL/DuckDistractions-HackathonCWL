@@ -3,76 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Forest</title>
+    <title>PeachyPomodoro</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#" data-target="get-started">Get Started</a></li>
-            <li><a href="#" data-target="pomodoro">Pomodoro Timer</a></li>
-            <li><a href="#" data-target="todo-list">To-Do List</a></li>
-            <li><a href="#" data-target="focus-mode">Focus Mode</a></li>
-            <li><a href="#" data-target="analytics">Analytics</a></li>
-            <li><a href="#" data-target="about-us">About Us</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="logo">PeachyPomodoro</div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#get-started">Get Started</a></li>
+                <li><a href="#pomodoro-timer">Pomodoro Timer</a></li>
+                <li><a href="#todo-list">To-Do List</a></li>
+                <li><a href="#focus-mode">Focus Mode</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-toggle">&#9776;</div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#get-started">Get Started</a></li>
+                <li><a href="#pomodoro-timer">Pomodoro Timer</a></li>
+                <li><a href="#todo-list">To-Do List</a></li>
+                <li><a href="#focus-mode">Focus Mode</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="content">
-        <section id="get-started" class="active">
-            <h1>Welcome to Focus Forest</h1>
-            <p>Your journey to a more focused and productive life begins here.</p>
-            <button class="cta-button">Get Started</button>
-        </section>
-
-        <section id="pomodoro">
-            <h2>Pomodoro Timer</h2>
-            <div class="timer">
-                <span class="time">25:00</span>
-                <div class="controls">
-                    <button class="control-btn">Start</button>
-                    <button class="control-btn">Pause</button>
-                    <button class="control-btn">Reset</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="todo-list">
-            <h2>To-Do List</h2>
-            <div class="todo-container">
-                <input type="text" placeholder="Add a new task...">
-                <ul class="todo-list">
-                    <!-- Tasks will be added here dynamically -->
-                </ul>
-            </div>
-        </section>
-
-        <section id="focus-mode">
-            <h2>Focus Mode</h2>
-            <label class="switch">
-                <input type="checkbox" id="focus-toggle">
-                <span class="slider round"></span>
-            </label>
-            <p id="focus-status">Focus Mode is OFF</p>
-        </section>
-
-        <section id="analytics">
-            <h2>Analytics</h2>
-            <p>Track your productivity over time.</p>
-            <div class="chart-placeholder">Charts go here</div>
-        </section>
-
-        <section id="about-us">
-            <h2>About Us</h2>
-            <p>Focus Forest is created to help you stay on track and achieve your goals.</p>
-            <p>Contact us: <a href="mailto:support@focusforest.com">support@focusforest.com</a></p>
-        </section>
+    <div id="get-started" class="tab-content">
+        <!-- Get Started Content Here -->
     </div>
 
-    <footer>
-        <p>&copy; 2024 Focus Forest. All rights reserved.</p>
-    </footer>
+    <div id="pomodoro-timer" class="tab-content">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="pomodoro">Pomodoro Timer</button>
+            <button class="tab-button" data-tab="short-break">Short Break</button>
+            <button class="tab-button" data-tab="long-break">Long Break</button>
+        </div>
 
-    <script src="./scripts/scripts.js"></script>
+        <div id="pomodoro" class="tab-panel">
+            <div class="timer-container">
+                <div class="stopwatch">
+                    <div class="time" id="pomodoro-time">25:00</div>
+                    <button class="btn">Start</button>
+                    <button class="btn">Reset</button>
+                </div>
+                <button class="btn">Add Task</button>
+            </div>
+        </div>
+
+        <div id="short-break" class="tab-panel">
+            <div class="stopwatch">
+                <div class="time" id="short-break-time">5:00</div>
+                <button class="btn">Start</button>
+                <button class="btn">Reset</button>
+            </div>
+        </div>
+
+        <div id="long-break" class="tab-panel">
+            <div class="stopwatch">
+                <div class="time" id="long-break-time">15:00</div>
+                <button class="btn">Start</button>
+                <button class="btn">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="todo-list" class="tab-content">
+        <!-- To-Do List Content Here -->
+    </div>
+
+    <div id="focus-mode" class="tab-content">
+        <!-- Focus Mode Content Here -->
+    </div>
+
+    <div id="analytics" class="tab-content">
+        <!-- Analytics Content Here -->
+    </div>
+
+    <div id="about-us" class="tab-content">
+        <!-- About Us Content Here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to show the selected tab
+            function showTab(tabId) {
+                const tabs = document.querySelectorAll('.tab-panel');
+                const buttons = document.querySelectorAll('.tab-button');
+                
+                // Hide all tab panels
+                tabs.forEach(tab => {
+                    if (tab.id === tabId) {
+                        tab.style.display = 'block';
+                    } else {
+                        tab.style.display = 'none';
+                    }
+                });
+
+                // Update tab button styles
+                buttons.forEach(button => {
+                    if (button.getAttribute('data-tab') === tabId) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+            }
+
+            // Function to toggle the mobile sidebar
+            function toggleSidebar() {
+                const mobileNav = document.querySelector('.mobile-nav');
+                mobileNav.classList.toggle('active');
+            }
+
+            // Add click event listener to sidebar toggle button
+            document.querySelector('.sidebar-toggle').addEventListener('click', toggleSidebar);
+
+            // Set default active tab
+            showTab('pomodoro');
+
+            // Set up click event listeners for tab buttons
+            document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+                     document.querySelector('.mobile-nav').classList.toggle('active');
+            });
+
+        });
+    </script>
 </body>
 </html>

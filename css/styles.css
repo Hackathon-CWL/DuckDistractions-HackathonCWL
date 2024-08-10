@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E9F5E1;
+    color: #2C5F2D;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+}
+
+nav {
+    background-color: #2C5F2D;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #E9F5E1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #A3DE83;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Verdana', sans-serif;
+    color: #1B4332;
+}
+
+.cta-button {
+    background-color: #A3DE83;
+    color: #1B4332;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #76B041;
+    transform: scale(1.05);
+}
+
+/* Pomodoro Timer */
+.timer {
+    margin-top: 20px;
+}
+
+.time {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.control-btn {
+    background-color: #76B041;
+    color: #E9F5E1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: #A3DE83;
+}
+
+/* To-Do List */
+.todo-container {
+    margin-top: 20px;
+}
+
+.todo-container input[type="text"] {
+    padding: 10px;
+    border: 2px solid #A3DE83;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.todo-list li {
+    background-color: #A3DE83;
+    color: #1B4332;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list li:hover {
+    background-color: #76B041;
+}
+
+/* Focus Mode */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #76B041;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Analytics */
+.chart-placeholder {
+    height: 200px;
+    background-color: #C4E3CB;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B4332;
+}
+
+/* About Us */
+footer {
+    background-color: #2C5F2D;
+    color: #E9F5E1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}

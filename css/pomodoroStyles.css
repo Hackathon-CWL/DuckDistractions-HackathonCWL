@@ -30,108 +30,57 @@ body {
   box-sizing: border-box; 
   margin-bottom: 50px;
 }
-
-.pomodoroTask-feature {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-  max-width: 500px; 
-  box-sizing: border-box;
-  margin-top: 20px; 
-  max-height: calc(100vh - 280px); 
-  overflow: hidden; 
-}
-#pomodoroTask-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 200px; 
-  overflow-y: auto; 
-  margin-bottom: 69px;
-}
-.pomodoroTask-item {
+.pomodoroTask-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd; 
-  color: white;
-  font-size: 16px;
-}
-
-.pomodoroTask-item button {
-  margin-left: 10px; 
-}
-.pomodoroTask-item button:hover {
-  color: #0056b3;
-}
-
-
-.pomodoroTask-feature h3 {
-  margin-top: 0;
-  color: white;
-  font-size: 24px;
-  font-style: bold;
-}
-
-#pomodoroTask-form {
-  display: flex;
   gap: 10px;
+  margin-top: 20px;
+  backdrop-filter: blur(10px); 
+  border-radius: 18px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); 
+  padding: 20px; 
+  background: rgba(255, 255, 255, 0.3); 
 }
-
-#pomodoroTask-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#add-pomodoroTask {
+#AddTaskPomodoro {
   padding: 10px 20px;
   background-color: #00B29A;
   color: white;
   border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+#task-inputPomodoro {
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  cursor: pointer;
-}
-
-
-.pomodoroTask-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.pomodoroTask-item button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #007bff;
-}
-.pomodoroTask-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd; 
-}
-
-.pomodoroTask-item button {
-  margin-left: 10px; 
-}
-.pomodoroTask-item button.edit {
-  color: #ffc107;
-}
-
-.pomodoroTask-item button.delete {
-  color: #dc3545;
-}
-
-.pomodoroTask-item input[type="checkbox"] {
+  font-size: 16px;
+  width: 200px;
+  border-image: linear-gradient(90deg, #4CAF50, #81C784) 1;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  flex: 1;
   margin-right: 10px;
+  border: 2px solid #54976A;
+  background: transparent;
+  padding: 10px;
+  text-wrap: wrap;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+  border-image: linear-gradient(90deg, #4CAF50, #81C784) 1;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  flex: 1;
+  margin-right: 10px;
+  border: 2px solid #54976A;
+  background: transparent;
+  color: #ffffff;
+  text-wrap: wrap;
+}
+#task-inputPomodoro::placeholder {
+  color: #57ff8f;
 }
 .rabs {
   display: flex;
@@ -181,11 +130,10 @@ body {
   text-align: center; 
   width: 100%; 
 }
-
-#start {
+#stop {
   padding: 15px 30px; 
-  background-color: #00B29A;
-  color: white;
+  background-image: linear-gradient(90deg, #ff0000b9, #ff0000b4);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
@@ -196,14 +144,70 @@ body {
   margin: 0 auto; 
   white-space: nowrap;  
 }
-#AddTaskPomodoro {
+#stop-short {
   padding: 15px 30px; 
-  background-color: #00B29A;
-  color: white;
+  background-image: linear-gradient(90deg, #ff0000b9, #ff0000b4);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
-  font-size: 15px; 
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#stop-long {
+  padding: 15px 30px; 
+  background-image: linear-gradient(90deg, #ff0000b9, #ff0000b4);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#start {
+  padding: 15px 30px; 
+  background-image: linear-gradient(90deg, #26da62, #77d797);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#start-short {
+  padding: 15px 30px; 
+  background-image: linear-gradient(90deg, #26da62, #77d797);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#start-long {
+  padding: 15px 30px; 
+  background-image: linear-gradient(90deg, #26da62, #77d797);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
   display: inline-flex; 
   align-items: center;
   justify-content: center;
@@ -213,7 +217,12 @@ body {
 #start i {
   margin-right: 8px;
 }
-
+#start-short i {
+  margin-right: 8px;
+}
+#start-long i {
+  margin-right: 8px;
+}
 @media (min-width: 1200px) {
   .card {
     max-width: 600px; 
@@ -229,6 +238,26 @@ body {
   }
 
   #start {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #start-short {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #start-long {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #stop {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #stop-short {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #stop-long {
     padding: 20px 40px; 
     font-size: 22px; 
   }
@@ -252,6 +281,26 @@ body {
     padding: 15px 30px;
     font-size: 20px; 
   }
+  #start-short {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #start-long {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #stop {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #stop-short {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #stop-long {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
 }
 
 @media (max-width: 768px) {
@@ -272,6 +321,26 @@ body {
     padding: 12px 24px; 
     font-size: 18px; 
   }
+  #start-short {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #start-long {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #stop {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #stop-short {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #stop-long {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
 }
 @media (max-width: 480px) {
   .card {
@@ -288,6 +357,26 @@ body {
   }
 
   #start {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #start-short {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #start-long {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #stop {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #stop-short {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #stop-long {
     padding: 10px 20px;
     font-size: 16px; 
   }

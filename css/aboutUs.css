@@ -1,9 +1,6 @@
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
-
-/* About Us Section Styling */
 .about-section {
     padding: 100px 20px;
     text-align: center;
@@ -13,32 +10,13 @@ html {
     position: relative;
 }
 
-/* Placeholder background colors */
-/* #section1 {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-}
-
-#section2 {
-    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-}
-
-#section3 {
-    background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
-}
-
-#section4 {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-} */
-
 body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background-image 0s ease-in-out; /* Disable background-image transition */
+    transition: background-image 0s ease-in-out; 
 }
 
-
-/* Placeholder class for smooth transition */
 body.section1 {
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
 }

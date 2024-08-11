@@ -2,26 +2,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const taskInput = document.getElementById('new-task');
     const addTaskButton = document.getElementById('add-task');
     const taskList = document.getElementById('task-list');
-
+    const addTaskButtonPomodoro = document.getElementById('AddTaskPomodoro');
+    const addTaskInputPomodoro = document.getElementById('task-inputPomodoro');
     const taskCompleteSound = new Audio('assets/Sound effects/taskComplete_fart.mp3'); 
     const taskDeleteSound = new Audio('assets/Sound effects/taskDelete_cancelled.mp3'); 
 
-    addTaskButton.addEventListener('click', addTask);
-
+    addTaskButton.addEventListener('click', () => DoAddTask('todo-list'));
+    addTaskButtonPomodoro.addEventListener('click',() =>  DoAddTask('pomodoro'));
     taskInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            addTask();
+            DoAddTask('todo-list');
         }
     });
-
-    function addTask() {
-        const taskText = taskInput.value.trim();
-        if (taskText === "") return;
-
+    addTaskInputPomodoro.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            DoAddTask('pomodoro');
+        }
+    });
+    function DoAddTask(checker) {
+        console.log(checker);
+        if (checker == 'todo-list') {
+            const taskText = taskInput.value.trim();
+            if (taskText === "") return;
+            addTask(taskText);
+        } 
+        else if (checker == 'pomodoro') {
+            const taskText = addTaskInputPomodoro.value.trim();
+            if (taskText === "") return;
+            addTask(taskText);
+            showSection('todo-list');
+        }
+    }
+    function addTask(tt) {
+        console.log(tt);
         const li = document.createElement('li');
 
         const taskSpan = document.createElement('span');
-        taskSpan.textContent = taskText;
+        taskSpan.textContent = tt;
 
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';

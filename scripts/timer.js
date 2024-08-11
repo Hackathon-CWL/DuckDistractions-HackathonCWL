@@ -1,7 +1,6 @@
 function formatTimeUnit(value) {
     return value.toString().padStart(2, '0');
 }
-
 function validateMinutes(minutes, maxMinutes) {
     if (isNaN(minutes) || minutes < 0) {
         return 0;
@@ -11,29 +10,38 @@ function validateMinutes(minutes, maxMinutes) {
     }
     return minutes;
 }
-
 function validateSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
         return 0;
     }
-    if (seconds > 60) {
-        return 60;
+    if (seconds > 59) {
+        return 59;
     }
     return seconds;
 }
-
 function handleMinutesInput(elementId, maxMinutes) {
     let element = document.getElementById(elementId);
-    let minutes = parseInt(element.textContent);
-    element.textContent = formatTimeUnit(validateMinutes(minutes, maxMinutes));
+    if (element) {
+        let minutes = parseInt(element.textContent);
+        element.textContent = formatTimeUnit(validateMinutes(minutes, maxMinutes));
+    }
 }
-
 function handleSecondsInput(elementId) {
     let element = document.getElementById(elementId);
-    let seconds = parseInt(element.textContent);
-    element.textContent = formatTimeUnit(validateSeconds(seconds));
+    if (element) {
+        let seconds = parseInt(element.textContent);
+        element.textContent = formatTimeUnit(validateSeconds(seconds));
+    }
 }
-
+function handleInput(event) {
+    const target = event.target;
+    const value = target.textContent;
+    const newValue = value.replace(/[^0-9]/g, ''); 
+    if (newValue !== value) {
+        target.textContent = newValue;
+    }
+    event.preventDefault(); 
+}
 document.getElementById('pomodoro-minutes').addEventListener('blur', function() {
     handleMinutesInput('pomodoro-minutes', 180);
 });
@@ -54,132 +62,74 @@ document.getElementById('long-break-minutes').addEventListener('blur', function(
 document.getElementById('long-break-seconds').addEventListener('blur', function() {
     handleSecondsInput('long-break-seconds');
 });
-
-document.getElementById('pomodoro-minutes').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-    }
+document.querySelectorAll('[contenteditable=true]').forEach(element => {
+    element.addEventListener('input', handleInput);
 });
-document.getElementById('pomodoro-seconds').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
+const updateDisplay = (type, minutes, seconds) => {
+    const minutesElement = document.querySelector(`#${type}-minutes`);
+    const secondsElement = document.querySelector(`#${type}-seconds`);
+    if (minutesElement && secondsElement) {
+        minutesElement.textContent = formatTimeUnit(minutes);
+        secondsElement.textContent = formatTimeUnit(seconds);
+    } else {
+        console.error(`Element with ID ${type}-minutes or ${type}-seconds not found.`);
     }
-});
-
-document.getElementById('short-break-minutes').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-    }
-});
-document.getElementById('short-break-seconds').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-    }
-});
-
-document.getElementById('long-break-minutes').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-    }
-});
-document.getElementById('long-break-seconds').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-    }
-});
-
-
-
-
-let timerInterval;
-let totalSeconds = 0;
-let currentTabId = 'pomodoro-content';
-
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${formatTimeUnit(minutes)}:${formatTimeUnit(secs)}`;
-}
-
-function formatTimeUnit(value) {
-    return value.toString().padStart(2, '0');
-}
-function updateTimerDisplay() {
-    const timerDisplay = document.querySelector(`#${currentTabId} .timer`);
-    if (timerDisplay) {
-        timerDisplay.textContent = formatTime(totalSeconds);
-    }
-}
-function startTimer() {
-    const activeTab = document.querySelector('.rab active');
-    if (!activeTab) return;
-
-    const minutesId = activeTab.id + '-minutes';
-    const secondsId = activeTab.id + '-seconds';
-    console.log(minutesId, secondsId);
-    let minutes = parseInt(document.getElementById(minutesId).textContent) || 0;
-    let seconds = parseInt(document.getElementById(secondsId).textContent) || 0;
-
-    totalSeconds = (minutes * 60) + seconds;
-
-    if (timerInterval) clearInterval(timerInterval);
-
-    updateTimerDisplay(); // Initialize display
-
-    timerInterval = setInterval(() => {
-        if (totalSeconds <= 0) {
-            clearInterval(timerInterval);
-            alert("Time's up!");
+};
+const timer = {};
+const timerRunning = {};
+const timeRemaining = {};
+const startTimer = (type, minutes, seconds) => {
+    const startTime = Date.now();
+    timeRemaining[type] = minutes * 60 + seconds;
+    timerRunning[type] = true;
+    timer[type] = setInterval(() => {
+        if (timeRemaining[type] <= 0) {
+            clearInterval(timer[type]);
+            timerRunning[type] = false;
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            updateTotalTime(type, elapsed);
+            alert('Time is up!');
             return;
         }
-        totalSeconds--;
-        updateTimerDisplay();
+        timeRemaining[type]--;
+        const mins = Math.floor(timeRemaining[type] / 60);
+        const secs = timeRemaining[type] % 60;
+        updateDisplay(type, mins, secs);
     }, 1000);
-}
+};
 
-function handleStartButton() {
-    document.querySelectorAll('.rab-content .btn').forEach(button => {
-        button.addEventListener('click', startTimer);
-    });
-}
-
-// Format time input
-function formatTimeInput(element) {
-    let value = element.textContent.trim();
-    if (value === '') return;
-
-    value = parseInt(value, 10);
-
-    if (element.id.includes('minutes')) {
-        if (value < 0) value = 0;
-        if (value > 180) value = 180;
-    } else if (element.id.includes('seconds')) {
-        if (value < 0) value = 0;
-        if (value > 60) value = 60;
+const stopTimer = (type) => {
+    clearInterval(timer[type]);
+    timerRunning[type] = false;
+    updateTotalTimeDisplay();
+};
+document.querySelector('#start').addEventListener('click', () => {
+    if (!timerRunning['pomodoro']) {
+        const minutes = parseInt(document.querySelector('#pomodoro-minutes').textContent, 10);
+        const seconds = parseInt(document.querySelector('#pomodoro-seconds').textContent, 10);
+        startTimer('pomodoro', minutes, seconds);
     }
-
-    element.textContent = formatTimeUnit(value);
-}
-
-// Add event listeners to handle input formatting
-function handleInputFormatting() {
-    document.querySelectorAll('[contenteditable]').forEach(element => {
-        element.addEventListener('blur', () => formatTimeInput(element));
-    });
-}
-
-// Handle tab switch
-function handleTabSwitch() {
-    document.querySelectorAll('.rab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            currentTabId = tab.dataset.target;
-            if (timerInterval) clearInterval(timerInterval);
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    handleStartButton();
-    handleInputFormatting();
-    handleTabSwitch();
+});
+document.querySelector('#start-short').addEventListener('click', () => {
+    if (!timerRunning['short-break']) {
+        const minutes = parseInt(document.querySelector('#short-break-minutes').textContent, 10);
+        const seconds = parseInt(document.querySelector('#short-break-seconds').textContent, 10);
+        startTimer('short-break', minutes, seconds);
+    }
+});
+document.querySelector('#start-long').addEventListener('click', () => {
+    if (!timerRunning['long-break']) {
+        const minutes = parseInt(document.querySelector('#long-break-minutes').textContent, 10);
+        const seconds = parseInt(document.querySelector('#long-break-seconds').textContent, 10);
+        startTimer('long-break', minutes, seconds);
+    }
+});
+document.querySelector('#stop').addEventListener('click', () => {
+    stopTimer('pomodoro');
+});
+document.querySelector('#stop-short').addEventListener('click', () => {
+    stopTimer('short-break');
+});
+document.querySelector('#stop-long').addEventListener('click', () => {
+    stopTimer('long-break');
 });

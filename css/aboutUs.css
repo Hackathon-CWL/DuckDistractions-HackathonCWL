@@ -11,23 +11,37 @@ html {
     text-align: center;
     min-height: 100vh;
     color: white;
+    position: relative;
+}
+
+/* Background Box Styling */
+.background-box {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 300px; /* Adjust the width */
+    height: 150px; /* Adjust the height */
+    background-size: cover;
+    background-position: center;
     transition: background 0.6s ease-in-out;
+    border-radius: 10px;
 }
 
-#section1 {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+/* Backgrounds are still set for each section, but they can be placeholders */
+#section1 .background-box {
+    background-image: url('https://hillbillyzen.com/wp-content/uploads/2011/11/little-yellow-duck-e1320557048227.jpg');
 }
 
-#section2 {
-    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+#section2 .background-box {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdl52SMbVLYf2BWnCvg7Y6wVnigYcmdCFzA&s');
 }
 
-#section3 {
-    background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
+#section3 .background-box {
+    background-image: url('https://wallpapers.com/images/hd/uwu-sbfp3wnmrsoez0fb.jpg');
 }
 
-#section4 {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+#section4 .background-box {
+    background-image: url('path/to/placeholder4.jpg');
 }
 
 /* Ensures only active section is visible */

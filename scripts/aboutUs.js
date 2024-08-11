@@ -1,17 +1,21 @@
-// aboutUs.js
 
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.tab-content');
-    sections.forEach(section => {
-        section.classList.remove('active');
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.about-section');
+    
+    window.addEventListener('scroll', function() {
+        let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        sections.forEach((section) => {
+            const box = section.querySelector('.background-box');
+            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                box.classList.add('active-box');
+            } else {
+                box.classList.remove('active-box');
+            }
+        });
     });
+});
 
-    const targetSection = document.getElementById(sectionId);
-    targetSection.classList.add('active');
 
-    // Smooth scroll to the top of the section
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}

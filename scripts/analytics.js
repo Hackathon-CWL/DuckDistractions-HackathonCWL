@@ -28,5 +28,4 @@ setInterval(function () {
             timeSpentInTotal= `00:${timeSpentInSeconds}`;
         }
     }
-    console.log(timeSpentInTotal);
 }, 1000); 

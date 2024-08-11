@@ -11,8 +11,6 @@ header {
     color: rgb(0, 0, 0);
     padding: 9px 15px;
     display: flex;
-    align-items: bottom;
-    position: relative;
     font-size: 22px;
     z-index: 1000;
 }
@@ -20,7 +18,7 @@ header {
     font-size: 1.5em;
     font-weight: 600;
     display: flex;
-    align-items: last baseline;
+    align-items: baseline;
     
 }
 .desktop-nav{
@@ -56,11 +54,16 @@ header {
 
 .sidebar-toggle {
     display: none;
+    font-weight: bold;
+    position: absolute;
+    right: 15px; 
+    top: 15px; 
+    z-index: 1001; 
+    cursor: pointer;
 }
 
-/* Mobile Navigation Menu */
 .mobile-nav {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -103,6 +106,7 @@ header {
     transition: background-color 0.3s; /* Smooth hover effect */
     text-decoration: none; /* Remove underline */
     color: white; /* Text color */
+    align-items: flex-start;
 }
 
 .mobile-nav ul li a:hover {

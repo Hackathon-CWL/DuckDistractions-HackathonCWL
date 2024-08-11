@@ -8,38 +8,74 @@
     <link rel="stylesheet" href="css/todolist.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pomodoroStyles.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
   
 </head>
 <body>
     <header>
         <div class="logo" style="display: flex; align-items: flex-end;">
-          <a href="index.html"><img src="../../images and docs/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
-            <div style="font-size: 32px; align-self: flex-start;">DuckDistractions</div>
+          <a href="index.html"><img src="assets/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
+            <div style="font-size: 32px; align-self: flex-start; font-style: normal;">DuckDistractions</div>
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#" onclick="showSection('get-started')">Get Started</a></li>
-                <li><a href="#" onclick="showSection('pomodoro')">Pomodoro</a></li>
-                <li><a href="#" onclick="showSection('todo-list')">To-Do List</a></li>
-                <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
-                <li><a href="#" onclick="showSection('about-us')">About Us</a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;"> </a></li>
+                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('analytics')"><img src="assets/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
-                <li><a href="index.html"><img src="../../images and docs/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')">Get Started</a></li>
-                <li><a href="#" onclick="showSection('pomodoro')">Pomodoro Timer</a></li>
-                <li><a href="#" onclick="showSection('todo-list')">To-Do List</a></li>
-                <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
-                <li><a href="#" onclick="showSection('about-us')">About Us</a></li>
+                <li><a href="index.html"><img src="assets/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Home</a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  About</a></li>
+                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Pomodoro</a></li>
+                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  To-Do List</a></li>
+                <li><a href="#" onclick="showSection('analytics')"><img src="assets/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Analytics</a></li>
             </ul>
         </nav>
     </header>
         <section id="get-started" class="tab-content active">
-            <h2>Get Started</h2>
+              <main class="homepage-main">
+                  <section id="features-section" class="features-section">
+                      <h1 class="features-heading">xyz</h1>
+                      <div class="features-list">
+                          <div class="feature-card" id="feature-one">
+                              <h2 class="feature-title">xyz</h2>
+                              <p class="feature-description">xyz</p>
+                          </div>
+                          <div class="feature-card" id="feature-two">
+                              <h2 class="feature-title">xyz</h2>
+                              <p class="feature-description">xyz</p>
+                          </div>
+                          <!-- Add more feature cards as needed -->
+                      </div>
+                  </section>
+          
+                  <section id="how-to-use-section" class="how-to-use-section">
+                      <h1 class="how-to-use-heading">xyz</h1>
+                      <div class="how-to-use-steps">
+                          <div class="step" id="step-one">
+                              <h2 class="step-title">xyz</h2>
+                              <p class="step-description">xyz</p>
+                          </div>
+                          <div class="step" id="step-two">
+                              <h2 class="step-title">xyz</h2>
+                              <p class="step-description">xyz</p>
+                          </div>
+                          <!-- Add more steps as needed -->
+                      </div>
+                  </section>
+          
+              </main>
+          
+              <footer class="homepage-footer">
+                  <p class="footer-text">&copy; 2024 DuckDistractions. All rights reserved.</p>
+              </footer>          
         </section>
 
         <section id="pomodoro" class="tab-content">

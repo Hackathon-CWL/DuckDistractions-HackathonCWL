@@ -181,8 +181,77 @@ body {
   text-align: center; 
   width: 100%; 
 }
-
+#stop {
+  padding: 15px 30px; 
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#stop-short {
+  padding: 15px 30px; 
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#stop-long {
+  padding: 15px 30px; 
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
 #start {
+  padding: 15px 30px; 
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#start-short {
+  padding: 15px 30px; 
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
+#start-long {
   padding: 15px 30px; 
   background-color: #00B29A;
   color: white;
@@ -213,7 +282,12 @@ body {
 #start i {
   margin-right: 8px;
 }
-
+#start-short i {
+  margin-right: 8px;
+}
+#start-long i {
+  margin-right: 8px;
+}
 @media (min-width: 1200px) {
   .card {
     max-width: 600px; 
@@ -229,6 +303,26 @@ body {
   }
 
   #start {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #start-short {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #start-long {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #stop {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #stop-short {
+    padding: 20px 40px; 
+    font-size: 22px; 
+  }
+  #stop-long {
     padding: 20px 40px; 
     font-size: 22px; 
   }
@@ -252,6 +346,26 @@ body {
     padding: 15px 30px;
     font-size: 20px; 
   }
+  #start-short {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #start-long {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #stop {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #stop-short {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
+  #stop-long {
+    padding: 15px 30px;
+    font-size: 20px; 
+  }
 }
 
 @media (max-width: 768px) {
@@ -272,6 +386,26 @@ body {
     padding: 12px 24px; 
     font-size: 18px; 
   }
+  #start-short {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #start-long {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #stop {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #stop-short {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
+  #stop-long {
+    padding: 12px 24px; 
+    font-size: 18px; 
+  }
 }
 @media (max-width: 480px) {
   .card {
@@ -288,6 +422,26 @@ body {
   }
 
   #start {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #start-short {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #start-long {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #stop {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #stop-short {
+    padding: 10px 20px;
+    font-size: 16px; 
+  }
+  #stop-long {
     padding: 10px 20px;
     font-size: 16px; 
   }

@@ -1,5 +1,5 @@
 const startTime = new Date();
-setInterval(function () {
+/*setInterval(function () {
     const currentTime = new Date();
     const timeSpent = currentTime - startTime; 
     const timeSpentInSeconds = Math.round(timeSpent / 1000);
@@ -28,4 +28,4 @@ setInterval(function () {
             timeSpentInTotal= `00:${timeSpentInSeconds}`;
         }
     }
-}, 1000); 
+11}, 1000); */

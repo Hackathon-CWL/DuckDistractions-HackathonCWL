@@ -11,33 +11,34 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/aboutUs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
   
 </head>
 <body>
     <header>
         <div class="logo" style="display: flex; align-items: flex-end;">
           <a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
-            <div style="font-size: 32px; align-self: flex-start; font-style: normal;">DuckDistractions</div>
+            <div style="font-size: 32px; align-self: flex-start; font-style: normal; text-decoration: none;"><a href="index.html" style="color: black; text-decoration: none;">DuckDistractions</a></div>
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a id="titleButtons" onclick="showSection('get-started')">Home</a></li>
-                <li><a id="titleButtons" onclick="showSection('pomodoro')">Pomodoro</a></li>
-                <li><a id="titleButtons" onclick="showSection('todo-list')">To-Do</a></li>
-                <li><a id="titleButtons" onclick="showSection('analytics')">Analytics</a></li>
-                <li><a id="titleButtons" onclick="showSection('about-us')">About</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('get-started')">Home</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('pomodoro')">Pomodoro</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('todo-list')">To-Do</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('analytics')">Analytics</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('about-us')">About</a></li>
+
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
-                <li><a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')">Home</a></li>
-                <li><a href="#" onclick="showSection('pomodoro')">Pomodoro</a></li>
-                <li><a href="#" onclick="showSection('todo-list')">To-Do List</a></li>
-                <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
-                <li><a href="#" onclick="showSection('about-us')">About</a></li>
-
+                <li><a  style="color: black; text-decoration: none;" href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a  style="color: black; text-decoration: none;" href="#" onclick="showSection('get-started')">Home</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" onclick="showSection('pomodoro')">Pomodoro</a></li>
+                <li><a  style="color: black; text-decoration: none;" href="#" onclick="showSection('todo-list')">To-Do List</a></li>
+                <li><a  style="color: black; text-decoration: none;" href="#" onclick="showSection('analytics')">Analytics</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" onclick="showSection('about-us')">About</a></li>
             </ul>
         </nav>
     </header>
@@ -88,15 +89,21 @@
                   </div>
                   <div class="content">
                     <div id="pomodoro-content" class="rab-content active">
-                      <div class="timer">25:00</div>
+                      <div class="timer">
+                        <span id="pomodoro-minutes" contenteditable="true">45</span>:<span id="pomodoro-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                     </div>
                     <div id="short-break" class="rab-content">
-                      <div class="timer">05:00</div>
+                      <div class="timer">
+                        <span id="short-break-minutes" contenteditable="true">05</span>:<span id="short-break-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                     </div>
                     <div id="long-break" class="rab-content">
-                      <div class="timer">15:00</div>
+                      <div class="timer">
+                        <span id="long-break-minutes" contenteditable="true">15</span>:<span id="long-break-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                     </div>
                   </div>
@@ -146,6 +153,8 @@
         <script src="scripts/pomodoroScript.js"></script>        
         <script src="scripts/analytics.js"></script>
         <script src="scripts/todolist.js"></script>
+        <script src="scripts/timer.js"></script>
         <!-- <script src="scripts/aboutUs.js"></script> -->
+
 </body>
 </html>

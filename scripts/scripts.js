@@ -13,5 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const mobileNav = document.querySelector('.mobile-nav');
         mobileNav.classList.toggle('active');
     });
+    document.querySelectorAll('.mobile-nav ul li a').forEach(function (menuLink) {
+        menuLink.addEventListener('click', function () {
+            document.querySelector('.mobile-nav').classList.remove('active');
+        });
+    });
     showSection('get-started');
 });

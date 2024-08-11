@@ -6,7 +6,7 @@
     <title>DuckDistractions</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/todolist.css">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pomodoroStyles.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
@@ -20,22 +20,23 @@
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;"> </a></li>
-                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a id="titleButtons" onclick="showSection('get-started')">Home</a></li>
+                <li><a id="titleButtons" onclick="showSection('pomodoro')">Pomodoro</a></li>
+                <li><a id="titleButtons" onclick="showSection('todo-list')">To-Do</a></li>
+                <li><a id="titleButtons" onclick="showSection('analytics')">Analytics</a></li>
+                <li><a id="titleButtons" onclick="showSection('get-started')">About</a></li>
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
                 <li><a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Home</a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  About</a></li>
-                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Pomodoro</a></li>
-                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  To-Do List</a></li>
-                <li><a href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Analytics</a></li>
+                <li><a href="#" onclick="showSection('get-started')">Home</a></li>
+                <li><a href="#" onclick="showSection('pomodoro')">Pomodoro</a></li>
+                <li><a href="#" onclick="showSection('todo-list')">To-Do List</a></li>
+                <li><a href="#" onclick="showSection('analytics')">Analytics</a></li>
+                <li><a href="#" onclick="showSection('get-started')">About</a></li>
+
             </ul>
         </nav>
     </header>
@@ -128,7 +129,7 @@
         </section>
         <script src="scripts/scripts.js"></script>
         <script src="scripts/pomodoroScript.js"></script>        
-        <script src="scripts/tasks.js"></script>
+        <script src="scripts/analytics.js"></script>
         <script src="scripts/todolist.js"></script>
 </body>
 </html>

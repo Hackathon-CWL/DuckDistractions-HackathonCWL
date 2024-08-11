@@ -1,5 +1,5 @@
 body {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Quicksand", sans-serif;
     margin: 0;
     padding: 0;
     background: url('../assets/Images/background.jpg') no-repeat center center fixed;
@@ -7,31 +7,38 @@ body {
     color: #333;
 }
 header {
-    background-color: #4fa26f; 
-    color: azure;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
     padding: 9px 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
+    align-items: bottom;
     position: relative;
     font-size: 22px;
-    font-style:oblique;
     z-index: 1000;
 }
 .logo {
     font-size: 1.5em;
     font-weight: 600;
+    display: flex;
+    align-items: last baseline;
     
+}
+.desktop-nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    font-weight: lighter;
 }
 .desktop-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 22px;
-
     display: flex;
+    justify-content: flex-end; /* Add this line to align to the right */
+
+    
 }
 
 .desktop-nav ul li {
@@ -39,9 +46,12 @@ header {
 }
 
 .desktop-nav ul li a {
-    color: white;
-    text-decoration: none;
     font-weight: 600;
+    justify-content: flex-end; /* Add this line to align to the right */
+    background-color:  transparent;
+    padding: 5px;
+    color: black;
+    border-radius: 10px;
 }
 
 .sidebar-toggle {
@@ -184,6 +194,7 @@ header {
     background-color: #003300;
     transform: translateY(-2px);
 }
+
 @media (max-width: 768px) {
     .desktop-nav {
         display: none;

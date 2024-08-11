@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const taskForm = document.getElementById('task-form');
-    const taskList = document.getElementById('task-list');
+    const taskForm = document.getElementById('pomodoroTask-form');
+    const taskList = document.getElementById('pomodoroTask-list');
     
     taskForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      const taskName = document.getElementById('task-name').value;
+      const taskName = document.getElementById('pomodoroTask-name').value;
       const pomodoroCount = document.getElementById('pomodoro-count').value;
       
       // Create a new task item
       const taskItem = document.createElement('li');
-      taskItem.className = 'task-item';
+      taskItem.className = 'pomodoroTask-item';
       
       taskItem.innerHTML = `
         <input type="checkbox">
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const taskName = taskItem.querySelector('span').textContent.split(' - ')[0];
         const pomodoroCount = taskItem.querySelector('span').textContent.split(' - ')[1].split(' ')[0];
         
-        document.getElementById('task-name').value = taskName;
+        document.getElementById('pomodoroTask-name').value = taskName;
         document.getElementById('pomodoro-count').value = pomodoroCount;
         
         taskItem.remove();

@@ -31,7 +31,7 @@ body {
   margin-bottom: 50px;
 }
 
-.task-feature {
+.pomodoroTask-feature {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -43,7 +43,7 @@ body {
   max-height: calc(100vh - 280px); 
   overflow: hidden; 
 }
-#task-list {
+#pomodoroTask-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -51,7 +51,7 @@ body {
   overflow-y: auto; 
   margin-bottom: 69px;
 }
-.task-item {
+.pomodoroTask-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,33 +61,33 @@ body {
   font-size: 16px;
 }
 
-.task-item button {
+.pomodoroTask-item button {
   margin-left: 10px; 
 }
-.task-item button:hover {
+.pomodoroTask-item button:hover {
   color: #0056b3;
 }
 
 
-.task-feature h3 {
+.pomodoroTask-feature h3 {
   margin-top: 0;
   color: white;
   font-size: 24px;
   font-style: bold;
 }
 
-#task-form {
+#pomodoroTask-form {
   display: flex;
   gap: 10px;
 }
 
-#task-form input {
+#pomodoroTask-form input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-#add-task {
+#add-pomodoroTask {
   padding: 10px 20px;
   background-color: #00B29A;
   color: white;
@@ -97,7 +97,7 @@ body {
 }
 
 
-.task-item {
+.pomodoroTask-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,13 +105,13 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.task-item button {
+.pomodoroTask-item button {
   background: none;
   border: none;
   cursor: pointer;
   color: #007bff;
 }
-.task-item {
+.pomodoroTask-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,18 +119,18 @@ body {
   border-bottom: 1px solid #ddd; 
 }
 
-.task-item button {
+.pomodoroTask-item button {
   margin-left: 10px; 
 }
-.task-item button.edit {
+.pomodoroTask-item button.edit {
   color: #ffc107;
 }
 
-.task-item button.delete {
+.pomodoroTask-item button.delete {
   color: #dc3545;
 }
 
-.task-item input[type="checkbox"] {
+.pomodoroTask-item input[type="checkbox"] {
   margin-right: 10px;
 }
 .rabs {

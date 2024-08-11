@@ -15,27 +15,27 @@
 <body>
     <header>
         <div class="logo" style="display: flex; align-items: flex-end;">
-          <a href="index.html"><img src="assets/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
+          <a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
             <div style="font-size: 32px; align-self: flex-start; font-style: normal;">DuckDistractions</div>
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;"> </a></li>
-                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('analytics')"><img src="assets/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;"> </a></li>
+                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
-                <li><a href="index.html"><img src="assets/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Home</a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  About</a></li>
-                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Pomodoro</a></li>
-                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  To-Do List</a></li>
-                <li><a href="#" onclick="showSection('analytics')"><img src="assets/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Analytics</a></li>
+                <li><a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Home</a></li>
+                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  About</a></li>
+                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Pomodoro</a></li>
+                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  To-Do List</a></li>
+                <li><a href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Analytics</a></li>
             </ul>
         </nav>
     </header>
@@ -101,14 +101,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="task-container">
+                <div class="pomodoroTask-container">
                   <h1 style="  color: white; font-size: 24px; font-style: bold;">Tasks</h1>
-                  <form id="task-form">
-                    <input type="text" id="task-name" placeholder="Task Name" required>
+                  <form id="pomodoroTask-form">
+                    <input type="text" id="pomodoroTask-name" placeholder="Task Name" required>
                     <input type="number" id="pomodoro-count" placeholder="Pomodoros" min="1" required>
-                    <button type="submit" id="add-task">Add Task</button>
+                    <button type="submit" id="add-pomodoroTask">Add Task</button>
                   </form>
-                  <ul id="task-list"></ul>
+                  <ul id="pomodoroTask-list"></ul>
                 </div>
               </div>      
         </section>

@@ -1,11 +1,6 @@
-/* aboutUs.css */
-
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
-
-/* About Us Section Styling */
 .about-section {
     padding: 100px 20px;
     text-align: center;
@@ -29,8 +24,6 @@ html {
 #section4 {
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
 }
-
-/* Ensures only active section is visible */
 .tab-content {
     display: none;
 }

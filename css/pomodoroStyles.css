@@ -30,7 +30,58 @@ body {
   box-sizing: border-box; 
   margin-bottom: 50px;
 }
+.pomodoroTask-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  backdrop-filter: blur(10px); 
+  border-radius: 18px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); 
+  padding: 20px; 
+  background: rgba(255, 255, 255, 0.3); 
+}
+#AddTaskPomodoro {
+  padding: 10px 20px;
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap;
+}
 
+#task-inputPomodoro {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+  border-image: linear-gradient(90deg, #4CAF50, #81C784) 1;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  flex: 1;
+  margin-right: 10px;
+  border: 2px solid #4CAF50;
+  background: transparent;
+  padding: 10px;
+  text-wrap: wrap;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+  border-image: linear-gradient(90deg, #4CAF50, #81C784) 1;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  flex: 1;
+  margin-right: 10px;
+  border: 2px solid #4CAF50;
+  background: transparent;
+  color: #ffffff;
+  text-wrap: wrap;
+}
+#task-inputPomodoro::placeholder {
+  color: #ffffff82;
+}
 .pomodoroTask-feature {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
@@ -259,20 +310,6 @@ body {
   border-radius: 19px;
   cursor: pointer;
   font-size: 20px; 
-  display: inline-flex; 
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto; 
-  white-space: nowrap;  
-}
-#AddTaskPomodoro {
-  padding: 15px 30px; 
-  background-color: #00B29A;
-  color: white;
-  border: none;
-  border-radius: 19px;
-  cursor: pointer;
-  font-size: 15px; 
   display: inline-flex; 
   align-items: center;
   justify-content: center;

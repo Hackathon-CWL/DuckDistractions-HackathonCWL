@@ -90,29 +90,30 @@
                       <div class="timer">
                         <span id="pomodoro-minutes" contenteditable="true">45</span>:<span id="pomodoro-seconds" contenteditable="true">00</span>
                       </div>
-                      <button id="start"><i class="fas fa-play"></i> Start</button>
-                      <button id="stop"><i class="fas fa-stop"></i>  Stop</button>
+                      <button id="start"><i class="fas fa-play"> Sta rt</i></button>
+                      <button id="stop"><i class="fas fa-stop"> Sto p</i></button>
                     </div>
                     <div id="short-break" class="rab-content">
                       <div class="timer">
                         <span id="short-break-minutes" contenteditable="true">05</span>:<span id="short-break-seconds" contenteditable="true">00</span>
                       </div>
-                      <button id="start-short"><i class="fas fa-play"></i> Start</button>
-                      <button id="stop-short"><i class="fas fa-stop"></i>  Stop</button>
+                      <button id="start-short"><i class="fas fa-play"> Sta rt</i></button>
+                      <button id="stop-short"><i class="fas fa-stop"> Sto p</i></button>
 
                     </div>
                     <div id="long-break" class="rab-content">
                       <div class="timer">
                         <span id="long-break-minutes" contenteditable="true">15</span>:<span id="long-break-seconds" contenteditable="true">00</span>
                       </div>
-                      <button id="start-long"><i class="fas fa-play"> Sta rt</i> </button>
+                      <button id="start-long"><i class="fas fa-play"> Sta rt</i></button>
                       <button id="stop-long"><i class="fas fa-stop"> Sto p</i></button>
 
                     </div>
                   </div>
                 </div>
                 <div class="pomodoroTask-container">
-                    <button id="AddTaskPomodoro" onclick="showSection('todo-list')">Add Task</button>
+                    <input type="text" id="task-inputPomodoro" placeholder="Add a new task...">
+                    <button id="AddTaskPomodoro">Add Task</button>
               </div>      
         </section>
 
@@ -158,6 +159,5 @@
         <script src="scripts/todolist.js"></script>
         <script src="scripts/timer.js"></script>
         <!-- <script src="scripts/aboutUs.js"></script> -->
-
 </body>
 </html>

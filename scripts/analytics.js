@@ -1,31 +1,40 @@
-const startTime = new Date();
-/*setInterval(function () {
-    const currentTime = new Date();
-    const timeSpent = currentTime - startTime; 
-    const timeSpentInSeconds = Math.round(timeSpent / 1000);
-    var timeSpentInTotal=``;
-    if (timeSpentInSeconds >= 60) {
-        const timeSpentInMinutes = Math.floor(timeSpentInSeconds / 60);
-        const remainingSeconds = timeSpentInSeconds % 60;
-        if((remainingSeconds < 10)&&(timeSpentInMinutes < 10)){
-            timeSpentInTotal= `0${timeSpentInMinutes}:0${remainingSeconds}`;
-        }
-        else if((remainingSeconds < 10)){
-            timeSpentInTotal= `${timeSpentInMinutes}:0${remainingSeconds}`;
-        }
-        else if((timeSpentInMinutes < 10)){
-            timeSpentInTotal= `${timeSpentInMinutes}:0${remainingSeconds}`;
-        }
-        else{
-            timeSpentInTotal= `${timeSpentInMinutes}:${remainingSeconds}`;
-        }
-    }
-    else{
-        if (timeSpentInSeconds < 10){
-            timeSpentInTotal= `00:0${timeSpentInSeconds}`;
-        }
-        else{
-            timeSpentInTotal= `00:${timeSpentInSeconds}`;
-        }
-    }
-11}, 1000); */
+const updateTotalTime = (type, elapsed) => {
+    let totalTimes = JSON.parse(localStorage.getItem('totalTimes')) || {
+        'pomodoro': 0,
+        'short-break': 0,
+        'long-break': 0
+    };
+
+    document.getElementById('total-pomodoro').textContent = totalTimes['pomodoro'];
+    document.getElementById('total-short-break').textContent = totalTimes['short-break'];
+    document.getElementById('total-long-break').textContent = totalTimes['long-break'];
+    totalTimes[type] += elapsed;
+    localStorage.setItem('totalTimes', JSON.stringify(totalTimes));
+};
+const displayTotalTimes = () => {
+    const totalTimes = JSON.parse(localStorage.getItem('totalTimes')) || {
+        'pomodoro': 0,
+        'short-break': 0,
+        'long-break': 0
+    };
+    console.log('Total times:', totalTimes);
+};
+const exportData = () => {
+    const totalTimes = JSON.parse(localStorage.getItem('totalTimes')) || {
+        'pomodoro': 0,
+        'short-break': 0,
+        'long-break': 0
+    };
+    const blob = new Blob([JSON.stringify(totalTimes, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'totalTimes.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+};
+const exportButton = document.createElement('button');
+exportButton.textContent = 'Export Data';
+exportButton.onclick = exportData;
+document.body.appendChild(exportButton);

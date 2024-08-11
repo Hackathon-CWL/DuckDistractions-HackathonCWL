@@ -79,12 +79,15 @@ const timer = {};
 const timerRunning = {};
 const timeRemaining = {};
 const startTimer = (type, minutes, seconds) => {
+    const startTime = Date.now();
     timeRemaining[type] = minutes * 60 + seconds;
     timerRunning[type] = true;
     timer[type] = setInterval(() => {
         if (timeRemaining[type] <= 0) {
             clearInterval(timer[type]);
             timerRunning[type] = false;
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            updateTotalTime(type, elapsed);
             alert('Time is up!');
             return;
         }
@@ -94,9 +97,11 @@ const startTimer = (type, minutes, seconds) => {
         updateDisplay(type, mins, secs);
     }, 1000);
 };
+
 const stopTimer = (type) => {
     clearInterval(timer[type]);
     timerRunning[type] = false;
+    updateTotalTimeDisplay();
 };
 document.querySelector('#start').addEventListener('click', () => {
     if (!timerRunning['pomodoro']) {

@@ -1,0 +1,295 @@
+body {
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0; 
+  height: calc(100vh+600px);
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  overflow: hidden; /* Allow scrolling if content overflows */
+  box-sizing: border-box;
+  margin-top: 69px;
+  z-index: 1; /* Ensure it’s on top of other content */
+  position:relative;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.3); /* White background with 30% opacity */
+  backdrop-filter: blur(10px); /* Backdrop blur effect */
+  border-radius: 18px; /* Rounded edges */
+  padding: 20px; /* Adjusted padding */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+  width: 100%; /* Full width to be responsive */
+  max-width: 500px; /* Reduced maximum width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align all content horizontally */
+  margin: 0 auto; /* Center card horizontally */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  margin-bottom: 50px;
+}
+
+.task-feature {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px; /* Ensure consistent width with the card */
+  box-sizing: border-box;
+  margin-top: 20px; /* Add space above the task feature */
+  max-height: calc(100vh - 280px); /* Adjust height based on the remaining viewport space */
+  overflow: hidden; /* Hide overflow outside the container */
+}
+
+
+/* Task List Styling */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* Set a fixed height for the task list */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 69px;
+
+}
+
+/* Ensure proper styling for task items */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+  color: white;
+  font-size: 16px;
+}
+
+.task-item button {
+  margin-left: 10px; /* Space between buttons */
+}
+.task-item button:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+
+.task-feature h3 {
+  margin-top: 0;
+  color: white;
+  font-size: 24px;
+  font-style: bold;
+}
+
+#task-form {
+  display: flex;
+  gap: 10px;
+}
+
+#task-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#add-task {
+  padding: 10px 20px;
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+}
+
+.task-item button {
+  margin-left: 10px; /* Space between buttons */
+}
+.task-item button.edit {
+  color: #ffc107;
+}
+
+.task-item button.delete {
+  color: #dc3545;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+.rabs {
+  display: flex;
+  width: 100%; /* Make rabs take full width of the card */
+  margin-bottom: 20px;
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+}
+
+.rab {
+  flex: 1; /* Make each rab take equal width */
+  background-color: transparent; 
+  border: none;
+  padding: 12px 20px; /* Adjust padding */
+  cursor: pointer;
+  color: #333; 
+  font-size: 19px; /* Adjusted font size */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center text inside rabs */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+.rab.active {
+  color: #007bff;
+}
+
+.content {
+  width: 100%; /* Make content take full width of the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align content horizontally */
+}
+
+.rab-content {
+  display: none;
+  width: 100%; 
+}
+
+.rab-content.active {
+  display: block;
+}
+
+.timer {
+  font-size: 100px; /* Adjusted font size for the timer */
+  font-weight: bold; /* Make the font bold */
+  margin-bottom: 20px;
+  text-align: center; /* Center the timer text horizontally */
+  width: 100%; /* Ensure it spans the full width of its container */
+}
+
+#start {
+  padding: 15px 30px; /* Adjust padding to increase button size */
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 20px; /* Increased font size for better readability */
+  display: inline-flex; /* Ensure button is centered properly */
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center the button horizontally */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+#start i {
+  margin-right: 8px;
+}
+
+/* Responsive Design for larger screens */
+@media (min-width: 1200px) {
+  .card {
+    max-width: 600px; /* Larger card for large screens */
+    padding: 30px; /* Increased padding for larger screens */
+  }
+
+  .rab {
+    font-size: 21px; /* Larger font size for rabs */
+  }
+
+  .timer {
+    font-size: 120px; /* Larger timer size */
+  }
+
+  #start {
+    padding: 20px 40px; /* Larger button padding */
+    font-size: 22px; /* Larger button font size */
+  }
+}
+
+/* Responsive Design for rablets */
+@media (max-width: 992px) {
+  .card {
+    max-width: 80%; /* Fit card width to 80% of screen width */
+    padding: 25px; /* Increased padding for rablets */
+  }
+
+  .rab {
+    font-size: 19px; /* Adjust font size for rabs */
+  }
+
+  .timer {
+    font-size: 100px; /* Adjust timer size for rablets */
+  }
+
+  #start {
+    padding: 15px 30px; /* Adjust button padding */
+    font-size: 20px; /* Adjust button font size */
+  }
+}
+
+/* Responsive Design for small rablets and larger mobile screens */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%; /* Fit card width to 90% of screen width */
+    padding: 20px; /* Adjust padding for smaller rablets */
+  }
+
+  .rab {
+    font-size: 18px; /* Adjust font size for rabs */
+  }
+
+  .timer {
+    font-size: 90px; /* Adjust timer size for smaller rablets */
+  }
+
+  #start {
+    padding: 12px 24px; /* Adjust button padding */
+    font-size: 18px; /* Adjust button font size */
+  }
+}
+
+/* Responsive Design for mobile devices */
+@media (max-width: 480px) {
+  .card {
+    max-width: 95%; /* Fit card width to 95% of screen width */
+    padding: 15px; /* Adjust padding for mobile screens */
+  }
+
+  .rab {
+    font-size: 16px; /* Smaller font size for very small screens */
+  }
+
+  .timer {
+    font-size: 80px; /* Adjust timer size for very small screens */
+  }
+
+  #start {
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 16px; /* Adjust button font size */
+  }
+}

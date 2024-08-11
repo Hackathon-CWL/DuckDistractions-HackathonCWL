@@ -7,27 +7,28 @@ html {
     min-height: 100vh;
     color: white;
     transition: background 0.6s ease-in-out;
+    position: relative;
 }
 
-#section1 {
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0s ease-in-out; 
+}
+
+body.section1 {
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
 }
 
-#section2 {
+body.section2 {
     background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
 }
 
-#section3 {
+body.section3 {
     background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
 }
 
-#section4 {
+body.section4 {
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-}
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
 }

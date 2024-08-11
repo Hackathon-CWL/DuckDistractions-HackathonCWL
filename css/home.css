@@ -6,6 +6,7 @@ body {
 }
 .homepage-main {
     padding: 20px;
+    margin-left: 0px;
 }
 .features-section, .how-to-use-section, .contact-section {
     margin: 20px auto;
@@ -24,7 +25,7 @@ body {
 }
 
 .feature-card, .step {
-    background-image: url('../assets/pomodoroWallpaper.jpg');
+    background-color: transparent;
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 10px;

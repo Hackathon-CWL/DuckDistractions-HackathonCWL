@@ -43,7 +43,7 @@ body {
 }
 #AddTaskPomodoro {
   padding: 10px 20px;
-  background-color: #00B29A;
+  background-color: #54976A;
   color: white;
   border: none;
   border-radius: 10px;
@@ -62,7 +62,7 @@ body {
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
   flex: 1;
   margin-right: 10px;
-  border: 2px solid #4CAF50;
+  border: 2px solid #54976A;
   background: transparent;
   padding: 10px;
   text-wrap: wrap;
@@ -74,115 +74,13 @@ body {
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
   flex: 1;
   margin-right: 10px;
-  border: 2px solid #4CAF50;
+  border: 2px solid #54976A;
   background: transparent;
   color: #ffffff;
   text-wrap: wrap;
 }
 #task-inputPomodoro::placeholder {
-  color: #ffffff82;
-}
-.pomodoroTask-feature {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-  max-width: 500px; 
-  box-sizing: border-box;
-  margin-top: 20px; 
-  max-height: calc(100vh - 280px); 
-  overflow: hidden; 
-}
-#pomodoroTask-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 200px; 
-  overflow-y: auto; 
-  margin-bottom: 69px;
-}
-.pomodoroTask-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd; 
-  color: white;
-  font-size: 16px;
-}
-
-.pomodoroTask-item button {
-  margin-left: 10px; 
-}
-.pomodoroTask-item button:hover {
-  color: #0056b3;
-}
-
-
-.pomodoroTask-feature h3 {
-  margin-top: 0;
-  color: white;
-  font-size: 24px;
-  font-style: bold;
-}
-
-#pomodoroTask-form {
-  display: flex;
-  gap: 10px;
-}
-
-#pomodoroTask-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#add-pomodoroTask {
-  padding: 10px 20px;
-  background-color: #00B29A;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-.pomodoroTask-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.pomodoroTask-item button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #007bff;
-}
-.pomodoroTask-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd; 
-}
-
-.pomodoroTask-item button {
-  margin-left: 10px; 
-}
-.pomodoroTask-item button.edit {
-  color: #ffc107;
-}
-
-.pomodoroTask-item button.delete {
-  color: #dc3545;
-}
-
-.pomodoroTask-item input[type="checkbox"] {
-  margin-right: 10px;
+  color: #57ff8f;
 }
 .rabs {
   display: flex;
@@ -234,8 +132,8 @@ body {
 }
 #stop {
   padding: 15px 30px; 
-  background-color: #ff0000;
-  color: white;
+  background-image: linear-gradient(90deg, #fc6a6a, #dc2a50);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
@@ -248,8 +146,8 @@ body {
 }
 #stop-short {
   padding: 15px 30px; 
-  background-color: #ff0000;
-  color: white;
+  background-image: linear-gradient(90deg, #e08c31, #ff7958);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
@@ -262,8 +160,8 @@ body {
 }
 #stop-long {
   padding: 15px 30px; 
-  background-color: #ff0000;
-  color: white;
+  background-image: linear-gradient(90deg, #e08c31, #ff7958);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
@@ -276,8 +174,8 @@ body {
 }
 #start {
   padding: 15px 30px; 
-  background-color: #00B29A;
-  color: white;
+  background-image: linear-gradient(90deg, #26da62, #77d797);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
@@ -290,8 +188,8 @@ body {
 }
 #start-short {
   padding: 15px 30px; 
-  background-color: #00B29A;
-  color: white;
+  background-image: linear-gradient(90deg, #26da62, #77d797);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;
@@ -304,8 +202,8 @@ body {
 }
 #start-long {
   padding: 15px 30px; 
-  background-color: #00B29A;
-  color: white;
+  background-image: linear-gradient(90deg, #26da62, #77d797);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
   cursor: pointer;

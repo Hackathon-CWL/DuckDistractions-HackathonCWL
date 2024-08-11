@@ -43,7 +43,7 @@ body {
 }
 #AddTaskPomodoro {
   padding: 10px 20px;
-  background-color: #54976A;
+  background-color: #00B29A;
   color: white;
   border: none;
   border-radius: 10px;
@@ -146,7 +146,7 @@ body {
 }
 #stop-short {
   padding: 15px 30px; 
-  background-image: linear-gradient(90deg, #e08c31, #ff7958);
+  background-image: linear-gradient(90deg, #ff0000b9, #ff0000b4);
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;
@@ -160,7 +160,7 @@ body {
 }
 #stop-long {
   padding: 15px 30px; 
-  background-image: linear-gradient(90deg, #e08c31, #ff7958);
+  background-image: linear-gradient(90deg, #ff0000b9, #ff0000b4);
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 19px;

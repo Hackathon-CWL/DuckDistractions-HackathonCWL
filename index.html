@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/pomodoroStyles.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
   
 </head>
 <body>
@@ -89,15 +90,21 @@
                   </div>
                   <div class="content">
                     <div id="pomodoro-content" class="rab-content active">
-                      <div class="timer">25:00</div>
+                      <div class="timer">
+                        <span id="pomodoro-minutes" contenteditable="true">45</span>:<span id="pomodoro-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                     </div>
                     <div id="short-break" class="rab-content">
-                      <div class="timer">05:00</div>
+                      <div class="timer">
+                        <span id="short-break-minutes" contenteditable="true">05</span>:<span id="short-break-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                     </div>
                     <div id="long-break" class="rab-content">
-                      <div class="timer">15:00</div>
+                      <div class="timer">
+                        <span id="long-break-minutes" contenteditable="true">15</span>:<span id="long-break-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                     </div>
                   </div>
@@ -131,5 +138,6 @@
         <script src="scripts/pomodoroScript.js"></script>        
         <script src="scripts/analytics.js"></script>
         <script src="scripts/todolist.js"></script>
+        <script src="scripts/timer.js"></script>
 </body>
 </html>

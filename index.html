@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pomodoroStyles.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/aboutUs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 
   
@@ -25,7 +26,8 @@
                 <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('pomodoro')">Pomodoro</a></li>
                 <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('todo-list')">To-Do</a></li>
                 <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('analytics')">Analytics</a></li>
-                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('get-started')">About</a></li>
+                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtons" onclick="showSection('about-us')">About</a></li>
+
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
@@ -36,8 +38,7 @@
                 <li><a style="color: black; text-decoration: none;" href="#" onclick="showSection('pomodoro')">Pomodoro</a></li>
                 <li><a  style="color: black; text-decoration: none;" href="#" onclick="showSection('todo-list')">To-Do List</a></li>
                 <li><a  style="color: black; text-decoration: none;" href="#" onclick="showSection('analytics')">Analytics</a></li>
-                <li><a style="color: black; text-decoration: none;" href="#" onclick="showSection('get-started')">About</a></li>
-
+                <li><a style="color: black; text-decoration: none;" href="#" onclick="showSection('about-us')">About</a></li>
             </ul>
         </nav>
     </header>
@@ -54,7 +55,6 @@
                               <h2 class="feature-title">xyz</h2>
                               <p class="feature-description">xyz</p>
                           </div>
-                          <!-- Add more feature cards as needed -->
                       </div>
                   </section>
           
@@ -69,7 +69,6 @@
                               <h2 class="step-title">xyz</h2>
                               <p class="step-description">xyz</p>
                           </div>
-                          <!-- Add more steps as needed -->
                       </div>
                   </section>
           
@@ -132,12 +131,30 @@
         </section>
 
         <section id="about-us" class="tab-content">
-            <h2>About Us</h2>
+            <div class="about-section" id="section1">
+                <h2>Our Mission</h2>
+                <p>We aim to help you stay focused and productive, while also ensuring you take the necessary breaks to stay healthy.</p>
+            </div>
+            <div class="about-section" id="section2">
+                <h2>Our Vision</h2>
+                <p>We envision a world where distractions are managed efficiently, allowing individuals to reach their full potential.</p>
+            </div>
+            <div class="about-section" id="section3">
+                <h2>Our Team</h2>
+                <p>We are a team of passionate individuals committed to creating tools that help you stay on track.</p>
+            </div>
+            <div class="about-section" id="section4">
+                <h2>Contact Us</h2>
+                <p>Have questions or feedback? Reach out to us, and we'll be happy to assist you.</p>
+            </div>
         </section>
+        
         <script src="scripts/scripts.js"></script>
         <script src="scripts/pomodoroScript.js"></script>        
         <script src="scripts/analytics.js"></script>
         <script src="scripts/todolist.js"></script>
         <script src="scripts/timer.js"></script>
+        <!-- <script src="scripts/aboutUs.js"></script> -->
+
 </body>
 </html>

@@ -34,7 +34,5 @@ const exportData = () => {
     a.click();
     document.body.removeChild(a);
 };
-const exportButton = document.createElement('button');
-exportButton.textContent = 'Export Data';
+const exportButton = document.getElementById('export-data');
 exportButton.onclick = exportData;
-document.body.appendChild(exportButton);

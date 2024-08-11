@@ -2,7 +2,7 @@ body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('../assets/background.jpg') no-repeat center center fixed;
+    background: url('../assets/Images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
 }
@@ -127,7 +127,11 @@ header {
 
 .tab-content {
     display: none;
-    border-radius: 19px;
+    background-color: transparent; /* Custom color */
+    /* opacity: 20%; */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 .tab-content.active {
     display: block;

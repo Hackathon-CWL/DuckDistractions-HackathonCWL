@@ -5,32 +5,29 @@ body {
   padding: 0; 
   height: calc(100vh+600px);
 }
-
-/* Container styling */
 .container {
   display: flex;
-  flex-direction: column; /* Arrange items vertically */
-  align-items: center; /* Center items horizontally */
-  overflow: hidden; /* Allow scrolling if content overflows */
+  flex-direction: column; 
+  align-items: center; 
+  overflow: hidden; 
   box-sizing: border-box;
   margin-top: 69px;
-  z-index: 1; /* Ensure it’s on top of other content */
+  z-index: 1; 
   position:relative;
 }
-
 .card {
-  background: rgba(255, 255, 255, 0.3); /* White background with 30% opacity */
-  backdrop-filter: blur(10px); /* Backdrop blur effect */
-  border-radius: 18px; /* Rounded edges */
-  padding: 20px; /* Adjusted padding */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
-  width: 100%; /* Full width to be responsive */
-  max-width: 500px; /* Reduced maximum width */
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(10px); 
+  border-radius: 18px; 
+  padding: 20px; 
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); 
+  width: 100%; 
+  max-width: 500px; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align all content horizontally */
-  margin: 0 auto; /* Center card horizontally */
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  align-items: center;  
+  margin: 0 auto; 
+  box-sizing: border-box; 
   margin-bottom: 50px;
 }
 
@@ -40,41 +37,35 @@ body {
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-  max-width: 500px; /* Ensure consistent width with the card */
+  max-width: 500px; 
   box-sizing: border-box;
-  margin-top: 20px; /* Add space above the task feature */
-  max-height: calc(100vh - 280px); /* Adjust height based on the remaining viewport space */
-  overflow: hidden; /* Hide overflow outside the container */
+  margin-top: 20px; 
+  max-height: calc(100vh - 280px); 
+  overflow: hidden; 
 }
-
-
-/* Task List Styling */
 #task-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 200px; /* Set a fixed height for the task list */
-  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 200px; 
+  overflow-y: auto; 
   margin-bottom: 69px;
-
 }
-
-/* Ensure proper styling for task items */
 .task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+  border-bottom: 1px solid #ddd; 
   color: white;
   font-size: 16px;
 }
 
 .task-item button {
-  margin-left: 10px; /* Space between buttons */
+  margin-left: 10px; 
 }
 .task-item button:hover {
-  color: #0056b3; /* Darker color on hover */
+  color: #0056b3;
 }
 
 
@@ -125,11 +116,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
+  border-bottom: 1px solid #ddd; 
 }
 
 .task-item button {
-  margin-left: 10px; /* Space between buttons */
+  margin-left: 10px; 
 }
 .task-item button.edit {
   color: #ffc107;
@@ -144,23 +135,23 @@ body {
 }
 .rabs {
   display: flex;
-  width: 100%; /* Make rabs take full width of the card */
+  width: 100%; 
   margin-bottom: 20px;
-  background-color: transparent; /* Transparent background */
-  border: none; /* No border */
+  background-color: transparent; 
+  border: none; 
 }
 
 .rab {
-  flex: 1; /* Make each rab take equal width */
+  flex: 1; 
   background-color: transparent; 
   border: none;
-  padding: 12px 20px; /* Adjust padding */
+  padding: 12px 20px; 
   cursor: pointer;
   color: #333; 
-  font-size: 19px; /* Adjusted font size */
-  font-weight: bold; /* Make the text bold */
-  text-align: center; /* Center text inside rabs */
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  font-size: 19px;
+  font-weight: bold; 
+  text-align: center; 
+  white-space: nowrap; 
 }
 
 .rab.active {
@@ -168,10 +159,10 @@ body {
 }
 
 .content {
-  width: 100%; /* Make content take full width of the card */
+  width: 100%; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align content horizontally */
+  align-items: center; 
 }
 
 .rab-content {
@@ -184,112 +175,107 @@ body {
 }
 
 .timer {
-  font-size: 100px; /* Adjusted font size for the timer */
-  font-weight: bold; /* Make the font bold */
+  font-size: 100px;
+  font-weight: bold; 
   margin-bottom: 20px;
-  text-align: center; /* Center the timer text horizontally */
-  width: 100%; /* Ensure it spans the full width of its container */
+  text-align: center; 
+  width: 100%; 
 }
 
 #start {
-  padding: 15px 30px; /* Adjust padding to increase button size */
+  padding: 15px 30px; 
   background-color: #00B29A;
   color: white;
   border: none;
   border-radius: 19px;
   cursor: pointer;
-  font-size: 20px; /* Increased font size for better readability */
-  display: inline-flex; /* Ensure button is centered properly */
+  font-size: 20px; 
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
-  margin: 0 auto; /* Center the button horizontally */
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  margin: 0 auto; 
+  white-space: nowrap;  
 }
 
 #start i {
   margin-right: 8px;
 }
 
-/* Responsive Design for larger screens */
 @media (min-width: 1200px) {
   .card {
-    max-width: 600px; /* Larger card for large screens */
-    padding: 30px; /* Increased padding for larger screens */
+    max-width: 600px; 
+    padding: 30px; 
   }
 
   .rab {
-    font-size: 21px; /* Larger font size for rabs */
+    font-size: 21px; 
   }
 
   .timer {
-    font-size: 120px; /* Larger timer size */
+    font-size: 120px;  
   }
 
   #start {
-    padding: 20px 40px; /* Larger button padding */
-    font-size: 22px; /* Larger button font size */
+    padding: 20px 40px; 
+    font-size: 22px; 
   }
 }
 
-/* Responsive Design for rablets */
 @media (max-width: 992px) {
   .card {
-    max-width: 80%; /* Fit card width to 80% of screen width */
-    padding: 25px; /* Increased padding for rablets */
+    max-width: 80%; 
+    padding: 25px; 
   }
 
   .rab {
-    font-size: 19px; /* Adjust font size for rabs */
+    font-size: 19px;
   }
 
   .timer {
-    font-size: 100px; /* Adjust timer size for rablets */
+    font-size: 100px;
   }
 
   #start {
-    padding: 15px 30px; /* Adjust button padding */
-    font-size: 20px; /* Adjust button font size */
+    padding: 15px 30px;
+    font-size: 20px; 
   }
 }
 
-/* Responsive Design for small rablets and larger mobile screens */
 @media (max-width: 768px) {
   .card {
-    max-width: 90%; /* Fit card width to 90% of screen width */
-    padding: 20px; /* Adjust padding for smaller rablets */
+    max-width: 90%; 
+    padding: 20px; 
   }
 
   .rab {
-    font-size: 18px; /* Adjust font size for rabs */
+    font-size: 18px; 
   }
 
   .timer {
-    font-size: 90px; /* Adjust timer size for smaller rablets */
+    font-size: 90px;  
   }
 
   #start {
-    padding: 12px 24px; /* Adjust button padding */
-    font-size: 18px; /* Adjust button font size */
+    padding: 12px 24px; 
+    font-size: 18px; 
   }
 }
-
-/* Responsive Design for mobile devices */
 @media (max-width: 480px) {
   .card {
-    max-width: 95%; /* Fit card width to 95% of screen width */
-    padding: 15px; /* Adjust padding for mobile screens */
+    max-width: 95%; 
+    padding: 15px;
   }
 
   .rab {
-    font-size: 16px; /* Smaller font size for very small screens */
+    font-size: 16px; 
   }
 
   .timer {
-    font-size: 80px; /* Adjust timer size for very small screens */
+    font-size: 80px;  
   }
 
   #start {
-    padding: 10px 20px; /* Adjust button padding */
-    font-size: 16px; /* Adjust button font size */
+    padding: 10px 20px;
+    font-size: 16px; 
   }
 }

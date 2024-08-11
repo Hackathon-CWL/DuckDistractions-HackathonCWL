@@ -37,8 +37,6 @@ header {
     font-size: 22px;
     display: flex;
     justify-content: flex-end; 
-
-    
 }
 
 .desktop-nav ul li {
@@ -56,6 +54,7 @@ header {
 
 .sidebar-toggle {
     display: none;
+    
 }
 
 .mobile-nav {

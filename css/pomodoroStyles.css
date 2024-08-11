@@ -196,7 +196,20 @@ body {
   margin: 0 auto; 
   white-space: nowrap;  
 }
-
+#AddTaskPomodoro {
+  padding: 15px 30px; 
+  background-color: #00B29A;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  font-size: 15px; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  white-space: nowrap;  
+}
 #start i {
   margin-right: 8px;
 }

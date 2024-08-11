@@ -7,7 +7,5 @@ rabs.forEach(rab => {
     rabContents.forEach(tc => tc.classList.remove('active'));
     rab.classList.add('active');
     document.getElementById(rab.dataset.target).classList.add('active');
-    console.log('rab method logged');
   });
 });
-console.log('Pomodoro script loaded');

@@ -16,9 +16,64 @@ body {
     background-repeat: no-repeat;
     transition: background-image 0s ease-in-out; 
 }
+
+/* Styling for the 'Thank You!' section */
+#section4 {
+    background-color: rgba(255, 255, 255, 0.353); /* Light background with slight transparency */
+    backdrop-filter: blur(5px);
+    padding: 20px 30px 10px; /* Adjust padding, more space at the top and sides */
+    border-radius: 15px; /* Curved corners */
+    display: inline-block; /* Ensure the rectangle wraps tightly around the text */
+    text-align: center; /* Center-align text */
+    margin: 40px auto 20px; /* Center the section horizontally, add space above, 20px space below */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3); /* Metallic look with slight shadow */
+}
+
+/* Grayish outline for the text */
+#section4 h2,
+#section4 p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Grayish outline effect */
+}
+
+#section4 h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    color: #000; /* Black font color */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+#section4 p {
+    font-size: 1.25em; /* Increase font size for paragraphs */
+    color: #000; /* Black font color */
+    line-height: 1.6; /* Increase line height for readability */
+    margin-bottom: 0; /* No extra space between paragraphs */
+    padding-bottom: 20px; /* Ensure 20px space below the last line of text */
+}
+
+#section4 p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    #section4 {
+        padding: 15px 20px 5px; /* Adjust padding for smaller screens */
+    }
+
+    #section4 h2 {
+        font-size: 2em; /* Slightly smaller font size on mobile */
+    }
+
+    #section4 p {
+        font-size: 1.1em; /* Adjust paragraph font size */
+    }
+}
+
+
+
+
 /* Footer Section Styles */
 #contact-footer {
-    background: rgba(255, 255, 255, 0.253); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Apply blur effect */
     color: #000; /* Set font color to black */
     padding: 40px 20px;
@@ -57,10 +112,34 @@ body {
     color: #e74c3c; /* Red color on hover */
 }
 
+/* Responsive adjustments for screens smaller than 768px */
 @media (max-width: 768px) {
+    #contact-footer {
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
     #contact-footer .footer-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center-align content */
+    }
+
+    #contact-footer .footer-section {
+        flex: 1 1 100%;
+        margin: 10px 0; /* Increase vertical spacing */
+    }
+
+    #contact-footer h2, 
+    #contact-footer h3 {
+        font-size: 1.5em; /* Slightly larger font size */
+    }
+
+    #contact-footer p {
+        font-size: 1em; /* Adjust paragraph font size */
+        margin-bottom: 15px;
+    }
+
+    #contact-footer a {
+        font-size: 1em; /* Adjust link font size */
     }
 }
 
@@ -68,3 +147,4 @@ body {
 .tab-content.active#about-us #contact-footer {
     display: block;
 }
+

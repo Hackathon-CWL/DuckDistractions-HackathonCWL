@@ -16,3 +16,55 @@ body {
     background-repeat: no-repeat;
     transition: background-image 0s ease-in-out; 
 }
+/* Footer Section Styles */
+#contact-footer {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    color: #000; /* Set font color to black */
+    padding: 40px 20px;
+    text-align: center;
+    display: none; /* Initially hide the footer */
+}
+
+#contact-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#contact-footer .footer-section {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+#contact-footer h2, 
+#contact-footer h3 {
+    margin-bottom: 15px;
+    color: #000; /* Black color for headings */
+}
+
+#contact-footer p {
+    margin-bottom: 20px;
+}
+
+#contact-footer a {
+    color: #000; /* Black color for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contact-footer a:hover {
+    color: #e74c3c; /* Red color on hover */
+}
+
+@media (max-width: 768px) {
+    #contact-footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Ensure footer is only visible in the About Us section */
+.tab-content.active#about-us #contact-footer {
+    display: block;
+}

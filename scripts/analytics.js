@@ -10,59 +10,58 @@ function showAnalyticsSection(sectionId) {
         } else {
             section.style.display = 'none';
         }
-    });
+});
 
-    const tabs = document.querySelectorAll('.analytics-tab');
-    tabs.forEach(tab => {
-        if (tab.id === sectionId + '-btn') {
-            tab.classList.add('active');
-        } else {
-            tab.classList.remove('active');
-        }
-    });
+const tabs = document.querySelectorAll('.analytics-tab');
+tabs.forEach(tab => {
+    if (tab.id === sectionId + '-btn') {
+        tab.classList.add('active');
+    } else {
+        tab.classList.remove('active');
+    }
+});
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     showAnalyticsSection('home-content');
         const ctx = document.getElementById('comparativeChart').getContext('2d');
 
-        const myChart = new Chart(ctx, {
-            type: 'bar',
+        const comparativeChart = new Chart(ctx, {
+            type: 'bar', 
             data: {
-                labels: ['Total Time', 'Pomodoro Time', 'Short Break Time', 'Long Break Time'],
+                labels: ['Total Time', 'Pomodoro Time', 'Short Break Time', 'Long Break Time'], 
                 datasets: [{
-                    label: 'Time in Minutes',
-                    data: [totalTime, pomodoroAnalysis, shortBreakAnalysis, longBreakAnalysis],
+                    label: 'Time Spent', 
+                    data: [totalTime, pomodoroAnalysis, shortBreakAnalysis, longBreakAnalysis], 
                     backgroundColor: [
-                        '#333',
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(153, 102, 255, 0.6)'
+                        '#000000', 
+                        '#000000', 
+                        '#000000', 
+                        '#000000' 
                     ],
                     borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(153, 102, 255, 1)'
+                        'white', 
+                        'white', 
+                        'white', 
+                        'white'  
                     ],
-                    borderWidth: 1,
-                    borderRadius: 10 // rounded edges for bars
+                    borderWidth: 2, 
+                    borderRadius: 10 
                 }]
             },
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true 
                     }
                 },
                 plugins: {
                     legend: {
-                        display: true,
+                        display: true, 
                         labels: {
-                            color: '#0B3835', // Match the green theme
+                            color: 'white', 
                             font: {
-                                size: 16,
-                                weight: 'bold'
+                                size: 14, 
+                                weight: 'normal' 
                             }
                         }
                     }

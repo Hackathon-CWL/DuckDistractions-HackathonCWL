@@ -7,11 +7,11 @@
   padding: 10px;
 }
 #comparativeChart{
-  margin-top: 10px;
-  max-width: 300px;
-  max-height: 400px;
-  color: White;
-  background-color: black;
+  margin-top: 10px !important;
+  max-width: 300px !important;
+  max-height: 400px !important;
+  border-radius: 15px !important;
+  background-color: white !important;
 }
 .accordionMenu {
     font-family: 'Raleway', sans-serif;
@@ -52,7 +52,8 @@
     transition: transform 0.3s; /* Smooth transition for icon */
   }
 
-  .accordion-content {
+  #accordion-content {
+    display : flex;
     font-family: 'Raleway', sans-serif;
     max-height: 0;
     overflow: hidden;
@@ -63,7 +64,7 @@
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transitions */
   }
   
-  .accordion-content p {
+  #accordion-content p {
     margin: 10px 0;
     font-size: 14px;
     color: #fff;
@@ -74,7 +75,7 @@
     transform: rotate(180deg); /* Rotate icon when active */
   }
   
-  .accordionMenu button.active + .accordion-content {
+  .accordionMenu button.active + #accordion-content {
     max-height: 1000px; /* Arbitrary large value to show content */
     opacity: 1;
     transition: max-height 0.5s ease-in, opacity 0.5s ease-in; /* Smooth transitions */

@@ -1,4 +1,5 @@
 var totalTime = 0;
+var comparativeChart;
 setInterval(() => {
     totalTime++;
 }, 1000);
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showAnalyticsSection('home-content');
         const ctx = document.getElementById('comparativeChart').getContext('2d');
 
-        const comparativeChart = new Chart(ctx, {
+        comparativeChart = new Chart(ctx, {
             type: 'bar', 
             data: {
                 labels: ['Total Time', 'Pomodoro Time', 'Short Break Time', 'Long Break Time'], 
@@ -58,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     legend: {
                         display: true, 
                         labels: {
-                            color: 'white', 
+                            color: 'black', 
                             font: {
-                                size: 14, 
+                                size: 18, 
                                 weight: 'normal' 
                             }
                         }
@@ -69,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
 document.querySelectorAll('.accordionHome, .accordionWebsite, .accordionPomodoro, .accordionShortBreak, .accordionLongBreak').forEach((accordion) => {
     accordion.addEventListener('click', function() {
         this.classList.toggle('active');
@@ -82,6 +82,11 @@ document.querySelectorAll('.accordionHome, .accordionWebsite, .accordionPomodoro
         }
     });
 });
-console.log(pomodoroAnalysis, shortBreakAnalysis, longBreakAnalysis);
 
 // variables for the timer are totalTime (website time), pomodoroAnalysis, shortBreakAnalysis, longBreakAnalysis
+
+
+setInterval( () => {
+    comparativeChart.data.datasets[0].data = [totalTime, pomodoroAnalysis, shortBreakAnalysis, longBreakAnalysis];
+    comparativeChart.update();
+    }, 60*1000);

@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+    function preloadImages(imageArray) {
+        imageArray.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+
+    preloadImages([
+        'assets/images/aboutUs/aboutUs_img1.jpg',
+        'assets/images/aboutUs/aboutUs_img2.jpg',
+        'assets/images/aboutUs/aboutUs_img3.jpg',
+        'assets/images/aboutUs/aboutUs_img4.jpg'
+    ]);
+
     const sections = document.querySelectorAll(".about-section");
     const body = document.body;
     const backgrounds = [
@@ -30,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function resetBackground() {
         body.style.backgroundImage = 'url("assets/images/background.jpg")';
-        currentIndex = -1; 
+        currentIndex = -1;
     }
 
     function updateBackground() {
@@ -44,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("nav ul li a").forEach(link => {
         link.addEventListener("click", () => {
             if (link.href.includes("#about-us")) {
-                fadeInBackground(backgrounds[0]); 
-                currentIndex = 0;  
+                fadeInBackground(backgrounds[0]);
+                currentIndex = 0;
                 updateBackground();
             } else {
                 resetBackground();
@@ -54,5 +68,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener('scroll', updateBackground);
-    updateBackground(); 
+    updateBackground();
 });

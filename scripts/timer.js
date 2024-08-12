@@ -88,15 +88,12 @@ const startTimer = (type, minutes, seconds) => {
     timer[type] = setInterval(() => {
         if (type==='pomodoro') {
             pomodoroAnalysis++;
-            console.log(pomodoroAnalysis);
         }
         else if (type==='short-break') {
             shortBreakAnalysis++;
-            console.log(shortBreakAnalysis);
         }
         else if (type==='long-break') {
             longBreakAnalysis++;
-            console.log(longBreakAnalysis);
         }
         if (timeRemaining[type] <= 0) {
             clearInterval(timer[type]);

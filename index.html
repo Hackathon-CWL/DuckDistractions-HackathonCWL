@@ -6,11 +6,12 @@
     <title>DuckDistractions</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/todolist.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pomodoroStyles.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/aboutUs.css">
+    <link rel="stylesheet" href="css/analytics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,11 +21,11 @@
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtonHome" onclick="showSection('get-started'); editView('titleButtonHome');">Home</a></li>
-                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtonPomodoro" onclick="showSection('pomodoro'); editView('titleButtonPomodoro');">Pomodoro</a></li>
-                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtonTodo-list" onclick="showSection('todo-list'); editView('titleButtonTodo-list');">To-Do</a></li>
-                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtonAnalytics" onclick="showSection('analytics'); editView('titleButtonAnalytics');">Analytics</a></li>
-                <li><a style="color: black; text-decoration: none;" href="#" id="titleButtonAbout-us" onclick="showSection('about-us'); editView('titleButtonAbout-us');">About</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonHome" onclick="showSection('get-started'); editView('titleButtonHome');">Home</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonPomodoro" onclick="showSection('pomodoro'); editView('titleButtonPomodoro');">Pomodoro</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonTodo-list" onclick="showSection('todo-list'); editView('titleButtonTodo-list');">To-Do</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonAnalytics" onclick="showSection('analytics'); editView('titleButtonAnalytics');">Analytics</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonAbout-us" onclick="showSection('about-us'); editView('titleButtonAbout-us');">About</a></li>
 
             </ul>
         </nav>
@@ -131,7 +132,37 @@
         </section>
 
         <section id="analytics" class="tab-content">
-            <h2>Analytics</h2>
+            <h1 id="analyticsHeading"><img src="assets/icons/analytics_coloured.png" style="vertical-align: middle; width: 52px; height: 52px; margin-right: 10px;">Analytics</h1>
+            <section id="analytics-section">
+                <div class="accordionMenu">
+
+                  <button class="accordionHome">Comparative Analysis</button>
+                  <div class="accordion-content">
+                    <canvas id="comparativeChart"></canvas>
+                    <p>Details about analytics overview.</p>
+                  </div>
+
+                  <button class="accordionWebsite">Time Spent</button>
+                  <div class="accordion-content">
+                    <p>Details about task breakdown.</p>
+                  </div>
+              
+                  <button class="accordionPomodoro">Pomodoro</button>
+                  <div class="accordion-content">
+                    <p>Details about performance metrics.</p>
+                  </div>
+              
+                  <button class="accordionShortBreak">Short Breaks</button>
+                  <div class="accordion-content">
+                    <p>Details about performance metrics.</p>
+                  </div>           
+
+                  <button class="accordionLongBreak">Long Breaks</button>
+                  <div class="accordion-content">
+                    <p>Details about performance metrics.</p>
+                  </div>
+
+              </section>
         </section>
 
         <section id="about-us" class="tab-content active">
@@ -157,13 +188,13 @@
             </div>
         </section>
         
-        
+        <script src="scripts/timer.js"></script>
         <script src="scripts/scripts.js"></script>
         <script src="scripts/pomodoroScript.js"></script>        
         <script src="scripts/analytics.js"></script>
         <script src="scripts/todolist.js"></script>
-        <script src="scripts/timer.js"></script>
         <script src="scripts/views.js"></script>
         <script src="scripts/aboutUs.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

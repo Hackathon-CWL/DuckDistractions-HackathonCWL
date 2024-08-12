@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+#analyticsHeading{
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  color: #0E443B;
+  text-align: center;
+  padding: 10px;
+}
+#comparativeChart{
+  margin-top: 10px;
+  max-width: 300px;
+  max-height: 400px;
+  color: White;
+  background-color: black;
+}
+.accordionMenu {
+    font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(90deg, rgba(10, 48, 49, 1), rgba(20, 83, 45, 1));
+    opacity: 80%;
+    border-radius: 10px; 
+    padding: 0; /* Remove padding around the accordion menu */
+    backdrop-filter: blur(8px); /* Backdrop blur effect */
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  }
+  
+  .accordionMenu button {
+    font-family: 'Raleway', sans-serif;
+    background: transparent; 
+    border: none;
+    border-radius: 10px 10px 0px 0px; /* Remove rounded edges for buttons */
+    cursor: pointer;
+    padding: 15px;
+    width: 100%; /* Stretch from edge to edge */
+    font-size: 16px;
+    color: #ebfff2;
+    font-weight: normal;
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+    display: flex;
+    align-items: center;
+  }
+  
+  .accordionMenu button:hover {
+    background: rgba(16, 93, 88, 0.6); /* Darker background on hover */
+    transform: scale(1.0001); /* Slight scaling on hover */
+  }
+  
+  .accordionMenu button::before {
+    content: "▼"; /* Dropdown icon */
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s; /* Smooth transition for icon */
+  }
+
+  .accordion-content {
+    font-family: 'Raleway', sans-serif;
+    max-height: 0;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 10px 10px 10px 10px; /* Rounded edges for content */
+    padding: 0 15px;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transitions */
+  }
+  
+  .accordion-content p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  /* Animations for accordion */
+  .accordionMenu button.active::before {
+    transform: rotate(180deg); /* Rotate icon when active */
+  }
+  
+  .accordionMenu button.active + .accordion-content {
+    max-height: 1000px; /* Arbitrary large value to show content */
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in; /* Smooth transitions */
+  }
+  

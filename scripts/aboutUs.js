@@ -90,4 +90,5 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(toggleFooter, 0); // Slight delay to allow class change
         });
     });
+    
 });

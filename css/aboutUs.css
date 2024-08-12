@@ -64,7 +64,3 @@ body {
     }
 }
 
-/* Ensure footer is only visible in the About Us section */
-.tab-content.active#about-us #contact-footer {
-    display: block;
-}

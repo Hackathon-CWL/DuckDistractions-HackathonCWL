@@ -18,7 +18,7 @@ body {
 }
 /* Footer Section Styles */
 #contact-footer {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.253); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Apply blur effect */
     color: #000; /* Set font color to black */
     padding: 40px 20px;
@@ -64,3 +64,7 @@ body {
     }
 }
 
+/* Ensure footer is only visible in the About Us section */
+.tab-content.active#about-us #contact-footer {
+    display: block;
+}

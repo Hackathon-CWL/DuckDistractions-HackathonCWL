@@ -6,36 +6,38 @@
     <title>DuckDistractions</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/todolist.css">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pomodoroStyles.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/aboutUs.css">
+    <link rel="stylesheet" href="css/analytics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-  
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo" style="display: flex; align-items: flex-end;">
           <a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
-            <div style="font-size: 32px; align-self: flex-start; font-style: normal;">DuckDistractions</div>
+            <div style="font-size: 32px; align-self: flex-start; font-style: normal; text-decoration: none;"><a href="index.html" style="color: black; text-decoration: none;">DuckDistractions</a></div>
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;"> </a></li>
-                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonHome" onclick="showSection('get-started'); editView('titleButtonHome');">Home</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonPomodoro" onclick="showSection('pomodoro'); editView('titleButtonPomodoro');">Pomodoro</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonTodo-list" onclick="showSection('todo-list'); editView('titleButtonTodo-list');">To-Do</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonAnalytics" onclick="showSection('analytics'); editView('titleButtonAnalytics');">Analytics</a></li>
+                <li><a class="menuButtons" href="#" id="titleButtonAbout-us" onclick="showSection('about-us'); editView('titleButtonAbout-us');">About</a></li>
+
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
-                <li><a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Home</a></li>
-                <li><a href="#" onclick="showSection('get-started')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  About</a></li>
-                <li><a href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Pomodoro</a></li>
-                <li><a href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  To-Do List</a></li>
-                <li><a href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; align-items: start;">  Analytics</a></li>
+                <li><a style="color: rgb(255, 255, 255); text-decoration: none; font-size: 32px; font-weight: bold;" href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">DuckDistractions</a></li>
+                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">Home</a></li>
+                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">Pomodoro</a></li>
+                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">To-Do List</a></li>
+                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">Analytics</a></li>
+                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('about-us')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">About</a></li>
             </ul>
         </nav>
     </header>
@@ -52,7 +54,6 @@
                               <h2 class="feature-title">xyz</h2>
                               <p class="feature-description">xyz</p>
                           </div>
-                          <!-- Add more feature cards as needed -->
                       </div>
                   </section>
           
@@ -67,7 +68,6 @@
                               <h2 class="step-title">xyz</h2>
                               <p class="step-description">xyz</p>
                           </div>
-                          <!-- Add more steps as needed -->
                       </div>
                   </section>
           
@@ -88,21 +88,33 @@
                   </div>
                   <div class="content">
                     <div id="pomodoro-content" class="rab-content active">
-                      <div class="timer">25:00</div>
+                      <div class="timer">
+                        <span id="pomodoro-minutes" contenteditable="true">45</span>:<span id="pomodoro-seconds" contenteditable="true">00</span>
+                      </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
+                      <button id="stop"><i class="fas fa-stop" style="margin-right: 4px;"></i>Stop</button>
                     </div>
                     <div id="short-break" class="rab-content">
-                      <div class="timer">05:00</div>
-                      <button id="start"><i class="fas fa-play"></i> Start</button>
+                      <div class="timer">
+                        <span id="short-break-minutes" contenteditable="true">05</span>:<span id="short-break-seconds" contenteditable="true">00</span>
+                      </div>
+                      <button id="start-short"><i class="fas fa-play"></i>Start</button>
+                      <button id="stop-short"><i class="fas fa-stop" style="margin-right: 4px;"></i>Stop</button>
+
                     </div>
                     <div id="long-break" class="rab-content">
-                      <div class="timer">15:00</div>
-                      <button id="start"><i class="fas fa-play"></i> Start</button>
+                      <div class="timer">
+                        <span id="long-break-minutes" contenteditable="true">15</span>:<span id="long-break-seconds" contenteditable="true">00</span>
+                      </div>
+                      <button id="start-long"><i class="fas fa-play"></i>Start</button>
+                      <button id="stop-long"><i class="fas fa-stop" style="margin-right: 4px;"></i>Stop</button>
+
                     </div>
                   </div>
                 </div>
                 <div class="pomodoroTask-container">
-                    <button id="AddTaskPomodoro" onclick="showSection('todo-list')">Add Task</button>
+                    <input type="text" id="task-inputPomodoro" placeholder="Add a new task...">
+                    <button id="AddTaskPomodoro">Add Task</button>
               </div>      
         </section>
 
@@ -120,15 +132,95 @@
         </section>
 
         <section id="analytics" class="tab-content">
-            <h2>Analytics</h2>
+            <h1 id="analyticsHeading"><img src="assets/icons/analytics_coloured.png" style="vertical-align: middle; width: 52px; height: 52px; margin-right: 10px;">Analytics</h1>
+            <section id="analytics-section">
+                <div class="accordionMenu">
+
+                  <button class="accordionHome">Comparative Analysis</button>
+                  <div id="accordion-content">
+                    <p>Details about task breakdown.</p>
+                    <canvas id="comparativeChart"></canvas>
+                  </div>
+
+                  <button class="accordionWebsite">Time Spent</button>
+                  <div id="accordion-content">
+                  </div>
+              
+                  <button class="accordionPomodoro">Pomodoro</button>
+                  <div id="accordion-content">
+                    <p>Details about performance metrics.</p>
+                  </div>
+              
+                  <button class="accordionShortBreak">Short Breaks</button>
+                  <div id="accordion-content">
+                    <p>Details about performance metrics.</p>
+                  </div>           
+
+                  <button class="accordionLongBreak">Long Breaks</button>
+                  <div id="accordion-content">
+                    <p>Details about performance metrics.</p>
+                  </div>
+
+              </section>
         </section>
 
-        <section id="about-us" class="tab-content">
-            <h2>About Us</h2>
+        <section id="about-us" class="tab-content active">
+            <div class="about-section" id="section1">
+                <div class="background-box"></div>
+                <h2>Our Mission</h2>
+                <p>We aim to help you stay focused and productive, while also ensuring you take the necessary breaks to stay healthy.</p>
+            </div>
+            <div class="about-section" id="section2">
+                <div class="background-box"></div>
+                <h2>Our Vision</h2>
+                <p>We envision a world where distractions are managed efficiently, allowing individuals to reach their full potential.</p>
+            </div>
+            <div class="about-section" id="section3">
+                <div class="background-box"></div>
+                <h2>Our Team</h2>
+                <p>We are a team of passionate individuals committed to creating tools that help you stay on track.</p>
+            </div>
+            <div class="about-section" id="section4">
+                <div class="background-box"></div>
+                <h2>Thank You!</h2>
+                <p>We would like to thank Lewis Menelaws and the Hackathon Team for providing us with this amazing opportunity to learn and grow. Again a huge thank you to those who made the Hackathon possible!</p>
+            </div>
+            <div>
+                <footer id="contact-footer">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h2>Contact Us</h2>
+                            <p>Have questions or feedback? Connect with us:</p>
+                        </div>
+                        <div class="footer-section">
+                            <div id="daamin-contact" class="contact-item">
+                                <h3>Daamin</h3>
+                                <a href="https://www.linkedin.com/in/daaminashai/" target="_blank">LinkedIn</a> | 
+                                <a href="https://github.com/Daamin909" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <div id="essa-contact" class="contact-item">
+                                <h3>Essa</h3>
+                                <a href="https://www.linkedin.com/in/essareshi/" target="_blank">LinkedIn</a> | 
+                                <a href="https://github.com/essareshi" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </section>
+
+
+        
+        
+        <script src="scripts/timer.js"></script>
         <script src="scripts/scripts.js"></script>
         <script src="scripts/pomodoroScript.js"></script>        
-        <script src="scripts/tasks.js"></script>
+        <script src="scripts/analytics.js"></script>
         <script src="scripts/todolist.js"></script>
+        <script src="scripts/views.js"></script>
+        <script src="scripts/aboutUs.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

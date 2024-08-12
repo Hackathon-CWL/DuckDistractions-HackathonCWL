@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
         sections.forEach(section => {
             if (section.id === sectionId) {
                 section.style.display = 'block';
-            } else {
+            } 
+            else {
                 section.style.display = 'none';
             }
         });
@@ -12,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.sidebar-toggle').addEventListener('click', function() {
         const mobileNav = document.querySelector('.mobile-nav');
         mobileNav.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-nav ul li a').forEach(function (menuLink) {
+        menuLink.addEventListener('click', function () {
+            document.querySelector('.mobile-nav').classList.remove('active');
+        });
     });
     showSection('get-started');
 });

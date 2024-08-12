@@ -1,56 +1,94 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('.about-section');
-    const backgrounds = [
-        'url("https://i.pinimg.com/originals/7a/9a/f5/7a9af5f6d0997cc632dc23fccd4f2f30.jpg")',
-        'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLPjCEDC14-iK1XLKX_JMO8F_IEnRxa9g54w&s")',
-        'url("https://img.freepik.com/premium-photo/forest-gradient-background_1016686-104275.jpg")',
-        'url("https://image-1.uhdpaper.com/wallpaper/japanese-castle-cherry-blossom-mountain-digital-art-scenery-hd-wallpaper-uhdpaper.com-702@1@k.jpg")'
-    ];
-
-    let lastBackgroundIndex = -1;
-
-    function updateBackground() {
-        let scrollPosition = window.scrollY + window.innerHeight / 2;
-
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                if (index !== lastBackgroundIndex) {
-                    fadeInBackground(backgrounds[index]);
-                    lastBackgroundIndex = index;
-                }
-            }
+document.addEventListener("DOMContentLoaded", function () {
+    function preloadImages(imageArray) {
+        imageArray.forEach(src => {
+            const img = new Image();
+            img.src = src;
         });
     }
 
+    preloadImages([
+        'assets/images/aboutUs/aboutUs_img1.jpg',
+        'assets/images/aboutUs/aboutUs_img2.jpg',
+        'assets/images/aboutUs/aboutUs_img3.jpg',
+        'assets/images/aboutUs/aboutUs_img4.jpg'
+    ]);
+
+    const sections = document.querySelectorAll(".about-section");
+    const body = document.body;
+    const backgrounds = [
+        'url("assets/images/aboutUs/aboutUs_img1.jpg")',
+        'url("assets/images/aboutUs/aboutUs_img2.jpg")',
+        'url("assets/images/aboutUs/aboutUs_img3.jpg")',
+        'url("assets/images/aboutUs/aboutUs_img4.jpg")'
+    ];
+    let currentIndex = -1;
+
     function fadeInBackground(newBackground) {
         const fadeElement = document.createElement('div');
-        fadeElement.style.position = 'fixed';
-        fadeElement.style.top = '0';
-        fadeElement.style.left = '0';
-        fadeElement.style.width = '100%';
-        fadeElement.style.height = '100%';
-        fadeElement.style.zIndex = '-1';
-        fadeElement.style.backgroundImage = newBackground;
-        fadeElement.style.backgroundSize = 'cover';
-        fadeElement.style.backgroundPosition = 'center';
-        fadeElement.style.opacity = '0';
-        fadeElement.style.transition = 'opacity 1s ease-in-out';
-
+        Object.assign(fadeElement.style, {
+            position: 'fixed', top: '0', left: '0', width: '100%', height: '100%', zIndex: '-1',
+            backgroundImage: newBackground, backgroundSize: 'cover', backgroundPosition: 'center',
+            opacity: '0', transition: 'opacity 1s ease-in-out'
+        });
         document.body.appendChild(fadeElement);
-
-        setTimeout(() => {
-            fadeElement.style.opacity = '1';
-        }, 10);
-
-        setTimeout(() => {
-            document.body.style.backgroundImage = newBackground;
-            fadeElement.remove();
-        }, 1000);
+        setTimeout(() => fadeElement.style.opacity = '1', 10);
+        setTimeout(() => { body.style.backgroundImage = newBackground; fadeElement.remove(); }, 1000);
     }
 
+    function changeBackground(index) {
+        if (index !== currentIndex) {
+            fadeInBackground(backgrounds[index]);
+            currentIndex = index;
+        }
+    }
+
+    function resetBackground() {
+        body.style.backgroundImage = 'url("assets/images/background.jpg")';
+        currentIndex = -1;
+    }
+
+    function updateBackground() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        sections.forEach((section, index) => {
+            const { offsetTop: top, offsetHeight: height } = section;
+            if (scrollPosition >= top && scrollPosition < top + height) changeBackground(index);
+        });
+    }
+
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (link.href.includes("#about-us")) {
+                fadeInBackground(backgrounds[0]);
+                currentIndex = 0;
+                updateBackground();
+            } else {
+                resetBackground();
+            }
+        });
+    });
+
     window.addEventListener('scroll', updateBackground);
-    updateBackground(); // Initial call to set the background image on page load
+    updateBackground();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.getElementById('contact-footer');
+    const aboutTab = document.getElementById('about-us');
+
+    function toggleFooter() {
+        if (aboutTab.classList.contains('active')) {
+            footer.style.display = 'block';
+        } else {
+            footer.style.display = 'none';
+        }
+    }
+
+    toggleFooter(); // Initial check
+
+    // Ensure this function runs when you switch tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            setTimeout(toggleFooter, 0); // Slight delay to allow class change
+        });
+    });
+    
 });

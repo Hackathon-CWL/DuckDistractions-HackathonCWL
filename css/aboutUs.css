@@ -17,18 +17,140 @@ body {
     transition: background-image 0s ease-in-out; 
 }
 
-body.section1 {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+/* Styling for the 'Thank You!' section */
+#section4 {
+    background-color: rgba(255, 255, 255, 0.353); /* Light background with slight transparency */
+    backdrop-filter: blur(5px);
+    padding: 20px 30px 20px; /* Adjust padding, more space at the top and sides */
+    border-radius: 15px; /* Curved corners */
+    display: inline-block; /* Ensure the rectangle wraps tightly around the text */
+    text-align: center; /* Center-align text */
+    min-height: 30vh;
+    max-width: 90vh;
+    margin: 40px auto 0px; /* Center the section horizontally, add space above, 20px space below */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3); /* Metallic look with slight shadow */
 }
 
-body.section2 {
-    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+/* Grayish outline for the text */
+#section4 h2,
+#section4 p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Grayish outline effect */
 }
 
-body.section3 {
-    background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
+#section4 h2 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    color: #000; /* Black font color */
+    margin-bottom: 10px; /* Space below the heading */
 }
 
-body.section4 {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+#section4 p {
+    font-size: 1.25em; /* Increase font size for paragraphs */
+    color: #000; /* Black font color */
+    line-height: 1.6; /* Increase line height for readability */
+    margin-bottom: 0; /* No extra space between paragraphs */
+    padding-bottom: 20px; /* Ensure 20px space below the last line of text */
 }
+
+#section4 p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    #section4 {
+        padding: 15px 20px 5px; /* Adjust padding for smaller screens */
+    }
+
+    #section4 h2 {
+        font-size: 2em; /* Slightly smaller font size on mobile */
+    }
+
+    #section4 p {
+        font-size: 1.1em; /* Adjust paragraph font size */
+    }
+}
+
+
+
+
+/* Footer Section Styles */
+#contact-footer {
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    color: #000; /* Set font color to black */
+    padding: 40px 20px;
+    text-align: center;
+    display: none; /* Initially hide the footer */
+    margin-top: 90px;
+    border-radius: 20px;
+}
+
+#contact-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#contact-footer .footer-section {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+#contact-footer h2, 
+#contact-footer h3 {
+    margin-bottom: 15px;
+    color: #000; /* Black color for headings */
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#contact-footer p {
+    margin-bottom: 20px;
+}
+
+#contact-footer a {
+    color: #000; /* Black color for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contact-footer a:hover {
+    color: #e74c3c; /* Red color on hover */
+}
+
+/* Responsive adjustments for screens smaller than 768px */
+@media (max-width: 768px) {
+    #contact-footer {
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
+    #contact-footer .footer-content {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center-align content */
+    }
+
+    #contact-footer .footer-section {
+        flex: 1 1 100%;
+        margin: 10px 0; /* Increase vertical spacing */
+    }
+
+    #contact-footer h2, 
+    #contact-footer h3 {
+        font-size: 1.5em; /* Slightly larger font size */
+    }
+
+    #contact-footer p {
+        font-size: 1em; /* Adjust paragraph font size */
+        margin-bottom: 15px;
+    }
+
+    #contact-footer a {
+        font-size: 1em; /* Adjust link font size */
+    }
+}
+
+/* Ensure footer is only visible in the About Us section */
+.tab-content.active#about-us #contact-footer {
+    display: block;
+}
+

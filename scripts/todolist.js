@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const addTaskInputPomodoro = document.getElementById('task-inputPomodoro');
     const taskCompleteSound = new Audio('assets/Sound effects/taskComplete_fart.mp3'); 
     const taskDeleteSound = new Audio('assets/Sound effects/taskDelete_cancelled.mp3'); 
-
     addTaskButton.addEventListener('click', () => DoAddTask('todo-list'));
     addTaskButtonPomodoro.addEventListener('click',() =>  DoAddTask('pomodoro'));
     taskInput.addEventListener('keydown', function(event) {
@@ -36,22 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function addTask(tt) {
         console.log(tt);
         const li = document.createElement('li');
-
         const taskSpan = document.createElement('span');
         taskSpan.textContent = tt;
-
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.addEventListener('change', toggleComplete);
-
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', deleteTask);
-
         li.appendChild(checkbox);
         li.appendChild(taskSpan);
         li.appendChild(deleteButton);
-
         taskList.appendChild(li);
         taskInput.value = "";
     }

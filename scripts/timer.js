@@ -1,3 +1,6 @@
+var pomodoroAnalysis = 0;
+var shortBreakAnalysis = 0;
+var longBreakAnalysis = 0;
 function formatTimeUnit(value) {
     return value.toString().padStart(2, '0');
 }
@@ -83,6 +86,18 @@ const startTimer = (type, minutes, seconds) => {
     timeRemaining[type] = minutes * 60 + seconds;
     timerRunning[type] = true;
     timer[type] = setInterval(() => {
+        if (type==='pomodoro') {
+            pomodoroAnalysis++;
+            console.log(pomodoroAnalysis);
+        }
+        else if (type==='short-break') {
+            shortBreakAnalysis++;
+            console.log(shortBreakAnalysis);
+        }
+        else if (type==='long-break') {
+            longBreakAnalysis++;
+            console.log(longBreakAnalysis);
+        }
         if (timeRemaining[type] <= 0) {
             clearInterval(timer[type]);
             timerRunning[type] = false;
@@ -101,7 +116,6 @@ const startTimer = (type, minutes, seconds) => {
 const stopTimer = (type) => {
     clearInterval(timer[type]);
     timerRunning[type] = false;
-    updateTotalTimeDisplay();
 };
 document.querySelector('#start').addEventListener('click', () => {
     if (!timerRunning['pomodoro']) {

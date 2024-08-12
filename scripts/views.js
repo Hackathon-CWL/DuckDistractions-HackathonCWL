@@ -1,6 +1,5 @@
 const IDs = ['titleButtonHome', 'titleButtonPomodoro', 'titleButtonTodo-list', 'titleButtonAnalytics', 'titleButtonAbout-us'];
 function editView(elementIDButton) {
-    console.log('editView function called');
     var button = document.getElementById(elementIDButton);
     button.style.color = '#54976A';
     button.style.fontWeight = 900;

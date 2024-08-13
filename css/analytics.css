@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Graduate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 #analyticsHeading{
   font-family: 'Raleway', sans-serif;
   font-size: 32px;
   color: #0E443B;
   text-align: center;
   padding: 10px;
-}
-#comparativeChart{
-  margin-top: 10px !important;
-  max-width: 300px !important;
-  max-height: 400px !important;
-  border-radius: 15px !important;
-  background-color: white !important;
 }
 .accordionMenu {
   font-family: 'Raleway', sans-serif;
@@ -25,7 +21,7 @@
 }
 
 .accordionMenu button {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   background: transparent;
   border: none;
   border-radius: 10px 10px 0 0; /* Remove rounded edges for buttons */
@@ -53,41 +49,51 @@
 }
 
 #accordion-content {
-  display: flex;
-  flex-direction: row; /* Arrange items in a row */
-  font-family: 'Raleway', sans-serif;
+  font-family: 'montserrat', sans-serif;
+  display: grid;
+  grid-template-columns: 70% 30%; /* Two equal-width columns */
+  gap: 20px; /* Space between the columns */
   max-height: 0;
   overflow: hidden;
   background-color: transparent;
   border-radius: 10px;
   padding: 0 15px;
   opacity: 0;
-  margin: 0; /* Reset margins */
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transitions */
+  margin: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-#accordion-content p {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #fff;
-  text-align: left; /* Left-align text inside accordion content */
-  flex: 1; /* Take up remaining space */
+#accordion-content .text-container {
+  text-align: left;
+  color: white;
+  font-size: 18px;
+  font-weight: lighter;
 }
 
-#accordion-content canvas {
-  margin-left: 15px; /* Add space between text and chart */
-  max-width: 100%; /* Ensure the chart fits within the container */
-  border-radius: 10px; /* Add rounded corners to the chart */
+#accordion-content .chart-container {
+  align-self: flex-end;
+  width: 95%;
+  height: 100%;
+}
+
+#comparativeChart {
+  margin-top: 10px !important;
+  width: 100%; /* Make sure the chart fills its container */
+  border-radius: 15px !important;
+  background-color: white !important;
+  height: 500px !important;
+}
+
+
+.accordionMenu button.active + #accordion-content {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
 }
 
 .accordionMenu button.active::before {
   transform: rotate(180deg); /* Rotate icon when active */
 }
 
-.accordionMenu button.active + #accordion-content {
-  max-height: 1000px; /* Arbitrary large value to show content */
-  opacity: 1;
-  transition: max-height 0.5s ease-in, opacity 0.5s ease-in; /* Smooth transitions */
-}
 
   

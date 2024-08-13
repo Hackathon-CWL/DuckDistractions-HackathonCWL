@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/aboutUs.css">
     <link rel="stylesheet" href="css/analytics.css">
-    <link rel="stylesheet" href="css/analyticsColumns.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -136,30 +135,17 @@
             <h1 id="analyticsHeading"><img src="assets/icons/analytics_coloured.png" style="vertical-align: middle; width: 52px; height: 52px; margin-right: 10px;">Analytics</h1>
             <section id="analytics-section">
                 <div class="accordionMenu">
+
                   <button class="accordionHome">Comparative Analysis</button>
-                  <div id="doc" class="col-t7">
-                    <div id="bd">
-                      <div id="col-main">
-                        <div class="col-b">
-                          <div class="col-gc">
-                            <div class="col-u first">
-                              <div>
-                                <p>Details about task breakdown.</p>
-                              </div>
-                            </div>
-                            <div class="col-u">
-                              <div>
-                                <canvas id="comparativeChart"></canvas>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                  <div id="accordion-content">
+                    <div class="text-container">
+                      <p id="time-analysis"></p>
+                    </div>
+                    <div class="chart-container">
+                      <canvas id="comparativeChart"></canvas>
                     </div>
                   </div>
-                  <div id="accordion-content">
 
-                  </div>
 
                   <button class="accordionWebsite">Time Spent</button>
                   <div id="accordion-content">

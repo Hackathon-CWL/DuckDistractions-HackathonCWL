@@ -96,9 +96,5 @@ document.getElementById("start-focus").addEventListener("click", function() {
     document.getElementById("focus-mode-overlay").style.display = "none";
 });
 
-document.getElementById("stop-focus").addEventListener("click", function() {
-    // Add functionality to stop focus mode
-});
-
 
 

@@ -56,4 +56,49 @@ document.getElementById("start-focus").addEventListener("click", function() {
     }
 });
 
+document.getElementById("start-focus").addEventListener("click", function() {
+    const hours = parseInt(document.getElementById("focus-hours").value) || 0;
+    const minutes = parseInt(document.getElementById("focus-minutes").value) || 0;
+    const totalMinutes = hours * 60 + minutes;
+
+    if (totalMinutes > 120) {
+        alert("The maximum focus time is 2 hours.");
+    } else if (totalMinutes > 0) {
+        alert(`Focus mode set for ${hours} hour(s) and ${minutes} minute(s).`);
+        document.getElementById("focus-mode-popup").style.display = "none";
+        document.getElementById("focus-mode-overlay").style.display = "none";
+    } else {
+        alert("Please set a valid focus time.");
+    }
+});
+
+document.getElementById("start-focus").addEventListener("click", function() {
+    let minutes = parseInt(document.getElementById("focus-minutes").textContent);
+    let seconds = parseInt(document.getElementById("focus-seconds").textContent);
+
+    if (isNaN(minutes) || minutes < 0 || minutes > 120) {
+        alert("Please enter valid minutes (0-120).");
+        return;
+    }
+
+    if (isNaN(seconds) || seconds < 0 || seconds > 59) {
+        alert("Please enter valid seconds (0-59).");
+        return;
+    }
+
+    if (minutes === 0 && seconds === 0) {
+        alert("Please set a valid focus time.");
+        return;
+    }
+
+    alert(`Focus mode set for ${minutes} minute(s) and ${seconds} second(s).`);
+    document.getElementById("focus-mode-popup").style.display = "none";
+    document.getElementById("focus-mode-overlay").style.display = "none";
+});
+
+document.getElementById("stop-focus").addEventListener("click", function() {
+    // Add functionality to stop focus mode
+});
+
+
 

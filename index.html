@@ -223,9 +223,10 @@
         
         <div id="focus-mode-popup">
             <h3>Set Focus Mode</h3>
-            <label for="focus-minutes">Minutes:</label>
-            <input type="number" id="focus-minutes" min="1" max="120">
-            <button id="start-focus">Start</button>
+            <div class="timer">
+                <span id="focus-minutes" contenteditable="true">00</span>:<span id="focus-seconds" contenteditable="true">00</span>
+            </div>
+            <button id="start-focus"><i class="fas fa-play"></i> Start</button>
         </div>
         
         <script src="scripts/timer.js"></script>

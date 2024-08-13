@@ -1,5 +1,7 @@
+var currentSection;
 document.addEventListener('DOMContentLoaded', function() {
     window.showSection = function(sectionId) {
+        currentSection = sectionId;
         const sections = document.querySelectorAll('.tab-content');
         sections.forEach(section => {
             if (section.id === sectionId) {

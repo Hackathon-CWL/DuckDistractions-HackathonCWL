@@ -121,7 +121,6 @@ setInterval(() => {
                     maintainAspectRatio: false,
                 }
             });
-            // Access the paragraph element by its ID
 const paragraphWebsiteAnalysis = document.getElementById('time-analysis');
 paragraphWebsiteAnalysis.innerHTML = paragraphWebsiteAnalysisVariable;
 setInterval(()=>{
@@ -152,24 +151,39 @@ setInterval(()=>{
     `; paragraphWebsiteAnalysis.innerHTML = paragraphWebsiteAnalysisVariable;}, 5*1000);
 
         });
-        document.querySelectorAll('.accordionHome, .accordionWebsite, .accordionPomodoro, .accordionShortBreak, .accordionLongBreak').forEach((accordion) => {
+        const accordions = document.querySelectorAll('.accordionHome, .accordionWebsite, .accordionPomodoro, .accordionShortBreak, .accordionLongBreak');
+        accordions.forEach((accordion) => {
             accordion.addEventListener('click', function() {
-                this.classList.toggle('active');
                 let content = this.nextElementSibling;
-                if (content.style.visibility === 'visible') {
-                    content.style.visibility = 'hidden';
-                    content.style.opacity = '0';
-                } else {
-                    document.querySelectorAll('.accordion-content').forEach((item) => {
-                        item.style.visibility = 'hidden';
-                        item.style.opacity = '0';
-                    });
+                document.querySelectorAll('.accordionHome, .accordionWebsite, .accordionPomodoro, .accordionShortBreak, .accordionLongBreak').forEach((item) => {
+                    if (item !== this) {
+                        item.classList.remove('active');
+                        let otherContent = item.nextElementSibling;
+                        if (otherContent) {
+                            otherContent.style.visibility = 'hidden';
+                            otherContent.style.opacity = '0';
+                        }
+                    }
+                });
+                this.classList.toggle('active');
+                if (this.classList.contains('active')) {
                     content.style.visibility = 'visible';
                     content.style.opacity = '1';
+                } else {
+                    content.style.visibility = 'hidden';
+                    content.style.opacity = '0';
                 }
             });
         });
-            
+        const defaultOpenAccordion = document.querySelector('.accordionHome'); 
+        if (defaultOpenAccordion) {
+            defaultOpenAccordion.classList.add('active');
+            let firstContent = defaultOpenAccordion.nextElementSibling;
+            if (firstContent) {
+                firstContent.style.visibility = 'visible';
+                firstContent.style.opacity = '1';
+            }
+        }   
 setInterval( () => {
     try{
         totalTimeMinutes = totalTime/60;

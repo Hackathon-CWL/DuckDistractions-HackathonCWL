@@ -33,12 +33,12 @@
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
-                <li><a style="color: rgb(255, 255, 255); text-decoration: none; font-size: 32px; font-weight: bold;" href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">DuckDistractions</a></li>
-                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('get-started')"><img src="assets/icons/home.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">Home</a></li>
-                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">Pomodoro</a></li>
-                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('todo-list')"><img src="assets/icons/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">To-Do List</a></li>
-                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">Analytics</a></li>
-                <li><a style="color: rgb(255, 255, 255); text-decoration: none;" href="#" onclick="showSection('about-us')"><img src="assets/icons/about.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;">About</a></li>
+                <li><a style="color: rgb(0, 0, 0); text-decoration: none; font-size: 32px; font-weight: bold;" href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width: 40px; height: 60px;"></a></li>
+                <li><a style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('get-started')"><img src="assets/icons/home_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Home</a></li>
+                <li><a style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Pomodoro</a></li>
+                <li><a style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('todo-list')"><img src="assets/Images/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">To-Do List</a></li>
+                <li><a style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Analytics</a></li>
+                <li><a style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('about-us')"><img src="assets/icons/about_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">About</a></li>
             </ul>
         </nav>
     </header>
@@ -139,27 +139,53 @@
 
                   <button class="accordionHome">Comparative Analysis</button>
                   <div id="accordion-content">
-                    <p>Details about task breakdown.</p>
-                    <canvas id="comparativeChart"></canvas>
+                    <div class="text-container">
+                      <p id="time-analysis"></p>
+                    </div>
+                    <div class="chart-container">
+                      <canvas id="comparativeChart"></canvas>
+                    </div>
                   </div>
+
 
                   <button class="accordionWebsite">Time Spent</button>
                   <div id="accordion-content">
+                      <div class="text-container">
+                        <p id="time-spent-analysis"></p>
+                      </div>
+                      <div class="chart-container">
+                        <canvas id="timeSpentChart"></canvas>
+                    </div>
                   </div>
               
                   <button class="accordionPomodoro">Pomodoro</button>
                   <div id="accordion-content">
-                    <p>Details about performance metrics.</p>
+                    <div class="text-container">
+                      <p id="pomodoro-analysis"></p>
+                    </div>
+                    <div class="chart-container">
+                      <canvas id="pomodoroChart"></canvas>
+                    </div>
                   </div>
               
                   <button class="accordionShortBreak">Short Breaks</button>
                   <div id="accordion-content">
-                    <p>Details about performance metrics.</p>
+                    <div class="text-container">
+                      <p id="short-break-analysis"></p>
+                    </div>
+                    <div class="chart-container">
+                      <canvas id="shortBreakChart"></canvas>
+                    </div>                  
                   </div>           
 
                   <button class="accordionLongBreak">Long Breaks</button>
                   <div id="accordion-content">
-                    <p>Details about performance metrics.</p>
+                    <div class="text-container">
+                      <p id="long-break-analysis"></p>
+                    </div>
+                    <div class="chart-container">
+                      <canvas id="longBreakChart"></canvas>
+                    </div>
                   </div>
 
               </section>
@@ -236,6 +262,10 @@
         <script src="scripts/todolist.js"></script>
         <script src="scripts/views.js"></script>
         <script src="scripts/aboutUs.js"></script>
+        <script src="scripts/timeSpentAnalytics.js"></script>
+        <script src="scripts/pomodoroAnalytics.js"></script>
+        <script src="scripts/shortBreakAnalytics.js"></script>
+        <script src="scripts/longBreakAnalytics.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="scripts/focusButton.js"></script>
 </body>

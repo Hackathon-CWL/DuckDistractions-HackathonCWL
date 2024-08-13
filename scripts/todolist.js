@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const taskCompleteSound = new Audio('assets/Sound effects/taskComplete_fart.mp3'); 
     const taskDeleteSound = new Audio('assets/Sound effects/taskDelete_cancelled.mp3'); 
     addTaskButton.addEventListener('click', () => DoAddTask('todo-list'));
-    addTaskButtonPomodoro.addEventListener('click',() =>  DoAddTask('pomodoro'));
+    addTaskButtonPomodoro.addEventListener('click',() =>  {DoAddTask('pomodoro'); editView('titleButtonTodo-list'); addTaskInputPomodoro.value = "";});
     taskInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             DoAddTask('todo-list');
@@ -16,10 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
     addTaskInputPomodoro.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             DoAddTask('pomodoro');
+            editView('titleButtonTodo-list');
+            addTaskInputPomodoro.value = "";
         }
     });
     function DoAddTask(checker) {
-        console.log(checker);
         if (checker == 'todo-list') {
             const taskText = taskInput.value.trim();
             if (taskText === "") return;
@@ -33,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     function addTask(tt) {
-        console.log(tt);
         const li = document.createElement('li');
         const taskSpan = document.createElement('span');
         taskSpan.textContent = tt;

@@ -71,6 +71,9 @@
     background: linear-gradient(90deg, #388E3C, #66BB6A);
     transform: scale(1.05);
 }
+.AddTaskPomodoro button:hover {
+    transform: scale(1.05);
+}
 
 ul#task-list li {
     font-family: 'Exo 2', sans-serif;

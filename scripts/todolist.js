@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     function DoAddTask(checker) {
-        console.log(checker);
         if (checker == 'todo-list') {
             const taskText = taskInput.value.trim();
             if (taskText === "") return;
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     function addTask(tt) {
-        console.log(tt);
         const li = document.createElement('li');
         const taskSpan = document.createElement('span');
         taskSpan.textContent = tt;

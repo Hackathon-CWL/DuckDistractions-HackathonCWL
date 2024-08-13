@@ -26,29 +26,21 @@ catch(err){
     longBreakAnalysisMinutes = 0;
 }
 var paragraphWebsiteAnalysisVariable=`
-        Over the course of using this website, you have squandered a total of 
-        <strong>${totalTime}</strong> Seconds or <strong>${totalTimeMinutes.toFixed(3)}</strong> Minutes.
-        <br>
-        Out of this, 
-        <strong>${pomodoroAnalysis}</strong> Seconds or <strong>${pomodoroAnalysisMinutes.toFixed(3)}</strong> Minutes were wasted on Pomodoro sessions,         <br> 
-        <strong>${shortBreakAnalysis}</strong> Seconds or <strong>${shortBreakAnalysisMinutes.toFixed(3)}</strong> Minutes were wasted on short breaks, and         <br>
-        <strong>${longBreakAnalysis}</strong> Seconds or <strong>${longBreakAnalysisMinutes.toFixed(3)}</strong> Minutes were wasted on long breaks. <br>
+        <strong>${totalTimeMinutes.toFixed(1)}</strong> Minutes on <strong>DuckDistractions™</strong><br>
+        <strong>${pomodoroAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Pomodoro</strong> <br> 
+        <strong>${shortBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Short Breaks</strong> <br>
+        <strong>${longBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Long Breaks</strong> <br>
         <br>
 Just think about what you could have achieved with that time instead:
 <ul>
-    <li>Achieved <strong>${(0.33*totalTime).toFixed(4)}</strong> blinks</li>
-    <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(4)}</strong> times</li>
-    <li>Burped <strong>${(0.00028*totalTime).toFixed(4)}</strong> times</li>
-    <li>Farted <strong>${(0.00028*totalTime).toFixed(4)}</strong> times</li>
-    <li>Wiggled your ears <strong>${(0.00001*totalTime).toFixed(4)}</strong> times</li>
-    <li>Jiggled your nose <strong>${(0.00001*totalTime).toFixed(4)}</strong> times</li>
-    <li>Performed <strong>${(0.028*totalTime).toFixed(4)}</strong> jumps.</li>
-    <li>Repeated <strong>${(0.0014*totalTime).toFixed(4)}</strong> singing sessions per second</li>
-    <li>Spent <strong>${(0.00001*totalTime).toFixed(4)}</strong> seconds picking your nose</li>
-    <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(4)}</strong> times</li>
+    <li>Achieved <strong>${(0.33*totalTime).toFixed(1)}</strong> blinks</li>
+    <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(1)}</strong> times</li>
+    <li>Burped <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
+    <li>Farted <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
+    <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(1)}</strong> times</li>
 </ul>
 
-Instead of dedicating yourself to such a tragically pointless endeavor, you could have been embracing the absurdity of life—perfecting the fine art of excessive farting or becoming the reigning champion of nose-picking. <br>
+Instead of dedicating yourself to such a tragically pointless endeavor, you could have been embracing the absurdity of life—perfecting the fine art of excessive farting.<br>
 `;
 setInterval(() => {
     totalTime++;
@@ -74,9 +66,8 @@ setInterval(() => {
     }
     document.addEventListener('DOMContentLoaded', function() {
         showAnalyticsSection('home-content');
-            const ctx = document.getElementById('comparativeChart').getContext('2d');
-    
-            comparativeChart = new Chart(ctx, {
+            const summaryAnalysis = document.getElementById('comparativeChart').getContext('2d');
+            comparativeChart = new Chart(summaryAnalysis, {
                 type: 'bar', 
                 data: {
                     labels: ['DuckDistractions', 'Pomodoro Time', 'Short Break Time', 'Long Break Time'], 
@@ -125,29 +116,21 @@ const paragraphWebsiteAnalysis = document.getElementById('time-analysis');
 paragraphWebsiteAnalysis.innerHTML = paragraphWebsiteAnalysisVariable;
 setInterval(()=>{
     paragraphWebsiteAnalysisVariable=`
-        Over the course of using this website, you have squandered a total of 
-        <strong>${totalTime}</strong> Seconds or <strong>${totalTimeMinutes.toFixed(3)}</strong> Minutes.
+        <strong>${totalTimeMinutes.toFixed(1)}</strong> Minutes on <strong>DuckDistractions™</strong><br>
+        <strong>${pomodoroAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Pomodoro</strong> <br> 
+        <strong>${shortBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Short Breaks</strong> <br>
+        <strong>${longBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Long Breaks</strong> <br>
         <br>
-        Out of this, 
-        <strong>${pomodoroAnalysis}</strong> Seconds or <strong>${pomodoroAnalysisMinutes.toFixed(3)}</strong> Minutes were wasted on Pomodoro sessions,         <br> 
-        <strong>${shortBreakAnalysis}</strong> Seconds or <strong>${shortBreakAnalysisMinutes.toFixed(3)}</strong> Minutes were wasted on short breaks, and         <br>
-        <strong>${longBreakAnalysis}</strong> Seconds or <strong>${longBreakAnalysisMinutes.toFixed(3)}</strong> Minutes were wasted on long breaks. <br>
-        <br>
-        Just think about what you could have achieved with that time instead:
-        <ul>
-            <li>Achieved <strong>${(0.33*totalTime).toFixed(4)}</strong> blinks</li>
-            <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(4)}</strong> times</li>
-            <li>Burped <strong>${(0.00028*totalTime).toFixed(4)}</strong> times</li>
-            <li>Farted <strong>${(0.00028*totalTime).toFixed(4)}</strong> times</li>
-            <li>Wiggled your ears <strong>${(0.00001*totalTime).toFixed(4)}</strong> times</li>
-            <li>Jiggled your nose <strong>${(0.00001*totalTime).toFixed(4)}</strong> times</li>
-            <li>Performed <strong>${(0.028*totalTime).toFixed(4)}</strong> jumps.</li>
-            <li>Repeated <strong>${(0.0014*totalTime).toFixed(4)}</strong> singing sessions per second</li>
-            <li>Spent <strong>${(0.00001*totalTime).toFixed(4)}</strong> seconds picking your nose</li>
-            <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(4)}</strong> times</li>
-        </ul>
-    
-        Instead of dedicating yourself to such a tragically pointless endeavor, you could have been embracing the absurdity of life—perfecting the fine art of excessive farting or becoming the reigning champion of nose-picking. <br>
+Just think about what you could have achieved with that time instead:
+<ul>        
+    <li>Achieved <strong>${(0.33*totalTime).toFixed(1)}</strong> blinks</li>
+    <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(1)}</strong> times</li>
+    <li>Burped <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
+    <li>Farted <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
+    <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(1)}</strong> times</li>
+</ul>
+
+Instead of dedicating yourself to such a tragically pointless endeavor, you could have been embracing the absurdity of life—perfecting the fine art of excessive farting.<br>
     `; paragraphWebsiteAnalysis.innerHTML = paragraphWebsiteAnalysisVariable;}, 5*1000);
 
         });

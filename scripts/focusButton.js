@@ -17,3 +17,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.getElementById("focus-mode-toggle").addEventListener("change", function() {
+    const popup = document.getElementById("focus-mode-popup");
+    if (this.checked) {
+        popup.style.display = "block";
+    } else {
+        popup.style.display = "none";
+    }
+});
+
+document.getElementById("start-focus").addEventListener("click", function() {
+    const minutes = document.getElementById("focus-minutes").value;
+    if (minutes) {
+        alert(`Focus mode set for ${minutes} minutes.`);
+        document.getElementById("focus-mode-popup").style.display = "none";
+    }
+});
+
+document.getElementById("focus-mode-toggle").addEventListener("change", function() {
+    const popup = document.getElementById("focus-mode-popup");
+    const overlay = document.getElementById("focus-mode-overlay");
+    if (this.checked) {
+        popup.style.display = "block";
+        overlay.style.display = "block";
+    } else {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+    }
+});
+
+document.getElementById("start-focus").addEventListener("click", function() {
+    const minutes = document.getElementById("focus-minutes").value;
+    if (minutes) {
+        alert(`Focus mode set for ${minutes} minutes.`);
+        document.getElementById("focus-mode-popup").style.display = "none";
+        document.getElementById("focus-mode-overlay").style.display = "none";
+    }
+});
+
+

@@ -26,18 +26,18 @@ catch(err){
     longBreakAnalysisMinutes = 0;
 }
 var paragraphWebsiteAnalysisVariable=`
-        <strong>${totalTimeMinutes.toFixed(1)}</strong> Minutes on <strong>DuckDistractions™</strong><br>
-        <strong>${pomodoroAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Pomodoro</strong> <br> 
-        <strong>${shortBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Short Breaks</strong> <br>
-        <strong>${longBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Long Breaks</strong> <br>
+        <strong>${(0)}</strong> Minutes on <strong>DuckDistractions™.</strong><br>
+        <strong>${(0)}</strong> Minutes on <strong>Pomodoro.</strong> <br> 
+        <strong>${(0)}</strong> Minutes on <strong>Short Breaks.</strong> <br>
+        <strong>${(0)}</strong> Minutes on <strong>Long Breaks.</strong> <br>
         <br>
 Just think about what you could have achieved with that time instead:
 <ul>
-    <li>Achieved <strong>${(0.33*totalTime).toFixed(1)}</strong> blinks</li>
-    <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(1)}</strong> times</li>
-    <li>Burped <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
-    <li>Farted <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
-    <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(1)}</strong> times</li>
+    <li>Achieved <strong>${(0)}</strong> blinks</li>
+    <li>Had your heart beat <strong>${(0)}</strong> times</li>
+    <li>Burped <strong>${(0)}</strong> times</li>
+    <li>Farted <strong>${(0)}</strong> times</li>
+    <li>Checked your phone <strong>${(0)}</strong> times</li>
 </ul>
 
 Instead of dedicating yourself to such a tragically pointless endeavor, you could have been embracing the absurdity of life—perfecting the fine art of excessive farting.<br>
@@ -116,18 +116,18 @@ const paragraphWebsiteAnalysis = document.getElementById('time-analysis');
 paragraphWebsiteAnalysis.innerHTML = paragraphWebsiteAnalysisVariable;
 setInterval(()=>{
     paragraphWebsiteAnalysisVariable=`
-        <strong>${totalTimeMinutes.toFixed(1)}</strong> Minutes on <strong>DuckDistractions™</strong><br>
-        <strong>${pomodoroAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Pomodoro</strong> <br> 
-        <strong>${shortBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Short Breaks</strong> <br>
-        <strong>${longBreakAnalysisMinutes.toFixed(1)}</strong> Minutes on <strong>Long Breaks</strong> <br>
+        <strong>${totalTimeMinutes.toFixed(2)}</strong> Minutes on <strong>DuckDistractions™.</strong><br>
+        <strong>${pomodoroAnalysisMinutes.toFixed(2)}</strong> Minutes on <strong>Pomodoro.</strong> <br> 
+        <strong>${shortBreakAnalysisMinutes.toFixed(2)}</strong> Minutes on <strong>Short Breaks.</strong> <br>
+        <strong>${longBreakAnalysisMinutes.toFixed(2)}</strong> Minutes on <strong>Long Breaks.</strong> <br>
         <br>
 Just think about what you could have achieved with that time instead:
 <ul>        
-    <li>Achieved <strong>${(0.33*totalTime).toFixed(1)}</strong> blinks</li>
-    <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(1)}</strong> times</li>
-    <li>Burped <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
-    <li>Farted <strong>${(0.00028*totalTime).toFixed(1)}</strong> times</li>
-    <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(1)}</strong> times</li>
+    <li>Achieved <strong>${(0.33*totalTime).toFixed(2)}</strong> blinks</li>
+    <li>Had your heart beat <strong>${(1.33*totalTime).toFixed(2)}</strong> times</li>
+    <li>Burped <strong>${(0.00028*totalTime).toFixed(2)}</strong> times</li>
+    <li>Farted <strong>${(0.00028*totalTime).toFixed(2)}</strong> times</li>
+    <li>Checked your phone <strong>${(0.0117*totalTime).toFixed(2)}</strong> times</li>
 </ul>
 
 Instead of dedicating yourself to such a tragically pointless endeavor, you could have been embracing the absurdity of life—perfecting the fine art of excessive farting.<br>

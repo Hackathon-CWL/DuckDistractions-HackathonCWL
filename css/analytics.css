@@ -85,7 +85,34 @@
   height: 350px !important;
 }
 
-
+#timeSpentChart {
+  margin-top: 10px !important;
+  width: 100%; /* Make sure the chart fills its container */
+  border-radius: 15px !important;
+  background-color: white !important;
+  height: 350px !important;
+}
+#pomodoroChart {
+  margin-top: 10px !important;
+  width: 100%; /* Make sure the chart fills its container */
+  border-radius: 15px !important;
+  background-color: white !important;
+  height: 350px !important;
+}
+#shortBreakChart {
+  margin-top: 10px !important;
+  width: 100%; /* Make sure the chart fills its container */
+  border-radius: 15px !important;
+  background-color: white !important;
+  height: 350px !important;
+}
+#longBreakChart {
+  margin-top: 10px !important;
+  width: 100%; /* Make sure the chart fills its container */
+  border-radius: 15px !important;
+  background-color: white !important;
+  height: 350px !important;
+}
 .accordionMenu button.active + #accordion-content {
   max-height: 1000px;
   opacity: 1;

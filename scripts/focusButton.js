@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const focusModeContainer = document.getElementById('focus-mode-container');
-    
     function toggleFocusModeButton() {
         if (currentSection === 'pomodoro' || currentSection === 'todo-list' || currentSection === 'analytics') {
             focusModeContainer.style.display = 'flex';
@@ -8,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
             focusModeContainer.style.display = 'none'; 
         }
     }
-
     toggleFocusModeButton();
-
     const menuButtons = document.querySelectorAll('.menuButtons');
     menuButtons.forEach(button => {
         button.addEventListener('click', function () {
@@ -42,7 +39,6 @@ document.getElementById("focus-seconds").addEventListener("input", () => {
 });  
 document.getElementById("focus-minutes").addEventListener("blur", () => {
     const minutesElement = document.getElementById("focus-minutes");
-    minutesElement.textContent = checkTimeLimit('minutes', minutesElement.textContent);
     minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
 });  
 document.getElementById("focus-seconds").addEventListener("blur", () => {
@@ -50,7 +46,7 @@ document.getElementById("focus-seconds").addEventListener("blur", () => {
     secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
 });  
 function checkTimeFormat(value) {
-    if (String(value).length === 1) {
+    if (value.length === 1) {
         return "0" + value;
     }
     return value;
@@ -60,7 +56,7 @@ function checkTimeLimit(unit, value) {
         if (value > 180) {
             return 180;
         }
-        else if(isNaN(value)){
+        else if(isNaN(value) || value === ""){
             return "00";
         }
         else if(String(value).length >3){
@@ -70,7 +66,7 @@ function checkTimeLimit(unit, value) {
         if (value > 59) {
             return 59;
         }
-        else if(isNaN(value)){
+        else if(isNaN(value) || value === ""){
             return "00";
         }  
         else if(String(value).length >2){
@@ -79,23 +75,14 @@ function checkTimeLimit(unit, value) {
     }
     return value;
 }
-document.getElementById("focus-minutes").addEventListener("focus", function() {
-    const minutesElement = document.getElementById("focus-minutes");
-    selectText(minutesElement);
-});
-document.getElementById("focus-seconds").addEventListener("focus", function() {
-    const secondsElement = document.getElementById("focus-seconds");
-    selectText(secondsElement);
-});
 document.getElementById("start-focus").addEventListener("click", function() {
     const minutes = parseInt(document.getElementById("focus-minutes").textContent);
     const seconds = parseInt(document.getElementById("focus-seconds").textContent);
     if (minutes === 0 && seconds === 0) {
-        // do nothing
+        return;
     } 
     else {
-        const time = minutes * 60 + seconds;
-        startFocusMode(time);
+        startFocusMode(minutes * 60 + seconds);
     }
 });
 function startFocusMode(time) {
@@ -136,6 +123,7 @@ document.addEventListener('keydown', function(event) {
     if (event.ctrlKey && event.key === 'a') {
         // Handle Ctrl + A key press here
     }
+
     if (event.key === 'F11' && event.code === 'F11') {
         console.log('F11 key pressed');
     }

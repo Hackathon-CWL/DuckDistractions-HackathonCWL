@@ -71,12 +71,8 @@ document.querySelectorAll('[contenteditable=true]').forEach(element => {
 const updateDisplay = (type, minutes, seconds) => {
     const minutesElement = document.querySelector(`#${type}-minutes`);
     const secondsElement = document.querySelector(`#${type}-seconds`);
-    if (minutesElement && secondsElement) {
-        minutesElement.textContent = formatTimeUnit(minutes);
-        secondsElement.textContent = formatTimeUnit(seconds);
-    } else {
-        console.error(`Element with ID ${type}-minutes or ${type}-seconds not found.`);
-    }
+    minutesElement.textContent = formatTimeUnit(minutes);
+    secondsElement.textContent = formatTimeUnit(seconds);
 };
 const timer = {};
 const timerRunning = {};

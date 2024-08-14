@@ -76,6 +76,7 @@
 
 #focus-minutes[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 #focus-minutes[type=number]::-webkit-inner-spin-button,

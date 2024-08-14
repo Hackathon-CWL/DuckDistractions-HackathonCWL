@@ -1,40 +1,45 @@
 const closePopupBtn = document.getElementById('closePopup');
 const popup = document.getElementById('popup');
-
-closePopupBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
-
-popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-        popup.style.display = 'none';
-    }
-});
+const distraction = document.getElementById('distracting-content');
+const distractionTitle = document.getElementById('distracting-content-title');
+let distractor;
 function distract(){
-    setInterval(() => {
+    distractor = setInterval(() => {
         const randomNumber = Math.floor(Math.random() * 5) + 1;
         switch (randomNumber) {
             case 1:
-                popup.innerHTML = 'Option 1';
+                distractionTitle.innerHTML = 'Option 1';
+                distraction.src='https://www.youtube.com/embed/content';
+                popup.style.display = 'block';
+                setTimeout(()=>{popup.style.display = 'none';}, 9*1000);
                 break;
             case 2:
-                popup.innerHTML = 'Option 2';
+                distractionTitle.innerHTML = 'Option 2';
+                distraction.src='https://www.youtube.com/embed/content';
+                popup.style.display = 'block';
+                setTimeout(()=>{popup.style.display = 'none';}, 9*1000);
                 break;
             case 3:
-                popup.innerHTML = 'Option 3';
+                distractionTitle.innerHTML = 'Option 3';
+                distraction.src='https://www.youtube.com/embed/content';
+                popup.style.display = 'block';
+                setTimeout(()=>{popup.style.display = 'none';}, 9*1000);
                 break;
             case 4:
-                popup.innerHTML = 'Option 4';
+                distractionTitle.innerHTML = 'Option 4';
+                distraction.src='https://www.youtube.com/embed/content';
+                popup.style.display = 'block';
+                setTimeout(()=>{popup.style.display = 'none';}, 9*1000);
                 break;
             case 5:
-                popup.innerHTML = 'Option 5';
-                break;
-            default:
-                popup.innerHTML = 'Default Option';
+                distractionTitle.innerHTML = 'Option 5';
+                distraction.src='https://www.youtube.com/embed/content';
+                popup.style.display = 'block';
+                setTimeout(()=>{popup.style.display = 'none';}, 9*1000);
                 break;
         }
     }, 20000);
 }
 function stopDistract() {
-  clearInterval(intervalId);
+    clearInterval(distractor);
 }

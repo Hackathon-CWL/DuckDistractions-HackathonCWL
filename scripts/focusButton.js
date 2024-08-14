@@ -33,16 +33,16 @@ document.getElementById("focus-mode-toggle").addEventListener("change", function
 
 document.getElementById("focus-minutes").addEventListener("input", () => {
     const minutesElement = document.getElementById("focus-minutes");
-    minutesElement.textContent = checkTimeLimit('minutes', parseInt(minutesElement.textContent));
+    minutesElement.textContent = checkTimeLimit('minutes', minutesElement.textContent);
 });   
 
 document.getElementById("focus-seconds").addEventListener("input", () => {
     const secondsElement = document.getElementById("focus-seconds");
-    secondsElement.textContent = checkTimeLimit('seconds', parseInt(secondsElement.textContent));
+    secondsElement.textContent = checkTimeLimit('seconds', secondsElement.textContent);
 });  
 document.getElementById("focus-minutes").addEventListener("blur", () => {
     const minutesElement = document.getElementById("focus-minutes");
-    minutesElement.textContent = checkTimeLimit('minutes', parseInt(minutesElement.textContent));
+    minutesElement.textContent = checkTimeLimit('minutes', minutesElement.textContent);
     minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
 });  
 document.getElementById("focus-seconds").addEventListener("blur", () => {
@@ -50,30 +50,43 @@ document.getElementById("focus-seconds").addEventListener("blur", () => {
     secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
 });  
 function checkTimeFormat(value) {
-    if (value < 10) {
+    if (String(value).length === 1) {
         return "0" + value;
     }
     return value;
 }
 function checkTimeLimit(unit, value) {
-    value = Number(value); 
     if (unit === 'minutes') {
         if (value > 180) {
             return 180;
         }
         else if(isNaN(value)){
-            return 0;
+            return "00";
+        }
+        else if(String(value).length >3){
+            return "180";
         }
     } else if (unit === 'seconds') {
         if (value > 59) {
             return 59;
         }
         else if(isNaN(value)){
-            return 0;
+            return "00";
         }  
+        else if(String(value).length >2){
+            return "59";
+        }
     }
     return value;
 }
+document.getElementById("focus-minutes").addEventListener("focus", function() {
+    const minutesElement = document.getElementById("focus-minutes");
+    selectText(minutesElement);
+});
+document.getElementById("focus-seconds").addEventListener("focus", function() {
+    const secondsElement = document.getElementById("focus-seconds");
+    selectText(secondsElement);
+});
 document.getElementById("start-focus").addEventListener("click", function() {
     const minutes = parseInt(document.getElementById("focus-minutes").textContent);
     const seconds = parseInt(document.getElementById("focus-seconds").textContent);
@@ -86,6 +99,9 @@ document.getElementById("start-focus").addEventListener("click", function() {
     }
 });
 function startFocusMode(time) {
+    if (time===0 && (isNaN(time))) {
+        return;
+    }
     const focusModePopup = document.getElementById("focus-mode-popup");
     const focusModeOverlay = document.getElementById("focus-mode-overlay");
     const focusModeToggle = document.getElementById("focus-mode-toggle");
@@ -95,6 +111,7 @@ function startFocusMode(time) {
     startFocusTimer(time);
     goFullscreen();
 }
+
 var timeElapsed = 0;
 function startFocusTimer(time){
     setInterval(() => {

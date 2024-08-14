@@ -111,10 +111,10 @@ function startFocusTimer(time){
     }, 1000);
 }
 function goFullscreen(){
-    document.documentElement.requestFullscreen();
+    lockFullscreen();
 }
 function focusModeCompleted() {
-    document.exitFullscreen();
+    unlockFullscreen();
 }
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {

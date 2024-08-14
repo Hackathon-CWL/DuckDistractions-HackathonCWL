@@ -1,41 +1,6 @@
 var pomodoroAnalysis = 0;
 var shortBreakAnalysis = 0;
 var longBreakAnalysis = 0;
-function formatTimeUnit(value) {
-    return value.toString().padStart(2, '0');
-}
-function validateMinutes(minutes, maxMinutes) {
-    if (isNaN(minutes) || minutes < 0) {
-        return 0;
-    }
-    if (minutes > maxMinutes) {
-        return maxMinutes;
-    }
-    return minutes;
-}
-function validateSeconds(seconds) {
-    if (isNaN(seconds) || seconds < 0) {
-        return 0;
-    }
-    if (seconds > 59) {
-        return 59;
-    }
-    return seconds;
-}
-function handleMinutesInput(elementId, maxMinutes) {
-    let element = document.getElementById(elementId);
-    if (element) {
-        let minutes = parseInt(element.textContent);
-        element.textContent = formatTimeUnit(validateMinutes(minutes, maxMinutes));
-    }
-}
-function handleSecondsInput(elementId) {
-    let element = document.getElementById(elementId);
-    if (element) {
-        let seconds = parseInt(element.textContent);
-        element.textContent = formatTimeUnit(validateSeconds(seconds));
-    }
-}
 function handleInput(event) {
     const target = event.target;
     const value = target.textContent;
@@ -45,40 +10,115 @@ function handleInput(event) {
     }
     event.preventDefault(); 
 }
-document.getElementById('pomodoro-minutes').addEventListener('blur', function() {
-    handleMinutesInput('pomodoro-minutes', 180);
-});
-document.getElementById('pomodoro-seconds').addEventListener('blur', function() {
-    handleSecondsInput('pomodoro-seconds');
-});
+document.getElementById("pomodoro-minutes").addEventListener("input", () => {
+    const minutesElement = document.getElementById("pomodoro-minutes");
+    minutesElement.textContent = checkTimeLimit('minutes', minutesElement.textContent);
+});   
 
-document.getElementById('short-break-minutes').addEventListener('blur', function() {
-    handleMinutesInput('short-break-minutes', 180);
-});
-document.getElementById('short-break-seconds').addEventListener('blur', function() {
-    handleSecondsInput('short-break-seconds');
-});
+document.getElementById("pomodoro-seconds").addEventListener("input", () => {
+    const secondsElement = document.getElementById("pomodoro-seconds");
+    secondsElement.textContent = checkTimeLimit('seconds', secondsElement.textContent);
+}); 
+document.getElementById("short-break-minutes").addEventListener("input", () => {
+    const minutesElement = document.getElementById("short-break-minutes");
+    minutesElement.textContent = checkTimeLimit('minutes', minutesElement.textContent);
+});   
 
-document.getElementById('long-break-minutes').addEventListener('blur', function() {
-    handleMinutesInput('long-break-minutes', 180);
+document.getElementById("short-break-seconds").addEventListener("input", () => {
+    const secondsElement = document.getElementById("short-break-seconds");
+    secondsElement.textContent = checkTimeLimit('seconds', secondsElement.textContent);
+}); 
+document.getElementById("long-break-minutes").addEventListener("input", () => {
+    const minutesElement = document.getElementById("long-break-minutes");
+    minutesElement.textContent = checkTimeLimit('minutes', minutesElement.textContent);
+});   
+
+document.getElementById("long-break-seconds").addEventListener("input", () => {
+    const secondsElement = document.getElementById("long-break-seconds");
+    secondsElement.textContent = checkTimeLimit('seconds', secondsElement.textContent);
+}); 
+document.getElementById("pomodoro-minutes").addEventListener("blur", () => {
+    const minutesElement = document.getElementById("pomodoro-minutes");
+    minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
+});  
+document.getElementById("pomodoro-seconds").addEventListener("blur", () => {
+    const secondsElement = document.getElementById("pomodoro-seconds");
+    secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
 });
-document.getElementById('long-break-seconds').addEventListener('blur', function() {
-    handleSecondsInput('long-break-seconds');
+document.getElementById("short-break-minutes").addEventListener("blur", () => {
+    const minutesElement = document.getElementById("short-break-minutes");
+    minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
+});  
+document.getElementById("short-break-seconds").addEventListener("blur", () => {
+    const secondsElement = document.getElementById("short-break-seconds");
+    secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
 });
+document.getElementById("long-break-minutes").addEventListener("blur", () => {
+    const minutesElement = document.getElementById("long-break-minutes");
+    minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
+});  
+document.getElementById("long-break-seconds").addEventListener("blur", () => {
+    const secondsElement = document.getElementById("long-break-seconds");
+    secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
+});
+document.getElementById("pomodoro-minutes").addEventListener("blur", () => {
+    const minutesElement = document.getElementById("pomodoro-minutes");
+    minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
+});  
+document.getElementById("pomodoro-seconds").addEventListener("blur", () => {
+    const secondsElement = document.getElementById("pomodoro-seconds");
+    secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
+}); 
+document.getElementById("short-break-minutes").addEventListener("blur", () => {
+    const minutesElement = document.getElementById("short-break-minutes");
+    minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
+});  
+document.getElementById("short-break-seconds").addEventListener("blur", () => {
+    const secondsElement = document.getElementById("short-break-seconds");
+    secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
+}); 
+document.getElementById("long-break-minutes").addEventListener("blur", () => {
+    const minutesElement = document.getElementById("long-break-minutes");
+    minutesElement.textContent = checkTimeFormat(minutesElement.textContent);
+});  
+document.getElementById("long-break-seconds").addEventListener("blur", () => {
+    const secondsElement = document.getElementById("long-break-seconds");
+    secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
+}); 
+document.getElementById("pomodoro-minutes").addEventListener("focus", () => {
+    selectText(document.getElementById("pomodoro-minutes"));
+
+});  
+document.getElementById("pomodoro-seconds").addEventListener("focus", () => {
+    selectText(document.getElementById("pomodoro-seconds"));
+}); 
+document.getElementById("short-break-minutes").addEventListener("focus", () => {
+    selectText(document.getElementById("short-break-minutes"));
+
+});  
+document.getElementById("short-break-seconds").addEventListener("focus", () => {
+    selectText(document.getElementById("short-break-seconds"));
+}); 
+document.getElementById("long-break-minutes").addEventListener("focus", () => {
+    selectText(document.getElementById("long-break-minutes"));
+
+});  
+document.getElementById("long-break-seconds").addEventListener("focus", () => {
+    selectText(document.getElementById("long-break-seconds"));
+}); 
 document.querySelectorAll('[contenteditable=true]').forEach(element => {
     element.addEventListener('input', handleInput);
 });
 const updateDisplay = (type, minutes, seconds) => {
     const minutesElement = document.querySelector(`#${type}-minutes`);
     const secondsElement = document.querySelector(`#${type}-seconds`);
-    minutesElement.textContent = formatTimeUnit(minutes);
-    secondsElement.textContent = formatTimeUnit(seconds);
+    minutesElement.textContent = checkTimeFormat(minutes);
+    secondsElement.textContent = checkTimeFormat(seconds);
 };
 const timer = {};
 const timerRunning = {};
 const timeRemaining = {};
 const startTimer = (type, minutes, seconds) => {
-    const startTime = Date.now();
     timeRemaining[type] = minutes * 60 + seconds;
     timerRunning[type] = true;
     timer[type] = setInterval(() => {
@@ -94,10 +134,21 @@ const startTimer = (type, minutes, seconds) => {
         if (timeRemaining[type] <= 0) {
             clearInterval(timer[type]);
             timerRunning[type] = false;
-            const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            updateTotalTime(type, elapsed);
-            alert('Time is up!');
-            return;
+            showMessage('Time is up!');
+            if (type === 'pomodoro') {
+                document.getElementById('pomodoro-minutes').textContent = 45;
+                document.getElementById('pomodoro-seconds').textContent = "00";
+            }
+            else if (type === 'long-break') {
+                document.getElementById('long-break-minutes').textContent = 15;
+                document.getElementById('long-break-seconds').textContent = "00";
+            }
+            else if (type === 'short-break') {
+                document.getElementById('short-break-minutes').textContent = 5;
+                document.getElementById('short-break-seconds').textContent = "00";
+            }
+            timeRemaining[type]=0;
+            return
         }
         timeRemaining[type]--;
         const mins = Math.floor(timeRemaining[type] / 60);

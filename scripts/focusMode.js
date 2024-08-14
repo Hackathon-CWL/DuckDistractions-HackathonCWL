@@ -67,7 +67,7 @@ document.getElementById("focus-seconds").addEventListener("focus", () => {
     selectText(document.getElementById("focus-seconds"));
 }); 
 function checkTimeFormat(value) {
-    if (value.length === 1) {
+    if (String(value).length === 1){
         return "0" + value;
     }
     return value;
@@ -100,15 +100,19 @@ document.getElementById("start-focus").addEventListener("click", function() {
     const minutes = parseInt(document.getElementById("focus-minutes").textContent);
     const seconds = parseInt(document.getElementById("focus-seconds").textContent);
     if ((minutes===0)) {
-        alert("Focus Mode should atleast be 1 minute long.");
-        return;
+        document.getElementById("focus-minutes").textContent = "01";
+        document.getElementById("focus-seconds").textContent = "00";
+        document.getElementById("focus-minutes").contentEditable = true;
+        document.getElementById("focus-seconds").contentEditable = true;
+        showErrorMessage("Focus Mode should be atleast 1 minute!");
     }
     else {
         startFocusMode(minutes * 60 + seconds);
     }
 });
 function startFocusMode(time) {
-    if (time===0 && (isNaN(time))) {
+    if ((isNaN(time))) {
+        showErrorMessage("Please enter a valid time!");
         return;
     }
     const focusModePopup = document.getElementById("focus-mode-popup");
@@ -120,6 +124,7 @@ function startFocusMode(time) {
     startFocusTimer(time);
     goFullscreen();
     distract();
+    disableButton();
 }
 function selectText(element) {
     let range = document.createRange();
@@ -135,6 +140,7 @@ function startFocusTimer(time){
         if (timeElapsed === time) {
             timeElapsed = 0;
             focusModeCompleted();
+            showMessage("Focus mode completed!");
         }
     }, 1000);
 }
@@ -144,4 +150,51 @@ function goFullscreen(){
 function focusModeCompleted() {
     unlockFullscreen();
     stopDistract();
+    enableButton();
+}
+function disableButton() {
+    document.getElementById("focus-mode-toggle").disabled = true;
+}
+function enableButton() {
+    document.getElementById("focus-mode-toggle").disabled = false;
+}
+
+function showMessage(message) {
+    const messageBox = document.createElement("div");
+    messageBox.textContent = message;
+    messageBox.style.position = "fixed";
+    messageBox.style.bottom = "20px";
+    messageBox.style.left = "50%";
+    messageBox.style.transform = "translateX(-50%)";
+    messageBox.style.backgroundColor = "#54976A";
+    messageBox.style.color = "white";
+    messageBox.style.padding = "10px 20px";
+    messageBox.style.borderRadius = "5px";
+    messageBox.style.zIndex = "1000";
+    document.body.appendChild(messageBox);
+    const completed = new Audio('assets/Sound effects/happy-message.mp3'); 
+    completed.play();
+    setTimeout(() => {
+        messageBox.remove();
+    }, 4000);
+}
+function showErrorMessage(message) {
+    const messageBox = document.createElement("div");
+    messageBox.textContent = message;
+    messageBox.style.position = "fixed";
+    messageBox.style.bottom = "20px";
+    messageBox.style.left = "50%";
+    messageBox.style.transform = "translateX(-50%)";
+    messageBox.style.backgroundColor = "#f44336";
+    messageBox.style.color = "white";
+    messageBox.style.padding = "10px 20px";
+    messageBox.style.borderRadius = "5px";
+    messageBox.style.zIndex = "10000000";
+    messageBox.style.fontSize = "22px";
+    document.body.appendChild(messageBox);
+    const completed = new Audio('assets/Sound effects/error-message.mp3'); 
+    completed.play();
+    setTimeout(() => {
+        messageBox.remove();
+    }, 4000);
 }

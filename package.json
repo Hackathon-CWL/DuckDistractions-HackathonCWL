@@ -1,5 +1,5 @@
 {
-  "name": "duck_distractions",
+  "name": "DuckDistractions",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,8 +9,8 @@
     "dist": "electron-builder"
   },
   "build": {
-    "appId": "com.example.duckdistractions",
-    "productName": "Duck Distractions",
+    "appId": "com.example.DuckDistractions",
+    "productName": "DuckDistractions",
     "files": [
       "**/*"
     ],

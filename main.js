@@ -28,8 +28,11 @@ function createWindow() {
     }
   });
   mainWindow.webContents.on('before-input-event', (event, input) => {
+    if (input.key === 'Alt'){
+      event.preventDefault()
+    }
     if (closeLocked){    
-      if (input.key === 'F11' || input.key === 'Escape' || input.key === 'Alt' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
+      if (input.key === 'F11' || input.key === 'Escape' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
           event.preventDefault()
        }
     }
@@ -42,7 +45,9 @@ function createWindow() {
       }
       mainWindow.removeAllListeners('close')
       mainWindow.on('close', (event) => {
-        event.preventDefault()
+        if (closeLocked){
+          event.preventDefault()
+        }
       })
     }
   }, 30*1000);  

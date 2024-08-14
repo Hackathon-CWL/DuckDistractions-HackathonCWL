@@ -15,8 +15,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-document.getElementById("focus-mode-toggle").addEventListener("change", function() {
+document.getElementById("closeFocus").addEventListener("click", function () {changer(document.getElementById("focus-mode-toggle"));});
+function changer(element) {
+    console.log(element);
+    const popup = document.getElementById("focus-mode-popup");
+    const overlay = document.getElementById("focus-mode-overlay");
+    const toggle = document.getElementById("focus-mode-toggle");
+    if (!element.checked) {
+        popup.style.display = "block";
+        overlay.style.display = "block";
+    } else {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+    }
+    toggle.checked = !toggle.checked; 
+}
+document.getElementById("focus-mode-toggle").addEventListener("change", function () {
     const popup = document.getElementById("focus-mode-popup");
     const overlay = document.getElementById("focus-mode-overlay");
     if (this.checked) {
@@ -85,9 +99,10 @@ function checkTimeLimit(unit, value) {
 document.getElementById("start-focus").addEventListener("click", function() {
     const minutes = parseInt(document.getElementById("focus-minutes").textContent);
     const seconds = parseInt(document.getElementById("focus-seconds").textContent);
-    if (minutes === 0 && seconds === 0) {
+    if ((minutes===0)) {
+        alert("Focus Mode should atleast be 1 minute long.");
         return;
-    } 
+    }
     else {
         startFocusMode(minutes * 60 + seconds);
     }
@@ -105,7 +120,6 @@ function startFocusMode(time) {
     startFocusTimer(time);
     goFullscreen();
     distract();
-    popup.style.display = 'block';
 }
 function selectText(element) {
     let range = document.createRange();
@@ -119,7 +133,6 @@ function startFocusTimer(time){
     setInterval(() => {
         timeElapsed++;
         if (timeElapsed === time) {
-            clearInterval();
             timeElapsed = 0;
             focusModeCompleted();
         }
@@ -131,10 +144,4 @@ function goFullscreen(){
 function focusModeCompleted() {
     unlockFullscreen();
     stopDistract();
-}
-function distract(){
-
-}
-function stopDistract(){
-
 }

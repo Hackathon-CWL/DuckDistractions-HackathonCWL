@@ -45,6 +45,13 @@ document.getElementById("focus-seconds").addEventListener("blur", () => {
     const secondsElement = document.getElementById("focus-seconds");
     secondsElement.textContent = checkTimeFormat(secondsElement.textContent);
 });  
+document.getElementById("focus-minutes").addEventListener("focus", () => {
+    selectText(document.getElementById("focus-minutes"));
+
+});  
+document.getElementById("focus-seconds").addEventListener("focus", () => {
+    selectText(document.getElementById("focus-seconds"));
+}); 
 function checkTimeFormat(value) {
     if (value.length === 1) {
         return "0" + value;
@@ -97,8 +104,16 @@ function startFocusMode(time) {
     focusModeToggle.checked = false;
     startFocusTimer(time);
     goFullscreen();
+    distract();
+    popup.style.display = 'block';
 }
-
+function selectText(element) {
+    let range = document.createRange();
+    range.selectNodeContents(element);
+    let selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+}
 var timeElapsed = 0;
 function startFocusTimer(time){
     setInterval(() => {
@@ -115,16 +130,11 @@ function goFullscreen(){
 }
 function focusModeCompleted() {
     unlockFullscreen();
+    stopDistract();
 }
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        // Handle the ESC key press here
-    }
-    if (event.ctrlKey && event.key === 'a') {
-        // Handle Ctrl + A key press here
-    }
+function distract(){
 
-    if (event.key === 'F11' && event.code === 'F11') {
-        console.log('F11 key pressed');
-    }
-});
+}
+function stopDistract(){
+
+}

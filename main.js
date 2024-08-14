@@ -27,6 +27,25 @@ function createWindow() {
       mainWindow.setFullScreen(true); 
     }
   });
+  mainWindow.webContents.on('before-input-event', (event, input) => {
+    if (closeLocked){    
+      if (input.key === 'F11' || input.key === 'Escape' || input.key === 'Alt' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
+          event.preventDefault()
+       }
+    }
+  });
+  mainWindow.setMenuBarVisibility(false)
+  setInterval(() => {
+    if (closeLocked){
+      if (!mainWindow.isFullScreen()) {
+        mainWindow.setFullScreen(true)
+      }
+      mainWindow.removeAllListeners('close')
+      mainWindow.on('close', (event) => {
+        event.preventDefault()
+      })
+    }
+  }, 30*1000);  
 }
 app.whenReady().then(() => {
   createWindow();

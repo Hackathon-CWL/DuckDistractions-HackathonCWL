@@ -6,7 +6,7 @@
 //     window.open(videoUrl, '_blank');
 // });
 
-document.getElementById('start-focus').addEventListener('click', function() {
+/*document.getElementById('start-focus').addEventListener('click', function() {
     var videoUrl = "https://www.youtube.com/watch?v=mhQ7-zCGRDE&autoplay=1";
     
     var videoContainer = document.getElementById('video-container');
@@ -17,7 +17,7 @@ document.getElementById('start-focus').addEventListener('click', function() {
     
     // Display the video container
     videoContainer.style.display = 'block';
-});
+});*/
 
 
 

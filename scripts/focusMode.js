@@ -132,9 +132,3 @@ function focusModeCompleted() {
     unlockFullscreen();
     stopDistract();
 }
-function distract(){
-
-}
-function stopDistract(){
-
-}

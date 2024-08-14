@@ -171,6 +171,7 @@ function showMessage(message) {
     messageBox.style.padding = "10px 20px";
     messageBox.style.borderRadius = "5px";
     messageBox.style.zIndex = "1000";
+    messageBox.style.fontSize = "18px";
     document.body.appendChild(messageBox);
     const completed = new Audio('assets/Sound effects/happy-message.mp3'); 
     completed.play();
@@ -190,7 +191,7 @@ function showErrorMessage(message) {
     messageBox.style.padding = "10px 20px";
     messageBox.style.borderRadius = "5px";
     messageBox.style.zIndex = "10000000";
-    messageBox.style.fontSize = "22px";
+    messageBox.style.fontSize = "18px";
     document.body.appendChild(messageBox);
     const completed = new Audio('assets/Sound effects/error-message.mp3'); 
     completed.play();

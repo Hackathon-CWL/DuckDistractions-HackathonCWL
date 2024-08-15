@@ -25,3 +25,10 @@ setInterval(() => {
     }
     setValues(dataSent);
 }, 60000);
+var dataSent={ 
+    "totalTime": totalTime, 
+    "pomodoroAnalysis": pomodoroAnalysis, 
+    "shortBreakAnalysis": shortBreakAnalysis, 
+    "longBreakAnalysis": longBreakAnalysis 
+}
+setValues(dataSent);

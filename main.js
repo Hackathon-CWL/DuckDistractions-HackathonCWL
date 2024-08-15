@@ -54,6 +54,13 @@ function createWindow() {
   }, 30*1000);  
 }
 app.whenReady().then(() => {
+  const dirPath = path.join('analytics');
+  fs.access(dirPath, fs.constants.F_OK, (err) => {
+    if (err) {
+      fs.mkdir(dirPath, { recursive: true }, (err) => {
+      });
+    }
+  });
   createWindow();
   ipcMain.handle('lock-fullscreen', () => {
     closeLocked = true;
@@ -64,15 +71,23 @@ app.whenReady().then(() => {
     mainWindow.setFullScreen(false);
   });
   ipcMain.handle('write-data', (event, data) => {
-    const filePath = path.join(__dirname, 'analytics/data/analytics.json');
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { flag: 'w' });
+    try {
+      const filePath = path.join(__dirname, 'analytics/analytics.json');
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { flag: 'w' });
+    }
+    catch (err) {
+      //do nothing
+    }
   });
   ipcMain.handle('read-data', (event) => {
-      const filePath = path.join(__dirname, 'analytics/data/analytics.json');
+    try{
+      const filePath = path.join(__dirname, 'analytics/analytics.json');
       if (fs.existsSync(filePath)) {
           const data = fs.readFileSync(filePath);
           return JSON.parse(data);
       }
+    }
+    catch (err) {
       const data= 
       {
         "totalTime": 0,
@@ -81,6 +96,7 @@ app.whenReady().then(() => {
         "longBreakAnalysis": 0
       };
       return data;
+    }
   });
 });
 app.on('window-all-closed', () => {

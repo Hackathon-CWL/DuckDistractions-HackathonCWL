@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const focusModeContainer = document.getElementById('focus-mode-container');
     function toggleFocusModeButton() {
-        if (currentSection === 'pomodoro' || currentSection === 'todo-list' || currentSection === 'analytics') {
+        //if (currentSection === 'pomodoro' || currentSection === 'todo-list' || currentSection === 'analytics') {
             focusModeContainer.style.display = 'flex';
-        } else {
-            focusModeContainer.style.display = 'none'; 
-        }
+       // } else {
+            //focusModeContainer.style.display = 'none'; 
+       // }
     }
     toggleFocusModeButton();
     const menuButtons = document.querySelectorAll('.menuButtons');
@@ -137,11 +137,12 @@ var timeElapsed = 0;
 function startFocusTimer(time){
     setInterval(() => {
         timeElapsed++;
-        console.log(timeElapsed);   
         if (timeElapsed === time) {
             timeElapsed = 0;
             focusModeCompleted();
             showMessage("Focus mode completed!");
+            timeElapsed = 0;
+            return;
         }
     }, 1000);
 }

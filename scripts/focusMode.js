@@ -137,6 +137,7 @@ var timeElapsed = 0;
 function startFocusTimer(time){
     setInterval(() => {
         timeElapsed++;
+        console.log(timeElapsed);   
         if (timeElapsed === time) {
             timeElapsed = 0;
             focusModeCompleted();

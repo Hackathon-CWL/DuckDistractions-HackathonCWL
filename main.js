@@ -33,7 +33,7 @@ function createWindow() {
       event.preventDefault()
     }
     if (closeLocked){    
-      if (input.key === 'F11' || input.key === 'Escape' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
+      if (input.control && input.shift && input.key==='Escape' || input.key === 'Meta' || input.key === 'F11' || input.key === 'Escape' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
           event.preventDefault()
        }
     }

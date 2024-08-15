@@ -1,0 +1,11 @@
+#distracting-content-youtube{
+    display: none;
+}
+#distracting-content-spotify{
+    display: none;
+}
+#distracting-content-image{
+    display: none;
+    height: 480px;
+    width: 600px;
+}

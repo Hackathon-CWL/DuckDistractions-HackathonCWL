@@ -7,4 +7,3 @@ contextBridge.exposeInMainWorld('electron', {
         off: ipcRenderer.off.bind(ipcRenderer)
     }
 });
-console.log('PRELOAD.JS loaded');

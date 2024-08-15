@@ -1,6 +1,3 @@
-var pomodoroAnalysis = 0;
-var shortBreakAnalysis = 0;
-var longBreakAnalysis = 0;
 function handleInput(event) {
     const target = event.target;
     const value = target.textContent;

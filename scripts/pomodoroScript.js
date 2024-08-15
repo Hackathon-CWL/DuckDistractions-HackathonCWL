@@ -14,45 +14,84 @@ rabs.forEach(rab => {
 const pomodoroCard = document.querySelector('.card');
 const taskContainer = document.querySelector('.pomodoroTask-container');
 
-function applyGravity(element) {
-  element.addEventListener('click', () => {
-    element.style.transition = 'transform 3s ease-in-out, top 3s ease-in-out'; // Slower fall
-    element.style.position = 'fixed';
-    element.style.top = `calc(100vh - ${element.offsetHeight}px)`;
-    element.style.left = `${element.getBoundingClientRect().left}px`;
-    element.style.transform = 'rotate(0deg)'; // Slight rotation
-  });
-
+function applyGravity(element, tilt) {
   let isDragging = false;
   let offsetX, offsetY;
+  let velocityY = 0;
+  const gravity = 0.6; // Gravity acceleration
+  const bounceFactor = 0.7; // Bounce effect
 
-  // Dragging functionality
-  element.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - element.getBoundingClientRect().left;
-    offsetY = e.clientY - element.getBoundingClientRect().top;
-    element.style.transition = 'none'; // Disable transition while dragging
+  element.addEventListener('click', () => {
+    element.style.transition = 'none'; // Disable transition during free fall
+    element.style.position = 'fixed';
+    element.style.transform = `rotate(${tilt}deg)`; // Slight rotation
+    
+    requestAnimationFrame(fall); // Start the fall animation
   });
 
-  document.addEventListener('mousemove', (e) => {
+  // Falling and bouncing logic
+  function fall() {
+    if (!isDragging) {
+      velocityY += gravity; // Increase velocity due to gravity
+      let newTop = element.offsetTop + velocityY;
+      
+      // Check if the element hits the bottom
+      if (newTop + element.offsetHeight >= window.innerHeight) {
+        newTop = window.innerHeight - element.offsetHeight;
+        velocityY = -velocityY * bounceFactor; // Invert and reduce velocity for bounce
+      }
+
+      element.style.top = `${newTop}px`;
+    }
+
+    requestAnimationFrame(fall); // Continue the fall animation
+  }
+
+  // Dragging functionality (Desktop + Mobile Support)
+  function startDrag(e) {
+    isDragging = true;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    offsetX = clientX - element.getBoundingClientRect().left;
+    offsetY = clientY - element.getBoundingClientRect().top;
+    element.style.transition = 'none'; // Disable transition while dragging
+    velocityY = 0; // Reset the falling velocity
+  }
+
+  function dragElement(e) {
     if (isDragging) {
-      let left = e.clientX - offsetX;
-      let top = e.clientY - offsetY;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      let left = clientX - offsetX;
+      let top = clientY - offsetY;
+
+      // Ensure the element stays within the viewport horizontally
+      if (left < 0) left = 0;
+      if (left + element.offsetWidth > window.innerWidth) {
+        left = window.innerWidth - element.offsetWidth;
+      }
 
       element.style.left = `${left}px`;
       element.style.top = `${top}px`;
     }
-  });
+  }
 
-  document.addEventListener('mouseup', () => {
+  function stopDrag() {
     if (isDragging) {
       isDragging = false;
-      element.style.transition = 'top 3s ease-in-out, transform 3s ease-in-out';
-      element.style.top = `calc(100vh - ${element.offsetHeight}px)`; // Reapply gravity
+      requestAnimationFrame(fall); // Resume falling and bouncing
     }
-  });
+  }
+
+  // Event listeners for drag start, drag move, and drag end
+  element.addEventListener('mousedown', startDrag);
+  element.addEventListener('touchstart', startDrag); // Mobile support
+  document.addEventListener('mousemove', dragElement);
+  document.addEventListener('touchmove', dragElement); // Mobile support
+  document.addEventListener('mouseup', stopDrag);
+  document.addEventListener('touchend', stopDrag); // Mobile support
 }
 
 // Apply gravity and dragging to both containers
-applyGravity(pomodoroCard);
-applyGravity(taskContainer);
+applyGravity(pomodoroCard, 0);
+applyGravity(taskContainer, 0);

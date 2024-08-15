@@ -1,7 +1,7 @@
 #focus-mode-container {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 40px;
     display: none; 
     align-items: center;
     z-index: 1000;
@@ -15,18 +15,11 @@
 
 #focus-mode-label {
     display: inline-block;
-    width: 50px;
-    height: 25px;
-    background-image: url('https://i.pngimg.me/thumb/f/720/comdlpng6962962.jpg'); 
-    background-size: cover;
+    width: 40px;
+    height: 61px;
     cursor: pointer;
     transition: background-image 0.3s ease;
 }
-
-#focus-mode-toggle:checked + #focus-mode-label {
-    background-image: url('https://cdn.imgbin.com/17/10/23/imgbin-rubber-duck-ww9WfUUfWBHc0jpT9Hc94GPi8.jpg'); 
-}
-
 #focus-mode-overlay {
     display: none;
     position: fixed;

@@ -146,8 +146,11 @@ function startFocusTimer(time){
 }
 function goFullscreen(){
     lockFullscreen();
+    document.getElementById("imageFocus").src="assets/icons/mascotResizedFocus.png";
+    showMessage("Focus mode started!");
 }
 function focusModeCompleted() {
+    document.getElementById("imageFocus").src="assets/icons/mascotWithoutSunglasses.png";
     unlockFullscreen();
     stopDistract();
     enableButton();
@@ -158,7 +161,6 @@ function disableButton() {
 function enableButton() {
     document.getElementById("focus-mode-toggle").disabled = false;
 }
-
 function showMessage(message) {
     const messageBox = document.createElement("div");
     messageBox.textContent = message;

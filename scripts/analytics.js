@@ -1,4 +1,3 @@
-var totalTime = 0;
 var comparativeChart;
 var totalTimeMinutes=0, pomodoroAnalysisMinutes=0, shortBreakAnalysisMinutes=0, longBreakAnalysisMinutes=0;
 try{

@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const fs = require('fs');
 let closeLocked = false;
 let mainWindow;
 function createWindow() {
@@ -61,6 +62,25 @@ app.whenReady().then(() => {
   ipcMain.handle('unlock-fullscreen', () => {
     closeLocked = false;
     mainWindow.setFullScreen(false);
+  });
+  ipcMain.handle('write-data', (event, data) => {
+    const filePath = path.join(__dirname, 'analytics.json');
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { flag: 'w' });
+  });
+  ipcMain.handle('read-data', (event) => {
+      const filePath = path.join(__dirname, 'analytics.json');
+      if (fs.existsSync(filePath)) {
+          const data = fs.readFileSync(filePath);
+          return JSON.parse(data);
+      }
+      const data= 
+      {
+        "totalTime": 0,
+        "pomodoroAnalysis": 0,
+        "shortBreakAnalysis": 0,
+        "longBreakAnalysis": 0
+      };
+      return data;
   });
 });
 app.on('window-all-closed', () => {

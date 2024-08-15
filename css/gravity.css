@@ -1,0 +1,5 @@
+.floatingTab {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+}

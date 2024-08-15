@@ -13,6 +13,7 @@ rabs.forEach(rab => {
 // Selecting the containers
 const pomodoroCard = document.querySelector('.card');
 const taskContainer = document.querySelector('.pomodoroTask-container');
+console.log(taskContainer);
 
 function applyGravity(element, tilt) {
   let isDragging = false;

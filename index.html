@@ -121,16 +121,20 @@
         </section>
 
         <section id="todo-list" class="tab-content">
-          <div class="floatingTab">
-            <img src="assets/Images/todolist.png" alt="To-Do Icon" class="todo-icon">
-            <h2>To-Do List</h2>
-            <div class="todo-container">
-                <h3>Your Tasks</h3>
-                <div class="todo-input">
-                    <input type="text" id="new-task" placeholder="Add a new task..." />
-                    <button id="add-task">Add</button>
+          <div class="aligner">
+            <div class="positionLimiter">
+              <div class="floatingTab">
+                <img src="assets/Images/todolist.png" alt="To-Do Icon" class="todo-icon">
+                <h2>To-Do List</h2>
+                <div class="todo-container">
+                    <h3>Your Tasks</h3>
+                    <div class="todo-input">
+                        <input type="text" id="new-task" placeholder="Add a new task..." />
+                        <button id="add-task">Add</button>
+                    </div>
+                    <ul id="task-list"></ul>
                 </div>
-                <ul id="task-list"></ul>
+              </div>
             </div>
           </div>
       </section>

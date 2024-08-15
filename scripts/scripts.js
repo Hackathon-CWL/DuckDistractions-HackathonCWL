@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
             else {
                 section.style.display = 'none';
             }
+            if (section.id !== 'todo-list') {
+                vx = 2.5;
+                vy = 3.5;            
+            }
         });
     }
     document.querySelector('.sidebar-toggle').addEventListener('click', function() {

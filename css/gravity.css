@@ -2,4 +2,83 @@
     position: absolute;
     cursor: grab;
     user-select: none;
+    width: 540px;
+}
+.positionLimiter {
+    position: relative;
+    height: 89vh;
+    width: 89vw;
+    align-self: center;
+    overflow:  hidden;
+    border-radius: 20px;
+
+}
+.aligner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.todo-container {
+    max-height: 30vh; 
+    overflow-y: auto; 
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Scrollbar of the todo list styling*/
+.todo-container::-webkit-scrollbar {
+    width: 10px;
+}
+.todo-container::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+.todo-container::-webkit-scrollbar-thumb {
+    background: #0b38356f transparent; 
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0); 
+}
+.todo-container::-webkit-scrollbar-thumb:hover {
+    background: #0b38356f transparent; 
+}
+.todo-container {
+    scrollbar-width: thin; 
+    scrollbar-color: #0b38356f transparent; 
+}
+
+
+
+
+html::-webkit-scrollbar {
+    width: 10px;
+    color: #0b38356f;
+    background: #0b3835c8;
+}
+html::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #0b3835c8;
+}
+html::-webkit-scrollbar-thumb {
+    background: #0b38356f; 
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0); 
+}
+html::-webkit-scrollbar-thumb:hover {
+    background: #0b38356f; 
+}
+html {
+    scrollbar-width: thin; 
+    scrollbar-color: #0b38356f transparent; 
 }

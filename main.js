@@ -64,11 +64,11 @@ app.whenReady().then(() => {
     mainWindow.setFullScreen(false);
   });
   ipcMain.handle('write-data', (event, data) => {
-    const filePath = path.join(__dirname, 'analytics.json');
+    const filePath = path.join(__dirname, 'analytics/data/analytics.json');
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { flag: 'w' });
   });
   ipcMain.handle('read-data', (event) => {
-      const filePath = path.join(__dirname, 'analytics.json');
+      const filePath = path.join(__dirname, 'analytics/data/analytics.json');
       if (fs.existsSync(filePath)) {
           const data = fs.readFileSync(filePath);
           return JSON.parse(data);

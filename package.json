@@ -1,29 +1,45 @@
 {
   "name": "DuckDistractions",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Electron app for Duck Distractions",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build": "electron-builder build --win --mac --linux"
   },
   "build": {
-    "appId": "com.example.DuckDistractions",
+    "appId": "org.theduckdistractionsteam.DuckDistractions",
     "productName": "DuckDistractions",
+    "win": {
+      "icon": "assets/icons/icon.png"
+    },
     "files": [
-      "**/*"
+      "main.js",
+      "index.html",
+      "scripts/preload.js",
+      "analytics/analytics.json",
+      "assets/**/*",
+      "css/**/*",
+      "scripts/**/*",
+      "assets/imgs/**/*",
+      "assets/imgs/background.jpg",
+      "assets/imgs/aboutUs/**/*"
     ],
     "directories": {
       "output": "app"
-    }
+    },
+    "extraResources": [
+      "assets/**"
+    ]
+    
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["electron", "duck", "distractions", "productivity", "app", "focus"],
+  "author": "The DuckDistractions Team",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^31.3.1",
-    "electron-builder": "^24.13.3",
-    "electron-packager": "^17.1.2"
+    "electron-builder": "^24.13.3"
   }
 }

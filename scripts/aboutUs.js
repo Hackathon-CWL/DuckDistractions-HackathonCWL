@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     preloadImages([
-        'assets/images/aboutUs/aboutUs_img1.jpg',
-        'assets/images/aboutUs/aboutUs_img2.jpg',
-        'assets/images/aboutUs/aboutUs_img3.jpg',
-        'assets/images/aboutUs/aboutUs_img4.jpg'
+        'assets/imgs/aboutUs/aboutUs_img1.jpg',
+        'assets/imgs/aboutUs/aboutUs_img2.jpg',
+        'assets/imgs/aboutUs/aboutUs_img3.jpg',
+        'assets/imgs/aboutUs/aboutUs_img4.jpg'
     ]);
 
     const sections = document.querySelectorAll(".about-section");
     const body = document.body;
     const backgrounds = [
-        'url("assets/images/aboutUs/aboutUs_img1.jpg")',
-        'url("assets/images/aboutUs/aboutUs_img2.jpg")',
-        'url("assets/images/aboutUs/aboutUs_img3.jpg")',
-        'url("assets/images/aboutUs/aboutUs_img4.jpg")'
+        'url("assets/imgs/aboutUs/aboutUs_img1.jpg")',
+        'url("assets/imgs/aboutUs/aboutUs_img2.jpg")',
+        'url("assets/imgs/aboutUs/aboutUs_img3.jpg")',
+        'url("assets/imgs/aboutUs/aboutUs_img4.jpg")'
     ];
     let currentIndex = -1;
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function resetBackground() {
-        body.style.backgroundImage = 'url("assets/images/background.jpg")';
+        body.style.backgroundImage = 'url("assets/imgs/background.jpg")';
         currentIndex = -1;
     }
 

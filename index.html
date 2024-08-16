@@ -19,28 +19,28 @@
 <body>
     <header>
         <div class="logo" style="display: flex; align-items: flex-end;">
-          <a href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
-            <div style="font-size: 32px; align-self: flex-start; font-style: normal; text-decoration: none;"><a href="index.html" style="color: black; text-decoration: none;">DuckDistractions</a></div>
+          <a><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start;"></a>
+            <div style="font-size: 32px; align-self: flex-start; font-style: normal; text-decoration: none;"><a style="color: black; text-decoration: none;">DuckDistractions</a></div>
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a class="menuButtons" href="#" id="titleButtonHome" onclick="showSection('get-started'); editView('titleButtonHome');">Home</a></li>
-                <li><a class="menuButtons" href="#" id="titleButtonPomodoro" onclick="showSection('pomodoro'); editView('titleButtonPomodoro');">Pomodoro</a></li>
-                <li><a class="menuButtons" href="#" id="titleButtonTodo-list" onclick="showSection('todo-list'); editView('titleButtonTodo-list');">To-Do</a></li>
-                <li><a class="menuButtons" href="#" id="titleButtonAnalytics" onclick="showSection('analytics'); editView('titleButtonAnalytics');">Analytics</a></li>
-                <li><a class="menuButtons" href="#" id="titleButtonAbout-us" onclick="showSection('about-us'); editView('titleButtonAbout-us');">About</a></li>
+                <li><a class="menuButtons" id="titleButtonHome" onclick="showSection('get-started'); editView('titleButtonHome');">Home</a></li>
+                <li><a class="menuButtons" id="titleButtonPomodoro" onclick="showSection('pomodoro'); editView('titleButtonPomodoro');">Pomodoro</a></li>
+                <li><a class="menuButtons" id="titleButtonTodo-list" onclick="showSection('todo-list'); editView('titleButtonTodo-list');">To-Do</a></li>
+                <li><a class="menuButtons" id="titleButtonAnalytics" onclick="showSection('analytics'); editView('titleButtonAnalytics');">Analytics</a></li>
+                <li><a class="menuButtons" id="titleButtonAbout-us" onclick="showSection('about-us'); editView('titleButtonAbout-us');">About</a></li>
 
             </ul>
         </nav>
         <div class="sidebar-toggle">&#9776;</div>
         <nav class="mobile-nav">
             <ul>
-                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 32px; font-weight: bold;" href="index.html"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width: 40px; height: 60px;"></a></li>
-                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('get-started')"><img src="assets/icons/home_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Home</a></li>
-                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Pomodoro</a></li>
-                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('todo-list')"><img src="assets/imgs/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">To-Do List</a></li>
-                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('analytics')"><img src="assets/icons/analytics_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Analytics</a></li>
-                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" href="#" onclick="showSection('about-us')"><img src="assets/icons/about_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">About</a></li>
+                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 32px; font-weight: bold;"><img src="assets/icons/mascotResized.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width: 40px; height: 60px;"></a></li>
+                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" onclick="showSection('get-started')"><img src="assets/icons/home_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Home</a></li>
+                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" onclick="showSection('pomodoro')"><img src="assets/icons/pomodoro_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Pomodoro</a></li>
+                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" onclick="showSection('todo-list')"><img src="assets/imgs/todolist.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">To-Do List</a></li>
+                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" onclick="showSection('analytics')"><img src="assets/icons/analytics_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">Analytics</a></li>
+                <li><a class="menuButtons" style="color: rgb(0, 0, 0); text-decoration: none;" onclick="showSection('about-us')"><img src="assets/icons/about_black.png" style="margin-top: 0px; margin-left: 0px; margin-right: 10px; align-items: start; width:40px; height: 40px;">About</a></li>
             </ul>
         </nav>
     </header>
@@ -201,11 +201,11 @@
                   <p>Go ahead! Click on the duck and duckDistractions!!</p>
                   <div class="duck-container">
                       <div class="duck-image">
-                          <img src="assets/Images/aboutUs/mascotWithoutSunglasses.png" alt="Poopy Duck">
+                          <img src="assets/icons/mascotWithoutSunglasses.png" alt="Poopy Duck">
                       </div>
                       <div class="arrow">➡</div>
                       <div class="coolDuck-image">
-                          <img src="assets/Images/aboutUs/mascotResized.png" alt="Cool ducks">
+                          <img src="assets/icons/mascotResizedFocus.png" alt="Cool ducks">
                       </div>
                   </div>
               </div>
@@ -232,7 +232,7 @@
                   <p>A to-do list can be your best friend. It helps you organize and remember all your tasks for the day and it’s always super satisfying to check things off, and it helps you stay on top of everything.</p>
                   <p>Give it a try ONLY IF YOU CAN CATCH IT!</p>
                   <div class="todo-image">
-                      <img src="assets/Images/aboutUs/todo_tut.jpg" img="todoImg" alt="To do list">
+                      <img src="assets/Images/aboutUs/todo_tut1.jpg" id="todoImg" alt="To do list">
                   </div>
               </div>
           </div>
@@ -244,7 +244,7 @@
                   <p>Well fear not! We've conviently included all useless things you could've done!</p>
                   <p>Enjoy!</p>
                   <div class="analytics-image">
-                      <img src="assets/Images/aboutUs/Analytics_tut5.jpg" id="analyticsImg" alt="Analytics">
+                      <img src="assets/Images/aboutUs/Analytics_tut.jpg" id="analyticsImg" alt="Analytics">
                   </div>
               </div>
           </div>
@@ -258,7 +258,7 @@
                     <div class="footer-content">
                         <div class="footer-section">
                             <h2>Contact Us</h2>
-                            <p>Have questions or feedback? Connect with us:</p>
+                            <p>Connect with The DuckDistractions™ Team: </p>
                         </div>
                         <div class="footer-section">
                             <div id="daamin-contact" class="contact-item">

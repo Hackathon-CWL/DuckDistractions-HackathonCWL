@@ -1,13 +1,11 @@
-const movingElements = document.querySelectorAll('.moving-element');
-const containerHome = document.querySelector('.homepage-container');
-const buttons = document.querySelectorAll('.homepage-button');
-
-containerHome.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { width, height } = containerHome.getBoundingClientRect();
-    movingElements.forEach((element) => {
-        const moveX = (clientX / width - 0.5) * 40;
-        const moveY = (clientY / height - 0.5) * 40;
-        element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+const mE = document.querySelectorAll('.moving-element');
+const cont = document.querySelector('.homepage-container');
+cont.addEventListener('mousemove', (e) => {
+    const { x, y } = e;
+    const { w, h } = containerHome.getBoundingClientRect();
+    mE.forEach((id) => {
+        const mX = (x / w - 0.5) * 40;
+        const mY = (y / h - 0.5) * 40;
+        id.style.transform = `translate(${mX}px, ${mY}px)`;
     });
 });

@@ -7,6 +7,7 @@ const distractionTitle = document.getElementById('distracting-content-title');
 const distractionDesc = document.getElementById('distracting-content-description');
 const distractionImageContainer = document.getElementById('image-container');
 const distractionVidContainer = document.getElementById('youtube-container');
+const popupCont=document.querySelector('.popup-content');
 
 let distractor;
 function distract(){
@@ -16,13 +17,15 @@ function distract(){
             case 1:
                 distractionTitle.innerHTML = 'Check out this YouTube™ video!';
                 distractionDesc.innerHTML = 'The Daily Dose of Internet made a compilation for 2022, check it out.';
-                distractionYoutube.src='https://www.youtube-nocookie.com/embed/MH-VHYtjdfY?si=4ixcKVhmsTym3-HA&amp;controls=0&amp;autplay=1';
+                distractionYoutube.src='https://www.youtube-nocookie.com/embed/MH-VHYtjdfY?si=4ixcKVhmsTym3-HA&amp;controls=0&amp;autoplay=1';
                 distractionYoutube.style.display = 'block';
                 distractionVidContainer.style.display = 'block';
                 popup.style.display = 'block';
+                popupCont.style.height = '450px'; 
                 setTimeout(()=>{
                     distractionYoutube.src='';
                     popup.style.display = 'none';
+                    popupCont.style.height = '600px';
                     distractionVidContainer.style.display = 'none';
                     distractionYoutube.style.display = 'none';
                 }, 10*1000);
@@ -34,7 +37,9 @@ function distract(){
                 distractionYoutube.style.display = 'block';
                 distractionVidContainer.style.display = 'block';
                 popup.style.display = 'block';
+                popupCont.style.height = '450px'; 
                 setTimeout(()=>{
+                    popupCont.style.height = '600px'; 
                     distractionYoutube.src='';
                     popup.style.display = 'none';
                     distractionVidContainer.style.display = 'none';
@@ -48,7 +53,9 @@ function distract(){
                 distractionYoutube.style.display = 'block';
                 document.getElementById('youtube-container').style.display = 'block';
                 popup.style.display = 'block';
+                popupCont.style.height = '450px'; 
                 setTimeout(()=>{
+                    popupCont.style.height = '600px'; 
                     distractionYoutube.src='';
                     popup.style.display = 'none';
                     document.getElementById('youtube-container').style.display = 'none';
@@ -62,7 +69,9 @@ function distract(){
                 distractionYoutube.style.display = 'block';
                 distractionVidContainer.style.display = 'block';
                 popup.style.display = 'block';
+                popupCont.style.height = '450px'; 
                 setTimeout(()=>{
+                    popupCont.style.height = '600px'; 
                     distractionYoutube.src='';
                     popup.style.display = 'none';
                     distractionVidContainer.style.display = 'none';
@@ -597,7 +606,62 @@ function distract(){
                     distractionImageContainer.style.display='none';
                 }, 10*1000);
                 break;
-
+            case 49:
+                distractionTitle.innerHTML = 'Check out Eminem\'s new album!';
+                distractionDesc.innerHTML = 'Check out this new album, it has such good bangers!!';
+                distractionSpotify.src='https://open.spotify.com/embed/album/3kjHLu1pL7tdY88GFwEkl6?utm_source=generator';
+                distractionSpotify.style.display = 'block';
+                popup.style.display = 'block';
+                popupCont.style.height = '280px'; 
+                setTimeout(()=>{
+                    distractionSpotify.src='';
+                    popup.style.display = 'none';
+                    popupCont.style.height = '600px';
+                    distractionSpotify.style.display = 'none';
+                }, 10*1000);
+                break;
+            case 50:
+                distractionTitle.innerHTML = 'Check out Travis Scott\'s new album!';
+                distractionDesc.innerHTML = 'Check out this new album, it has such good bangers!!';
+                distractionSpotify.src='https://open.spotify.com/embed/album/18NOKLkZETa4sWwLMIm0UZ?utm_source=generator';
+                distractionSpotify.style.display = 'block';
+                popup.style.display = 'block';
+                popupCont.style.height = '280px'; 
+                setTimeout(()=>{
+                    distractionSpotify.src='';
+                    popup.style.display = 'none';
+                    popupCont.style.height = '600px';
+                    distractionSpotify.style.display = 'none';
+                }, 10*1000);
+                break;
+            case 51:
+                distractionTitle.innerHTML = 'Check out Bryan Adams\' new album!';
+                distractionDesc.innerHTML = 'Check out this new album, it has such good bangers!!';
+                distractionSpotify.src='https://open.spotify.com/embed/album/03XgnNQDve2dWqBG1ARjvR?utm_source=generator';
+                distractionSpotify.style.display = 'block';
+                popup.style.display = 'block';
+                popupCont.style.height = '280px'; 
+                setTimeout(()=>{
+                    distractionSpotify.src='';
+                    popup.style.display = 'none';
+                    popupCont.style.height = '600px';
+                    distractionSpotify.style.display = 'none';
+                }, 10*1000);
+                break;
+            case 52:
+                distractionTitle.innerHTML = 'Check out the new album from Panic At The Disco!';
+                distractionDesc.innerHTML = 'Check out this new album, it has such good bangers!!';
+                distractionSpotify.src='https://open.spotify.com/embed/album/1hxraaWEf3wFnJxADf8Dge?utm_source=generator';
+                distractionSpotify.style.display = 'block';
+                popup.style.display = 'block';
+                popupCont.style.height = '280px'; 
+                setTimeout(()=>{
+                    distractionSpotify.src='';
+                    popup.style.display = 'none';
+                    popupCont.style.height = '600px';
+                    distractionSpotify.style.display = 'none';
+                }, 10*1000);
+                break;
         }
     }, 13000);
 }

@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const focusModeContainer = document.getElementById('focus-mode-container');
     function toggleFocusModeButton() {
-        //if (currentSection === 'pomodoro' || currentSection === 'todo-list' || currentSection === 'analytics') {
             focusModeContainer.style.display = 'flex';
-       // } else {
-            //focusModeContainer.style.display = 'none'; 
-       // }
     }
     toggleFocusModeButton();
     const menuButtons = document.querySelectorAll('.menuButtons');
@@ -135,13 +131,15 @@ function selectText(element) {
 }
 var timeElapsed = 0;
 function startFocusTimer(time){
-    setInterval(() => {
+    const focusTimer= setInterval(() => {
         timeElapsed++;
         if (timeElapsed === time) {
             timeElapsed = 0;
             focusModeCompleted();
             showMessage("Focus mode completed!");
             timeElapsed = 0;
+            clearInterval(focusTimer);
+            time=0;
             return;
         }
     }, 1000);

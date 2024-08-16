@@ -9,7 +9,7 @@ let offsetX, offsetY;
 let acceleration=0.5;
 function moveCard() {
     if (!isDragging) {
-        vx += (Math.random() - 0.5) * 0.2;  // Random direction changes
+        vx += (Math.random() - 0.5) * 0.2;  
         vy += (Math.random() - 0.5) * 0.2;
         x += vx;
         y += vy;

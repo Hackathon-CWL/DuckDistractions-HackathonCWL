@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron');
 const path = require('path');
 const fs = require('fs');
 let closeLocked = false;
@@ -16,7 +16,6 @@ function createWindow() {
     },
     autoHideMenuBar: true 
   });
-
   mainWindow.loadFile('index.html');
   mainWindow.maximize();
   mainWindow.on('close', (event) => {
@@ -34,7 +33,7 @@ function createWindow() {
       event.preventDefault()
     }
     if (closeLocked){    
-      if (input.control && input.shift && input.key==='Escape' || input.key === 'Meta' || input.key === 'F11' || input.key === 'Escape' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
+      if (input.key === 'Meta' || input.key === 'F11' || input.key === 'Escape' || (input.control && input.key === 'w' ) || (input.control && input.key === 'q')){
           event.preventDefault()
        }
     }
@@ -54,6 +53,14 @@ function createWindow() {
     }
   }, 30*1000);  
 }
+app.on('browser-window-focus', function () {
+  globalShortcut.register("CommandOrControl+R", () => {});
+  globalShortcut.register("F5", () => {});
+});
+app.on('browser-window-blur', function () {
+  globalShortcut.unregister('CommandOrControl+R');
+  globalShortcut.unregister('F5');
+});
 app.whenReady().then(() => {
   const dirPath = path.join('analytics');
   fs.access(dirPath, fs.constants.F_OK, (err) => {

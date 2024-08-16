@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         li.appendChild(deleteButton);
         taskList.appendChild(li);
         taskInput.value = "";
-        const added= new Audio('assets/Sound effects/happy-message.mp3');
+        const added= new Audio('assets/Sound effects/taskAdded.mp3');
         added.play();
     }
 

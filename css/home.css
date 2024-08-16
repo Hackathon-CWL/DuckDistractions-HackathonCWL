@@ -4,18 +4,35 @@ body {
     padding: 0;
 
 }
+
 .homepage-container {
-    height: 100vh;
+    height: 75vh;
+    width: max-content;
+    border-radius: 15px;
+    padding: 15px;
+    align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     background: transparent;
-    position: absolute;
-    top: 40px;
+    position: relative;
+    margin: 0 auto; 
+}
+.background-box-home {
+    backdrop-filter: blur(3px);
+    padding: 15px;
+    border-radius: 15px;
+    position: relative; 
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: float 10s ease-in-out infinite;
 }
 
+.background-box-home:hover {
+    transform: translateY(-5px);
+}
 .homepage-title {
     font-size: 3rem;
     color: #ffffff;

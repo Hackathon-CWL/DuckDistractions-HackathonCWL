@@ -46,24 +46,26 @@
     </header>
           <section id="get-started" class="tab-content active">
             <div class="homepage-container">
+              <div class = "background-box-home">
                 <h1 class="homepage-title moving-element">Welcome to DuckDistractions™</h1>
                 <div class="button-container">
-                    <button class="homepage-button moving-element">
+                    <button class="homepage-button moving-element" onclick="showSection('pomodoro'); editView('titleButtonPomodoro);">
                         <i class="fas fa-clock"></i>
                         Pomodoro
                     </button>
-                    <button class="homepage-button moving-element">
+                    <button class="homepage-button moving-element" onclick="showSection('todo-list'); editView('titleButtonTodo-list');">
                         <i class="fas fa-list-ul"></i>
                         To-Do List
                     </button>
-                    <button class="homepage-button moving-element">
+                    <button class="homepage-button moving-element" onclick="showSection('analytics'); editView('titleButtonAnalytics');">
                         <i class="fas fa-chart-line"></i>
                         Analytics
                     </button>
-                    <button class="homepage-button moving-element">
+                    <button class="homepage-button moving-element" onclick="showSection('about-us'); editView('titleButtonAbout-us');" >
                         <i class="fas fa-info-circle"></i>
                         About
                     </button>
+                </div>
                 </div>
             </div>
         </section>
@@ -187,7 +189,7 @@
               </section>
         </section>
 
-        <section id="about-us" class="tab-content active">
+        <section id="about-us" class="tab-content">
           <div class="about-section" id="section1">
               <div class="background-box">
                   <h2>Focus Mode</h2>

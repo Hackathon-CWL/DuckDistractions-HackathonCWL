@@ -1,50 +1,46 @@
 html {
     scroll-behavior: smooth;
 }
-/* Common styles for sections with images and text inside the background-box */
+
 .background-box {
-    background-color: rgba(255, 255, 255, 0.353); /* Light background with slight transparency */
+    background-color: rgba(255, 255, 255, 0.353);
     backdrop-filter: blur(5px);
-    border-radius: 15px; /* Curved corners */
-    /* padding: 20px 30px; Padding inside the box */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3); /* Metallic look with slight shadow */
-    margin: 20px auto; /* Center the background box */
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    margin: 20px auto;
     text-align: center;
     max-width: 90vh;
     padding: 20px 20px 20px;
 }
 
-/* Styling for text inside background-box */
 .background-box h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
-    color: #000; /* Black font color */
-    margin-bottom: 10px; /* Space below the heading */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Grayish outline effect */
+    font-size: 2.5em;
+    color: #000;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .background-box p {
-    font-size: 1.25em; /* Increase font size for paragraphs */
-    color: #000; /* Black font color */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Grayish outline effect */
+    font-size: 1.25em;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Image styles for the background-box */
 .background-box img {
     display: block;
-    margin: 20px auto; /* Center the images */
-    max-width: 40%; /* Adjust size of the images */
+    margin: 20px auto;
+    max-width: 40%;
     height: auto;
-    border-radius: 10px; /* Optional: Add slight rounding to image corners */
+    border-radius: 10px;
 }
 
-/* Adjusting padding and margin for responsive screens */
 @media (max-width: 768px) {
     .background-box {
-        padding: 50px 10px; /* Adjust padding for smaller screens */
+        padding: 50px 10px;
         max-width: 100%;
     }
     .background-box img {
-        max-width: 80%; /* Larger image size on smaller screens */
+        max-width: 80%;
     }
 }
 
@@ -55,70 +51,63 @@ body {
     transition: background-image 0s ease-in-out; 
 }
 
-/* Styling for the 'Thank You!' section */
 #section4 {
-    background-color: rgba(255, 255, 255, 0.353); /* Light background with slight transparency */
+    background-color: rgba(255, 255, 255, 0.353);
     backdrop-filter: blur(5px);
-    padding: 20px 30px 20px; /* Adjust padding, more space at the top and sides */
-    border-radius: 15px; /* Curved corners */
-    display: inline-block; /* Ensure the rectangle wraps tightly around the text */
-    text-align: center; /* Center-align text */
+    padding: 20px 30px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
     min-height: 30vh;
     max-width: 90vh;
-    margin: 40px auto 0px; /* Center the section horizontally, add space above, 20px space below */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3); /* Metallic look with slight shadow */
+    margin: 40px auto 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Grayish outline for the text */
 #section4 h2,
 #section4 p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Grayish outline effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #section4 h2 {
-    font-size: 2.5em; /* Larger font size for the heading */
-    color: #000; /* Black font color */
-    margin-bottom: 10px; /* Space below the heading */
+    font-size: 2.5em;
+    color: #000;
+    margin-bottom: 10px;
 }
 
 #section4 p {
-    font-size: 1.25em; /* Increase font size for paragraphs */
-    color: #000; /* Black font color */
-    line-height: 1.6; /* Increase line height for readability */
-    margin-bottom: 0; /* No extra space between paragraphs */
-    padding-bottom: 20px; /* Ensure 20px space below the last line of text */
+    font-size: 1.25em;
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding-bottom: 20px;
 }
 
 #section4 p:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+    margin-bottom: 0;
 }
 
-/* Mobile view adjustments */
 @media (max-width: 768px) {
     #section4 {
-        padding: 15px 20px 5px; /* Adjust padding for smaller screens */
+        padding: 15px 20px 5px;
     }
 
     #section4 h2 {
-        font-size: 2em; /* Slightly smaller font size on mobile */
+        font-size: 2em;
     }
 
     #section4 p {
-        font-size: 1.1em; /* Adjust paragraph font size */
+        font-size: 1.1em;
     }
 }
 
-
-
-
-/* Footer Section Styles */
 #contact-footer {
-    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
-    backdrop-filter: blur(10px); /* Apply blur effect */
-    color: #000; /* Set font color to black */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: #000;
     padding: 40px 20px;
     text-align: center;
-    display: none; /* Initially hide the footer */
+    display: none;
     margin-top: 90px;
     border-radius: 20px;
 }
@@ -137,7 +126,7 @@ body {
 #contact-footer h2, 
 #contact-footer h3 {
     margin-bottom: 15px;
-    color: #000; /* Black color for headings */
+    color: #000;
     font-weight: bold;
     font-size: 28px;
 }
@@ -147,47 +136,45 @@ body {
 }
 
 #contact-footer a {
-    color: #000; /* Black color for links */
+    color: #000;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 #contact-footer a:hover {
-    color: #e74c3c; /* Red color on hover */
+    color: #e74c3c;
 }
 
-/* Responsive adjustments for screens smaller than 768px */
 @media (max-width: 768px) {
     #contact-footer {
-        padding: 20px 10px; /* Reduce padding on smaller screens */
+        padding: 20px 10px;
     }
 
     #contact-footer .footer-content {
-        flex-direction: column; /* Stack sections vertically */
-        align-items: center; /* Center-align content */
+        flex-direction: column;
+        align-items: center;
     }
 
     #contact-footer .footer-section {
         flex: 1 1 100%;
-        margin: 10px 0; /* Increase vertical spacing */
+        margin: 10px 0;
     }
 
     #contact-footer h2, 
     #contact-footer h3 {
-        font-size: 1.5em; /* Slightly larger font size */
+        font-size: 1.5em;
     }
 
     #contact-footer p {
-        font-size: 1em; /* Adjust paragraph font size */
+        font-size: 1em;
         margin-bottom: 15px;
     }
 
     #contact-footer a {
-        font-size: 1em; /* Adjust link font size */
+        font-size: 1em;
     }
 }
 
-/* Ensure footer is only visible in the About Us section */
 .tab-content.active#about-us #contact-footer {
     display: block;
 }
@@ -201,12 +188,12 @@ body {
 }
 
 .duck-image img {
-    width: 40px; /* Adjust size if needed */
+    width: 40px;
     height: auto;
 }
 
 .coolDuck-image img {
-    width: 40px; /* Increase the size of the cool duck */
+    width: 40px;
     height: auto;
 }
 

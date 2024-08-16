@@ -5,6 +5,7 @@
     display: none; 
     align-items: center;
     z-index: 1000;
+    border: 3px groove #000;
 }
 
 #focus-mode-toggle {

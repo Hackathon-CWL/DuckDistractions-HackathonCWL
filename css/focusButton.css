@@ -161,7 +161,7 @@
     font-weight: bolder;
 }
 
-.video-container {
+#image-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
@@ -169,7 +169,7 @@
     overflow: hidden;
 }
 
-.video-container iframe {
+#image-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -177,7 +177,7 @@
     height: 100%;
 }
 
-.youtube-container {
+#youtube-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
@@ -185,7 +185,7 @@
     overflow: hidden;
 }
 
-.youtube-container iframe {
+#youtube-container iframe {
     position: absolute;
     top: 0;
     left: 0;

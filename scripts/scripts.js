@@ -32,7 +32,6 @@ const footer = document.getElementById('contact-footer');
 const aboutTab = document.getElementById('about-us');
 
 function toggleFooter() {
-    console.log(currentSection);
     if (currentSection=='about-us') {
         footer.style.display = 'block';
     } else {

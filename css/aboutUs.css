@@ -153,3 +153,58 @@ body {
 .tab-content.active#about-us #contact-footer {
     display: block;
 }
+
+.duck-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 40px;
+}
+
+.duck-image img {
+    width: 40px; /* Adjust size if needed */
+    height: auto;
+}
+
+.coolDuck-image img {
+    width: 40px; /* Increase the size of the cool duck */
+    height: auto;
+}
+
+.arrow {
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pomodoro-image img {
+    display: block;
+    margin: 20px auto; /* Center the placeholder image */
+    max-width: 20%;
+    height: auto;
+}
+
+.placeholder-image img {
+    display: block;
+    margin: 20px auto; /* Center the placeholder image */
+    max-width: 20%;
+    height: auto;
+}
+
+.placeholder-image img {
+    display: block;
+    margin: 20px auto; /* Center the placeholder image */
+    max-width: 20%;
+    height: auto;
+}
+
+.placeholder-image img {
+    display: block;
+    margin: 20px auto; /* Center the placeholder image */
+    max-width: 20%;
+    height: auto;
+}

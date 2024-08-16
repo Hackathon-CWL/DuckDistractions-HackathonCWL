@@ -1,7 +1,7 @@
 {
   "name": "DuckDistractions",
   "version": "1.0.0",
-  "description": "An Electron app for Duck Distractions",
+  "description": "A productivity app that helps you focus and says \"DUCK YOU DISTRACTIONS!\"",
   "main": "main.js",
   "scripts": {
     "start": "electron .",

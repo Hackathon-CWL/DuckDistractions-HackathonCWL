@@ -1,6 +1,24 @@
 const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron');
 const path = require('path');
+const os = require('os');
 const fs = require('fs');
+const directory = os.homedir();
+const filePath = path.join(directory, 'AppData', 'Roaming');
+const jsonfile = path.join(filePath, 'DuckDistractions', 'analytics.json');
+const defjson = {
+  "totalTime": 0,
+  "pomodoroAnalysis": 0,
+  "shortBreakAnalysis": 0,
+  "longBreakAnalysis": 0
+};
+if (!fs.existsSync(path.join(filePath, 'DuckDistractions'))) {
+  fs.mkdirSync(path.join(filePath, 'DuckDistractions'));
+}
+if (!fs.existsSync(jsonfile)) {
+  fs.writeFileSync(jsonfile, JSON.stringify(defjson, null, 2), 'utf-8');
+} 
+else {
+}
 let closeLocked = false;
 let mainWindow;
 function createWindow() {
@@ -19,7 +37,7 @@ function createWindow() {
   mainWindow.loadFile('index.html');
   mainWindow.maximize();
   mainWindow.on('close', (event) => {
-    if (closeLocked){
+    if (closeLocked){``
       event.preventDefault();
     }
   });
@@ -62,13 +80,6 @@ app.on('browser-window-blur', function () {
   globalShortcut.unregister('F5');
 });
 app.whenReady().then(() => {
-  const dirPath = path.join('analytics');
-  fs.access(dirPath, fs.constants.F_OK, (err) => {
-    if (err) {
-      fs.mkdir(dirPath, { recursive: true }, (err) => {
-      });
-    }
-  });
   createWindow();
   ipcMain.handle('lock-fullscreen', () => {
     closeLocked = true;
@@ -79,9 +90,9 @@ app.whenReady().then(() => {
     mainWindow.setFullScreen(false);
   });
   ipcMain.handle('write-data', (event, data) => {
+    console.log(JSON.stringify(data, null, 2));
     try {
-      const filePath = path.join(__dirname, 'analytics/analytics.json');
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { flag: 'w' });
+      fs.writeFileSync(jsonfile, JSON.stringify(data, null, 2), { flag: 'w' });
     }
     catch (err) {
       //do nothing
@@ -89,9 +100,8 @@ app.whenReady().then(() => {
   });
   ipcMain.handle('read-data', (event) => {
     try{
-      const filePath = path.join(__dirname, 'analytics/analytics.json');
-      if (fs.existsSync(filePath)) {
-          const data = fs.readFileSync(filePath);
+      if (fs.existsSync(jsonfile)) {
+          const data = fs.readFileSync(jsonfile);
           return JSON.parse(data);
       }
     }

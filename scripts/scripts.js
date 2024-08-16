@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 vy = 3.5;            
             }
         });
+        toggleFooter(); 
     }
     document.querySelector('.sidebar-toggle').addEventListener('click', function() {
         const mobileNav = document.querySelector('.mobile-nav');
@@ -27,3 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     showSection('get-started');
 });
+const footer = document.getElementById('contact-footer');
+const aboutTab = document.getElementById('about-us');
+
+function toggleFooter() {
+    console.log(currentSection);
+    if (currentSection=='about-us') {
+        footer.style.display = 'block';
+    } else {
+        footer.style.display = 'none';
+    }
+}

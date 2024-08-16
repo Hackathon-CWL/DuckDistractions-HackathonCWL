@@ -6,11 +6,12 @@ html {
     background-color: rgba(255, 255, 255, 0.353); /* Light background with slight transparency */
     backdrop-filter: blur(5px);
     border-radius: 15px; /* Curved corners */
-    padding: 20px 30px; /* Padding inside the box */
+    /* padding: 20px 30px; Padding inside the box */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3); /* Metallic look with slight shadow */
     margin: 20px auto; /* Center the background box */
     text-align: center;
     max-width: 90vh;
+    padding: 20px 20px 20px;
 }
 
 /* Styling for text inside background-box */
@@ -24,9 +25,6 @@ html {
 .background-box p {
     font-size: 1.25em; /* Increase font size for paragraphs */
     color: #000; /* Black font color */
-    line-height: 1.6; /* Increase line height for readability */
-    margin-bottom: 0; /* No extra space between paragraphs */
-    padding-bottom: 20px; /* Ensure 20px space below the last line of text */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Grayish outline effect */
 }
 

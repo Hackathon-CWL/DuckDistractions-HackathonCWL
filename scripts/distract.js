@@ -11,8 +11,7 @@ const distractionVidContainer = document.getElementById('youtube-container');
 let distractor;
 function distract(){
     distractor = setInterval(() => {
-        //const randomNumber = Math.floor(Math.random() * 46) + 1;
-        const randomNumber = 3;
+        const randomNumber = Math.floor(Math.random() * 48) + 1;
         switch(randomNumber){
             case 1:
                 distractionTitle.innerHTML = 'Check out this YouTube™ video!';
@@ -566,6 +565,30 @@ function distract(){
                 distractionTitle.innerHTML = 'Check out this funny meme!';
                 distractionDesc.innerHTML = 'Lol, this is funny welp...';
                 distractionImage.src='assets/Memes/small/42.jpeg';  
+                distractionImageContainer.style.display = 'block';
+                popup.style.display = 'block';
+                setTimeout(()=>{
+                    distractionImage.src='';
+                    popup.style.display = 'none';
+                    distractionImageContainer.style.display='none';
+                }, 10*1000);
+                break;
+            case 47:
+                distractionTitle.innerHTML = 'Check out this funny meme!';
+                distractionDesc.innerHTML = 'Lol, this is funny welp...';
+                distractionImage.src='assets/Memes/small/43.jpeg';  
+                distractionImageContainer.style.display = 'block';
+                popup.style.display = 'block';
+                setTimeout(()=>{
+                    distractionImage.src='';
+                    popup.style.display = 'none';
+                    distractionImageContainer.style.display='none';
+                }, 10*1000);
+                break;
+            case 48:
+                distractionTitle.innerHTML = 'Check out this funny meme!';
+                distractionDesc.innerHTML = 'Lol, this is funny welp...';
+                distractionImage.src='assets/Memes/small/44.jpeg';  
                 distractionImageContainer.style.display = 'block';
                 popup.style.display = 'block';
                 setTimeout(()=>{

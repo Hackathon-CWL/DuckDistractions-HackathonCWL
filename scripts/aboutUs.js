@@ -70,25 +70,3 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', updateBackground);
     updateBackground();
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const footer = document.getElementById('contact-footer');
-    const aboutTab = document.getElementById('about-us');
-
-    function toggleFooter() {
-        if (aboutTab.classList.contains('active')) {
-            footer.style.display = 'block';
-        } else {
-            footer.style.display = 'none';
-        }
-    }
-
-    toggleFooter(); // Initial check
-
-    // Ensure this function runs when you switch tabs
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-            setTimeout(toggleFooter, 0); // Slight delay to allow class change
-        });
-    });
-    
-});

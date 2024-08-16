@@ -12,6 +12,8 @@ html {
     text-align: center;
     max-width: 90vh;
     padding: 20px 20px 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 /* Styling for text inside background-box */
@@ -35,6 +37,34 @@ html {
     max-width: 40%; /* Adjust size of the images */
     height: auto;
     border-radius: 10px; /* Optional: Add slight rounding to image corners */
+}
+
+#pomodoroImg{
+    display: block;
+    margin: 20px auto; /* Center the images */
+    max-width: 40%; /* Adjust size of the images */
+    height: auto;
+    border-radius: 10px; /* Optional: Add slight rounding to image corners */
+    border: 2px solid #000;
+}
+
+#todoImg{
+    display: block;
+    margin: 20px auto; /* Center the images */
+    max-width: 40%; /* Adjust size of the images */
+    height: auto;
+    border-radius: 10px; /* Optional: Add slight rounding to image corners */
+    border: 2px solid #000;
+}
+
+#analyticsImg{
+    display: block;
+    margin: 20px auto; /* Center the images */
+    max-width: 40%; /* Adjust size of the images */
+    height: auto;
+    border-radius: 10px; /* Optional: Add slight rounding to image corners */
+    border: 2px solid #000;
+
 }
 
 /* Adjusting padding and margin for responsive screens */
@@ -107,9 +137,6 @@ body {
         font-size: 1.1em; /* Adjust paragraph font size */
     }
 }
-
-
-
 
 /* Footer Section Styles */
 #contact-footer {

@@ -18,4 +18,4 @@ clone the repository.
 install nodejs.
 add nodejs to path.
 in the repo directory run "npm install"
-to start the app run "npm install"
+to start the app run "npm start"

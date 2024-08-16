@@ -5,7 +5,14 @@
     display: none;
 }
 #distracting-content-image{
-    display: none;
+    display: block;
     height: 480px;
     width: 600px;
+}
+#image-container{
+    display: none;
+}
+#vid-container{
+    width: 600px;
+    display: none;
 }

@@ -135,13 +135,15 @@ function selectText(element) {
 }
 var timeElapsed = 0;
 function startFocusTimer(time){
-    setInterval(() => {
+    const focusTimer= setInterval(() => {
         timeElapsed++;
         if (timeElapsed === time) {
             timeElapsed = 0;
             focusModeCompleted();
             showMessage("Focus mode completed!");
             timeElapsed = 0;
+            clearInterval(focusTimer);
+            time=0;
             return;
         }
     }, 1000);
